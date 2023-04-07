@@ -1,4 +1,4 @@
-# kathisa.github.io
+# Climate Indoor Simulation
 Test
 
 Project: Indoor Climate Simulation
