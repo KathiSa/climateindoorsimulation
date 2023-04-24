@@ -1,6 +1,6 @@
 ---
 layout: default
-title: New Simulation
+title: Occupancy
 parent: Program
 nav_order: 3
 ---
