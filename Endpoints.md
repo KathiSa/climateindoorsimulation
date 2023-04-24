@@ -1,9 +1,11 @@
 ---
 layout: default
-title: Endpoints
-nav_order: 3
+title: REST
+nav_order: 4
 ---
 
 # Endpoints
 
 Einfügen des Kapitels Endpoints aus dem Administrationshandbuch
+
+REST erklären
