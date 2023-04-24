@@ -1,7 +1,7 @@
 ---
 layout: default
 title: New Simulation
-parent: Programmschritte
+parent: Program
 nav_order: 1
 ---
 
