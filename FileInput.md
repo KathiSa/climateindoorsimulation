@@ -1,6 +1,6 @@
 ---
 layout: default
-title: New Simulation
+title: File Input
 parent: Program
 nav_order: 2
 ---
