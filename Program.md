@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Programmschritte
-nav_order: 6
+title: Program
+nav_order: 3
 has_children: true
 ---
 
-# Programmschritte
+# Program & Features
 
 Einfügen des Kapitels Programmschritte des Benutzerhandbuchs
 
