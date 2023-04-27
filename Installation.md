@@ -102,12 +102,65 @@ Daten gespeichert.
 
 ## Installation with Linux
 
+Für die Installation unter Linux gibt es ein paar Eigenheiten zu beachten. Die .bat Skripte 
+sind unter Linux nicht ausführbar. Dafür werden extra Shell-Skripte mit der Endung „.sh“ 
+bereitgestellt. Die Installation Erfolg mit diesen Skripten analog zu den Bash-Skripten. Zum 
+Starten des Backend muss allerdings die config.ini im Backend-Verzeichnis angepasst 
+werden. Im Folgenden ist die Beispiel-Konfiguration in der EnergyPlus im /opt/ Verzeichnis 
+installiert wurde.
 
-Einfügen des Kapitels Installation unter Linux aus dem Administrationshandbuch
+```
+[EnergyPlus]
+EplusPath = /opt/EnergyPlus-22.2.0
+iddPath = /opt/EnergyPlus-22.2.0/Energy+.idd
+```
+
+Erfolgt die Installation auf einem Server und soll von Clients erreichbar sein, muss außerdem 
+die frontend_config.ini im Frontend-Verzeichnis angepasst werden.
+
+```
+[Frontend]
+IP = 0.0.0.0
+Port = 80
+```
+
+Durch die eingestellt IP-Adresse 0.0.0.0 läuft der Webserver auf allen verfügbaren Netzwerk Adaptern. Oft sind innerhalb eines Netzwerks nur wenige Ports durch die Firewall 
+zugelassen. Standardmäßig ist im Frontend der Port 100 konfiguriert, da dieser kein 
+Standard ist und daher oft blockiert wird, empfiehlt es sich den Port auf den Standard http Port 80 zu ändern.
+Für die genauer Abfolge der Befehle um die komplette Anwendung, sowie EnergyPlus unter 
+Linux zu installieren bitte die README.md Datei des Projekts beachten.
 
 
 # Parametrisierung & Konfiguration
 
-Einfügen des Kapitels P & K aus dem Administrationshandbuch
+Die Konfiguration der wichtigsten Softwareparameter für das Backend kann in der config.ini, 
+welche sich im Ordner „raumklimadaten-simulation-a1/backend“ befindet, vorgenommen 
+werden. Folgende Parameter können eingestellt werden:
+
+| Parameter | Beschreibung | Bereich |
+|----------|----------|----------|
+|EplusPath|Pfad zur EnergyPlus Installation auf der lokalen Maschine. Dieser Pfad muss hier angegeben werden. Beispiel: C:/EnergyPlusV22-2-0| EnergyPlus
+|iddPath|Pfad zur .idd Datei von EnergyPlus. Dieser Pfad muss angegeben werden, um Simulationen starten zu können. Der Pfad muss hierbei in den Ordner der EnergyPlus Installation führen. Idd-Files, welche in anderen Verzeichnissen liegen, werden zu Fehlermeldungen führen. Beispiel: C:/EnergyPlusV22-2-0/Energy+.idd|EnergyPlus|
+|idfZone|Die zu nutzende Zone innerhalb einer .idf Datei. Dieser Wert liegt standardmäßig bei „RL_Office_27214585“. Dieser Wert basiert auf dem Standard-IDF Gebäude3.idf. Wird ein komplett eigenes .idf genutzt und nicht nur Raum und Fenstermaße angepasst, so muss dieser Name entsprechend vom Admin geändert werden. Beispiel: RL_OFFICE-27214585|EnergyPlus|
+|co2OutdoorValue|Ergebnis der WarmUp Simulation. Parameter gibt die Ausgangs Co2 Werte an, welche beim Start einer Simulation bereits gelten sollen. Angabe des Wertes im ppm. Standardmäßig auf 437 eingestellt. Wird benötigt, um Plots der Co2 Werte erstellen zu können.Beispiel: 437|EnergyPlus|
+|co2GenerationRate|Zugrundeliegende Standard-Co2 Generationsrate. Standardmäßig auf 0.0000000382 eingestellt. Beispiel: 0.0000000382|EnergyPlus|
+|ActivityLevel|Das Aktivitätslevel möglicher vorhandener Personen in einer Simulation. Basiert auf der American Society of Heating, Refrigerating and Air-Conditioning (ANSHRAE) des American National Standard Institutes (ANSI). Aktivitätslevel beschreiben in Tätigkeiten einer Person und die damit verbundenen Generationsraten von Co2 in einem Raum. Tabelle ersichtlich in ANSI/ASHRAE 55-2010. Standardmäßig auf 108 (Mischung aus 55 % Lesen, 40% Tippen, 3% Ablage sitzend und 2% Umhergehen) eingestellt. Beispiel: 108|EnergyPlus|
+|OutputDirectoryName|Name des zu erstellenden und zu nutzenden Output Directorys für Output-EnergyPlus Files. Standardmäßig auf „eppy_output“ eingestellt. Beispiel: eppy_output|EnergyPlus|
+|Connection_String|Pfad, um sich mit der Raumklima MongoDB zu verbinden. Standardmäßig auf Port der Standardinstallation mit Docker eingestellt. Der lokal verfügbare Container Port muss angegeben werden. Das vorgeschaltete „mongodb://“ wird immer benötigt und sollte nach nicht abgeändert werden. Beispiel: mongodb://localhost:27017|MongoDB|
+
+
+Die Konfiguration der Parameter für das Frontend werden in der frontend_config.ini 
+vorgenommen. Diese Datei befindet sich im Ordner „„raumklimadaten-simulation-a1/frontend
+
+
+|Parameter|Beschreibung|Bereich|
+|-|-|-|
+|IP|Die IP Adresse unter der das Frontend erreichbar ist. |Frontend|
+|Port|Der Port unter dem das Frontend erreichbar ist. |Frontend|
+|Adress|Die Adresse unter der das Frontend mit dem Backend kommunizieren kann. |Backend|
+|Port|Der Port unter dem das Frontend mit dem Backend kommunizieren kann|Backend|
+|Zone|Dieser Wert liegt standardmäßig bei „RL_Office_27214585“. Dieser Wert basiert auf dem Standard-IDF Gebäude3.idf. Wird ein komplett eigenes .idf genutzt und nicht nur Raum und Fenstermaße angepasst, so muss dieser Name entsprechend vom Admin geändert werden. |Simulation|
+
+
 
 
