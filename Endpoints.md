@@ -23,5 +23,6 @@ nav_order: 4
 ||GET|Ergebnis einer Simulation abrufen|
 ||GET|Übersicht aller verfügbaren Ergebnisse abrufen|
 ||GET|Metadaten zu einer Simulation abrufen|
+||||
 
 TODO: REST erklären
