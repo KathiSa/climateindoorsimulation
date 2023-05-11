@@ -50,6 +50,7 @@ URL: http://localhost:5000/simulation
 Method: GET
 
 Parameters: 
+
 |Term|Format|Description|
 |-|-|-|
 |ID|String|The ID of the simulation. The ID is used to query information|
