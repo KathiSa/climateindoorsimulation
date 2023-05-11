@@ -94,6 +94,7 @@ URL: http://localhost:5000/simulation
 Method: DELETE
 
 Parameters: 
+
 |Term|Format|Description|
 |-|-|-|
 |ID|String|The ID of the simulation which should be deleted|
