@@ -20,6 +20,7 @@ nav_order: 4
 |http://localhost:5000/weather|POST|Upload or edit weather data in epw file|
 |http://localhost:5000/occupancy|POST|Upload or edit occupancy data in csv format|
 |http://localhost:5000/result|GET|Retrieving the result of a simulation|
+|http://localhost:5000/result|DEL|Deletes the result of a simulation|
 |http://localhost:5000/result/overview|GET|Get an overview of all available results|
 |http://localhost:5000/metadata|GET|Retrieve metadata about a simulation|
 
@@ -133,6 +134,8 @@ Example Response for request with error:
 ## POST Occupancy
 
 ## GET Result
+
+## DELETE Result
 
 ## GET Result overview
 
