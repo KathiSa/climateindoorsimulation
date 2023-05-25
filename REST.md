@@ -24,6 +24,7 @@ nav_order: 4
 |http://localhost:5000/result/csv|GET|Returns the results in csv format|
 |http://localhost:5000/result/overview|GET|Get an overview of all available results|
 |http://localhost:5000/metadata|GET|Retrieve metadata about a simulation|
+|http://localhost:5000/simulation/control/onlyidf| POST | Starts simulation with only an idf file|
 
 ## POST Simulation
 
