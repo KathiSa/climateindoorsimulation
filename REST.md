@@ -25,6 +25,13 @@ nav_order: 4
 |http://localhost:5000/result/overview|GET|Get an overview of all available results|
 |http://localhost:5000/metadata|GET|Retrieve metadata about a simulation|
 |http://localhost:5000/simulation/control/onlyidf| POST | Starts simulation with only an idf file|
+|http://localhost:5000/series/create|GET/POST|Creates a simulation series|
+|http://localhost:5000/series/weather|GET/POST|Upload or edit the weather file for a simulation series|
+|http://localhost:5000/series/occupancy|GET/POST|Upload or edit a csv file for the occupancy for a simulation series|
+|http://localhost:5000/series/idf|POST and GET?|Uploads or edit an idf file of a simulation series|
+|http://localhost:5000/series/run|GET and POST?|Start a simulaiton for a series|
+|http://localhost:5000/series/results|GET and POST?|Retrieving the results of a simulationseries|
+
 
 ## POST Simulation
 
