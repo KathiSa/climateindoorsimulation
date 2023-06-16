@@ -1,6 +1,6 @@
 ---
 layout: default
-title: REST
+title: REST API
 nav_order: 4
 ---
 
