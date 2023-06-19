@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Dependenies
+title: Dependencies
 nav_order: 6
 ---
 
