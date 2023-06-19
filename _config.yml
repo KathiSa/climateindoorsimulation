@@ -11,5 +11,5 @@ remote_theme: just-the-docs/just-the-docs
 #https://github.com/xriley/PrettyDocs-Theme
 # GitHub pages Dokumentation: https://docs.github.com/en/pages/quickstart
 
-title: Indoor Climate Simulation
-description: Documentation for the Tool Indoor Climate Simulation
+title: EnergyPlus Room Simulation
+description: Documentation for the Tool EnergyPlus Room Simulation
