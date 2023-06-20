@@ -5,6 +5,7 @@ nav_order: 3
 has_children: true
 ---
 
+(Author: Sophia Weißenberger) 
 # Program & Features
 
 ## Features 
