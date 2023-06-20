@@ -7,7 +7,7 @@ nav_order: 2
 
 # New Simulation
 
-Once you launch the application and open http://localhost:100/ in your browser, you will be taken to the Home screen shown in Fig. New Simulation.
+Once you launch the application and open [http://localhost:100/](http://localhost:100/) in your browser, you will be taken to the Home screen shown in Fig. New Simulation.
 
 
 ![Figg. New Simulation](images/NewSimulationMarker.PNG)
