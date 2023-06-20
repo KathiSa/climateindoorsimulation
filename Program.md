@@ -7,8 +7,31 @@ has_children: true
 
 # Program & Features
 
-Einfügen des Kapitels Programmschritte des Benutzerhandbuchs
+## Features 
+This web application for EnergyPlus provides the user with the following functionality:
 
-Einfügen des Kapitels Funktionsumfang des Benutzerhandbuchs
+   * Simulation configuration
+      * Upload of an idf file
+      * Upload of an epw file
+      * Select the simulation period (Timeframe)
+         * Simulation of one day
+         * Simulation of several days upto four months
+      * Upload of an occupancy csv file or creating a custom occupancy
+      * Adjustment of room parameters (room dimensions and infiltration rate)
+   * Running of the simulation
+   * Simulation results
+      * Display of selected measured values in graphs
+         * Zone air temperature
+         * CO2 concentration
+         * Outdoor temperature
+         * Relative humidity
+         * Barometric pressure (outdoor)
+         * Occupancy
+      * Download simulation results as csv file or eso file
+   * Simulation History
+      * Reopen previous simulation results
+      * Reopen previous simulations
+ 
 
+## GUI 
 Einzelne Frames des Frontends erklären
