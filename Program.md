@@ -30,6 +30,7 @@ This web application for EnergyPlus provides the user with the following functio
          * Occupancy
       * Download simulation results as csv file or eso file
    * Simulation History
+      * Overview over simulations previous run  
       * Reopen previous simulation results
       * Reopen previous simulations
  
