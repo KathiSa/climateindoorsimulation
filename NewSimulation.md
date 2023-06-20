@@ -4,7 +4,7 @@ title: New Simulation
 parent: Program
 nav_order: 2
 ---
-
+(Author: Sophia Weißenberger) 
 # New Simulation
 
 Once you launch the application and open [http://localhost:100/](http://localhost:100/) in your browser, you will be taken to the Home screen shown in Fig. New Simulation.
