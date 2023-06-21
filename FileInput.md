@@ -34,7 +34,7 @@ Note: The IDF file, is based on a generic IDF file (Gebauede3), which can be fur
       * Click on the "+" in the line 'Upload IDF file' (Fig. 1, marker 3).
       * Click on the 'Select file' or 'Datei auswählen' button (Fig. 2, marker 2).
       * In the Explorer window that opens, choose your desired file.
-      * If successfull the name of your file should be displayed in the field next to the button (Fig. 2 marker 3).
+      * If successfull the name of your file should be displayed in the field next to the button (Fig. 2, marker 3).
       * Then click on the 'Upload' button (Fig. 2, marker 4). Important: Your file has been uploaded only after clicking this button!
       * After a successful upload, the name of the uploaded file is now displayed in the the web interface (Fig. 4, marker 1).
    * Deleting an existing IDF file
@@ -44,11 +44,34 @@ Note: The IDF file, is based on a generic IDF file (Gebauede3), which can be fur
 
 ## EPW files
 
+EPW files ( short for "EnergyPlus Weather Data File") are EnergyPlus-specific weather files. EPW files are the main data source of the simulation in regards to the
+the simulation of an outdoor climate. An EPW file is mandatory for a simulation!
+EPW files contain time series with different real measured climate data at a certain location. The EPW file for the simulation must be uploades in the GUI.
+
+If you do not have weather data in EPW format, we refer you to following resources:
+   * [https://energyplus.net/weather](https://energyplus.net/weather) - A weather data service from EnergyPlus, which provides EPW data for about 3000 locations.
+   * [https://bigladdersoftware.com/projects/elements/](https://bigladdersoftware.com/projects/elements/) - A software to create and convert existing weather data into the appropriate EPW format.
+
 ## Step-by-step instructions for choosing the required epw file
 
 ![Figg. 3](images/FileUpload5Marked.PNG)
 
+   * (Option A) Using a given example EPW file  
+      * Click on the "+" button in the line 'Use example EPW file' (Fig. 1, marker 4).
+      * Press the 'Use example' button (Fig. 3, marker 1).
+      * If successful, the name "base.epw" will now be displayed in the web interface (Fig. 4, marker 1).
+   * (Option B) Upload your own EPW file
+      * Click on the "+" in the line 'Upload EPW file' (Fig. 1, marker 5).
+      * Click on the 'Select file' or 'Datei auswählen' button (Fig. 3, marker 2).
+      * In the Explorer window that opens, choose your desired file.
+      * If successfull the name of your file should be displayed in the field next to the button (Fig. 3, marker 3).
+      * Then click on the 'Upload' button (Fig. 3, marker 4). Important: Your file has been uploaded only after clicking this button!
+      * After a successful upload, the name of the uploaded file is now displayed in the the web interface (Fig. 4, marker 1).
+   * Deleting an existing EPW file
+      * If you want to remove an uploaded file, you don't have to delete it. You can choose a new file and the old upload will be overwritten.
+
 ## Optional Feature: Run simulation only via idf & epw file
+
 
 ![Figg. 4](images/FileUpload6Marker.PNG)
 
