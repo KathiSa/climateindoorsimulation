@@ -5,6 +5,7 @@ parent: Program
 nav_order: 3
 ---
 
+Author: Sophia Weißenberger
 # File Input
 
-Descripe the Functions on the page File Input
+
