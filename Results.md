@@ -57,10 +57,11 @@ Step-by-step instructions for creating individual graphs
 5. (Optional) Give an individual name to the created graph (Fig. 3, marker 5)
 6. Click on the "Generate Plot" button (Fig. 3, marker 6)
 
+## How to download the results
 If you want to use the simulated values furthermore yourself, we offer a download of all the data in csv- and eso-format. To do this, click on the "download csv" and "download eso" buttons (Fig. 3, marker 7).
 
-When you have finished creating the graphs, you have three options with the buttons
-buttons at the bottom of the screen:
+## Proceed
+When you have finished creating the graphs, you have three options with the buttons buttons at the bottom of the screen:
    * Return to the landing page (Home) using the "Return to landing page" button.
    * Go a step back using the "Back" button to return to the step before.
    * View the simulation history using the "Show Simulation History" button.
