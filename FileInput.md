@@ -70,10 +70,16 @@ If you do not have weather data in EPW format, we refer you to following resourc
    * Deleting an existing EPW file
       * If you want to remove an uploaded file, you don't have to delete it. You can choose a new file and the old upload will be overwritten.
 
-## Optional Feature: Run simulation only via idf & epw file
+## Proceed or use optional Feature: Run simulation only via idf & epw file
 
+After successfully uploading the idf and epw files (Fig. 4, marker 1), there are two ways to proceed. 
+
+1. Proceed to the next step with the "Proceed to occupancy" button and configure further settings for the simulation (Fig. 4, marker 2). 
+2. With the "Start simulation with only provided idf and epw file" button you can skip the remaining steps and jump directly to the step where you can start the simulation without having to make any further configurations (Fig. 4, marker 3).
 
 ![Figg. 4](images/FileUpload6Marker.PNG)
+
+If you choose "Start simulation with only provided idf and epw file" you will be send to the step seen in the following picture an you can start the simulation without further need for configurations (Fig. 5).
 
 
 ![Figg. 5](images/FileUpload7.PNG)
