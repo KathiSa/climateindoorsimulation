@@ -10,6 +10,8 @@ Author: Sophia Weißenberger
 
 This step of the web application takes you to the overview of simulation inputs and configurations, as well as the execution of the simulation itself.
 
+
+
 ## Simulation Parameters
 
 The simulation overview allows you to view all inputs again before the simulation and to check their correctness.
