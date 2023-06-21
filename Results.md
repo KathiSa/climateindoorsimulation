@@ -39,7 +39,7 @@ The graphs you create open in a separate window/browser tab. In this one you can
    * Creation of a screenshot for a selected section
    * Downloading the plot as png
 
-For easier navigation, all possible interaction are also displayed at the upper right edge of the graph (Fig 2, mark 1).
+For easier navigation, all possible interaction are also displayed at the upper right edge of the graph (Fig 2, marker 1).
 
 ![Figg. 2](images/ViewResults3Marker.PNG)
 
@@ -49,5 +49,18 @@ If you no longer need the graph and want to create a new plot, simply close the 
 
 ![Figg. 3](images/ViewResults2Marker.PNG)
 
+Step-by-step instructions for creating individual graphs
+1. Select the first measured value (Y-axis (1)) (Fig. 3, marker 1)
+2. (Optional) Select a second measured value (Y-Axis (2)) (Fig. 3, marker 2)
+3. Select an individual line color for each measured value (Fig. 3, marker 3)
+4. (Optional) Give each measured value an individual name (Fig. 3, marker 4)
+5. (Optional) Give an individual name to the created graph (Fig. 3, marker 5)
+6. Click on the "Generate Plot" button (Fig. 3, marker 6)
 
+If you want to use the simulated values furthermore yourself, we offer a download of all the data in csv- and eso-format. To do this, click on the "download csv" and "download eso" buttons (Fig. 3, marker 7).
 
+When you have finished creating the graphs, you have three options with the buttons
+buttons at the bottom of the screen:
+   * Return to the landing page (Home) using the "Return to landing page" button.
+   * Go a step back using the "Back" button to return to the step before.
+   * View the simulation history using the "Show Simulation History" button.
