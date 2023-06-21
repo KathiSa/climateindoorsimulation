@@ -22,11 +22,10 @@ The simulation overview allows you to view all inputs again before the simulatio
 
 For instance, in the File Input section (Fig. 2, marker 1), you can again view which .idf and .epw file you selected at the beginning. If you have uploaded an occupancy file, the uploaded file will also be shown in this section. If you have created a custom occupancy, there will be a different section shown, but this will be explained further down. In the simulation parameters section of the overview (Fig. 2, marker 2), you will again see the room dimensions and infiltration rate you specified for the simulation. If you notice that you have made an incorrect entry here, you can return via the back button to the step parameter input and adjust the values accordingly. If you are satisfied with the input data, you can now start the simulation. To do this, click on the "Start Simulation" button (Fig. 2, marker 3). The view results button will be unclickable and greyed out until the simulation is run (Fig. 2, marker 4).
 
-TODO: Picture custom occupancy
+![Figg. 3](images/Overview5Marker.PNG)
 
 
-TODO: fix text here:
-In the section below (Fig. Overview, marker 2), you can view the room occupancy (Occupancy) created or uploaded in process step 2. This occupancy section is only shown if you have choosen to create a custom occupancy in step 2, If you have uploaded an occupancy file, the file will be shown in the File input section.
+In the section occupancy (Fig. 3, marker 1), you can view the custom room occupancy created in process step 2. This occupancy section is only shown if you have choosen to create a custom occupancy in step 2, If you have uploaded an occupancy file, the file will be shown in the File input section.
 
 ## Simulation status 
 
