@@ -52,7 +52,7 @@ If you do not have weather data in EPW format, we refer you to following resourc
    * [https://energyplus.net/weather](https://energyplus.net/weather) - A weather data service from EnergyPlus, which provides EPW data for about 3000 locations.
    * [https://bigladdersoftware.com/projects/elements/](https://bigladdersoftware.com/projects/elements/) - A software to create and convert existing weather data into the appropriate EPW format.
 
-## Step-by-step instructions for choosing the required epw file
+### Step-by-step instructions for choosing the required epw file
 
 ![Figg. 3](images/FileUpload5Marked.PNG)
 
@@ -70,7 +70,7 @@ If you do not have weather data in EPW format, we refer you to following resourc
    * Deleting an existing EPW file
       * If you want to remove an uploaded file, you don't have to delete it. You can choose a new file and the old upload will be overwritten.
 
-## Proceed or use optional Feature: Run simulation only via idf & epw file
+## Proceed or use optional feature: Run simulation only via idf & epw file
 
 After successfully uploading the idf and epw files (Fig. 4, marker 1), there are two ways to proceed. 
 
