@@ -17,11 +17,13 @@ You can find a step by step guide including pictures below!
 
 Open a command window and navigate into you project folder. 
 
-execute the following: 
+Execute the following: 
 
 ```
  python install.py
 ```
+
+Your backend and frontend is started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
 
 Note: You can find a step by step guide including pictures below!
 
@@ -31,17 +33,19 @@ Note: You can find a step by step guide including pictures below!
 
 Open a command window and navigate into you project folder. 
 
-execute the following: 
+Execute the following:  
 
 ```
 cd backend
 ```
 
-execute the following: 
+Execute the following:  
 
 ```
 python -m app
 ```
+
+Backend is started. Now you can use the backend, for example to work with Jupyter Notebooks.
 
 Note: You can find a step by step guide including pictures below!
 
@@ -50,17 +54,20 @@ Note: You can find a step by step guide including pictures below!
 
 Open another command window and navigate into you project folder. 
 
-execute the following: 
+Execute the following: 
 
 ```
 cd frontend
 ```
 
-execute the following: 
+Execute the following:  
 
 ```
 python -m app
 ```
+
+
+Your frontend is started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
 
 Note: You can find a step by step guide including pictures below!
 
@@ -79,17 +86,21 @@ Step 2: Navigate to the project folder.
 
 Step 3: Run script install.py 
 
+Execute the following: 
+
 ```
  python install.py
 ```
 
 ![Figg. 4](images/ProgramStartAll4.PNG)
 
+
 Step 4: Backend and frontend start automatically
 
 In this step you have to do nothing. If the frontend started successfully another command window should open automatically. 
 
 ![Figg. 5](images/ProgramStartAll5.PNG)
+
 
 Step 5: Open [http://localhost:100/](http://localhost:100/) in your browser
 
@@ -111,39 +122,45 @@ Step 2: Navigate to the project folder.
 
 Step 3: Start backend 
 
+Execute the following: 
+
 ```
 cd backend
 ```
 
-![Figg. 1](images/FileUpload1Marked.PNG)
+![Figg. 1](images/ProgramStartFB4.PNG)
 
+Execute the following: 
 
 ```
 python -m app
 ```
 
-![Figg. 1](images/FileUpload1Marked.PNG)
+![Figg. 1](images/ProgramStartFB5.PNG)
 
+Backend is started. Now you can use the backend, for example to work with Jupyter Notebooks. 
 
 Step 4 (optional): Start frontend 
 
 Repeat Step 1 and 2: Open a new command window and navigate to the project folder. 
 
-Then 
+Execute the following: 
 
 ```
 cd frontend
 ```
 
-![Figg. 1](images/FileUpload1Marked.PNG)
+![Figg. 1](images/ProgramStartFB6.PNG)
+
+Execute the following: 
 
 ```
 python -m app
 ```
 
-![Figg. 1](images/FileUpload1Marked.PNG)
+![Figg. 1](images/ProgramStartFB7.PNG)
 
-
+Frontend is started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation. 
 
 # Start Program with Linux
 
