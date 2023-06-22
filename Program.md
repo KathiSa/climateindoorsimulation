@@ -6,9 +6,8 @@ has_children: true
 ---
 
 (Author: Sophia Weißenberger) 
-# Program & Features
+# Program Features
 
-## Features 
 This web application for EnergyPlus provides the user with the following functionality:
 
    * Simulation configuration
@@ -33,7 +32,3 @@ This web application for EnergyPlus provides the user with the following functio
       * Overview over simulations previous run  
       * Reopen previous simulation results
       * Reopen previous simulations
- 
-
-## GUI 
-Einzelne Frames des Frontends erklären
