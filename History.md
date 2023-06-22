@@ -7,7 +7,7 @@ nav_order: 8
 (Author: Sophia Weißenberger) 
 # Simulation History
 
-In the simulation history you can get an overview of the simulations performed so far. You can access this page from every step in the simulation process with the "Simulation History" button (Fig. 1, marker 1). In the Table the simulation history the individual simulation ID and the creation date of the individual simulations are displayed. Furthermore you can see the status of the simulation.
+In the simulation history you can get an overview of the simulations performed so far. You can access this page from every step in the simulation process with the "Simulation History" button (Fig. 1, marker 1). In the simulation history table the individual simulation ID and the creation date of the individual simulations are displayed. Furthermore you can see the status of the simulation.
 
 ![Figg. 1](images/SimHist1Marker.PNG)
 
@@ -25,7 +25,7 @@ You will be redirected to the results page. You can see by the ID in the url tha
 
 # Reopen an old simulation to change parameters and run again
 
-We offer you the feature to reopen a previous run simulation in the frontend to change configurations and run the simulation again, without having to upload all the files again or reentering all the configurations. If you want to use this functionality, click on the "Reopen Simulation with ID" button (Fig. 1, marker 3) with the simulation ID of the simulation you want to open again.
+We also offer you the feature to reopen a previous run simulation in the frontend to change files or configurations and run the simulation again, without having to upload all the files again or reentering all the configurations. If you want to use this functionality, click on the "Reopen Simulation with ID" button (Fig. 1, marker 3) with the simulation ID of the simulation you want to open again.
 
 ![Figg. 4](images/SimHist4Marker.PNG)
 
