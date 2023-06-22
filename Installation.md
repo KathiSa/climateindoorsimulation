@@ -3,7 +3,7 @@ layout: default
 title: Installation
 nav_order: 2
 ---
-
+(Author: Diana) 
 # Introduction
 
 This documentation provides you with information for the programm Indoor Climate Simulation. This programm simulates the concentration of CO2 in rooms. For the simulation the program "EnergyPlus" is used. Additionaly the Python Package "eppy" serves as a connector between EnergyPlus and Python.  
