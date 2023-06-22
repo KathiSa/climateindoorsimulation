@@ -4,7 +4,7 @@ title: Occupancy
 parent: Program
 nav_order: 4
 ---
-
+(Author: Katharina Sammet) 
 # Occupancy
 
 Describe the functions on the page Occupancy
