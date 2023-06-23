@@ -38,7 +38,7 @@ Many control instances for the uploaded data are integrated into the frontend. T
     - File consistency is not checked
         - IDF-file: structure and necessary elements are not previosly checked
         - CSV-file: 
-            - file structure: day|time|occupants|win1
+            - file structure: day\|time\|occupants\|win1
             - file length: (rows % 1440) = 1
             - time coloumn format: HH:MM:SS
     - File encoded
