@@ -8,19 +8,34 @@ nav_order: 5
 Author: Sophia Weißenberger 
 # Room
 
-Now that you have successfully specified the input data as well as the time period and room occupancy, you can make selected adjustments in the idf file in the following step. It is important to emphasize that these adjustments are not mandatory. If no changes are made, the values in the the idf file will remain unchanged, or default values will be used.
+Now that you have successfully specified the input data as well as the time period and room occupancy, you can make selected adjustments in the idf file in the following step. It is important to emphasize that these adjustments are not mandatory. If no changes are made, the values in the the idf file will remain unchanged, or default values will be used and you can move on to the next step (Fig. 1, marker 3).
 
-TODO: BILD EINFÜGEN!!
+![Figg. 1](images/RoomParameter1Marker.PNG)
 
-## Adjust Room Dimensions
+1. Open Adjust Room Dimension (+ idf visualisation)
+2. Open Adjust Infiltration Rate
+3. Proceed to Simulation-Overview (next step)
 
-Furthermore, the adjustment of the room parameters is possible only if you have used the base idf file generated in step 1. If you have uploaded your own idf-file, the room dimensions cannot be adjusted, because it could be a more complex building with several rooms. In this case we ask you to upload the idf-file in a dedicated idf editor and only then upload it to this web application.
-
-If you have the idf base file in step 1 and now decide to adjust it, this can be done in two steps. If you click on the "Adjust room dimensions" field (Fig. 1, marker 1), the menu for adjusting the room parameters shown in Fig. Room opens analogously to the process steps. The graphic on the left side shows the idf base file true to scale and gives you information about which parameters you can use to adjust the room to your desired dimensions by means of the labels "Length", "Width" and "Height". So, in the next step, please enter your input in the fields provided for this purpose (Fig. 1, marker 2). The room dimensions will then be adjusted in the idf file and the windows will scale in the same proportion. Then confirm your input by clicking on the "Set dimensions" field (Fig. 1, marker 3). The menu for adjusting the room dimensions will then close. When you open it again, you will also see the new floor size of the room.
-
+   
 ## Adjust Infiltration Rate
-Clicking on "Adjust infiltration rate" (Fig. 1, marker 4) opens the input for the desired infiltration rate. Please enter the desired infiltration rate in the field provided (Fig. 1, marker 5). Please note that the entered value must be between 0 and 1. Then confirm the entry via the "Set infiltration rate" field (Fig. Room, marker 6). As on the previous pages, you can also return to the start screen here (Fig. 1, marker 7), go Back to the previous process step (Fig. 1, marker XXX), or go to the next process step, the overview of the set simulation parameters (Fig. 1, marker 8).
 
-## Visualise Room 
+![Figg. 2](images/RoomParameter2Marker.PNG)
 
-TODO: TODODODODOOOOOOO
+1. Change infiltration rate
+2. Confirm new infiltration rate with button
+   
+Clicking on "Adjust infiltration rate" (Fig. 1, marker 2) opens the input for the desired infiltration rate. Please enter the desired infiltration rate in the field provided (Fig. 2, marker 1). Please note that the entered value must be between 0 and 1. Then confirm the entry via the "Set infiltration rate" button (Fig. 2, marker 2). 
+
+## Adjust Room Dimensions and visualise IDF Room
+
+![Figg. 3](images/RoomParameter4Marker.PNG)
+
+1. Room Parameter
+2. Button to confirm new room parameters
+3. Button to download the newly created idf file with the changed room dimensions.
+4. Short step-by-step guide for the idf visualisation
+5. Visualisation of the idf file 
+
+The adjustment of the room parameters is only possible if you have used the base.idf example idf file in the file upload. If you have uploaded your own idf-file, the room will be visualised but the room dimensions cannot be adjusted, because it could be a more complex building with several rooms. In this case we ask you to upload the idf-file in a dedicated idf editor and only then upload it to this web application.
+
+If you have the base.idf file in step 1 and now decide to adjust it, this can be done in two easy steps. If you click on the "Adjust room dimensions" field (Fig. 1, marker 1), the menu for adjusting the room parameters shown in (Fig. 3, marker 1) opens. The graphic (Fig. 3, marker 5) on the left side shows the visualisation of the uploaded idf file and the parameter on the right side (Fig. 3, marker 1) give you information about which parameters you can use to adjust the room to your desired dimensions by means of the labels "Length", "Width" and "Height". "Orientation" can also be adjusted, but will only be used for the simulation and not be visualised. In the next step, please enter your input in the fields provided for this purpose (Fig. 3, marker 1). The room dimensions will then be adjusted in the idf file and the windows will scale in the same proportion. Please confirm your input by clicking on the "Set dimensions" field (Fig. 3, marker 2). You will see the changed room visualised (Fig. 3, marker 5) and updated with the new parameters and also see the new floor size of the room. After clicking the button "Set dimensions" another button will show up. You can use the "Download new idf file" button to download the newly created idf file with the changed parameters for later use (Fig. 3, marker 3). 
