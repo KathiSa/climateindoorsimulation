@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Endpointsa
+title: Endpoints
 parent: REST API
 nav_order: 1
 ---
