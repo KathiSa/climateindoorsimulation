@@ -11,6 +11,7 @@ nav_order: 1
 
 |URI|Method|Description|
 |-|-|-|
+|http://localhost:5000/status|GET|TODO|
 |http://localhost:5000/simulation|POST|Generates a new simulation ID and initiates a new simulation in the backend|
 |http://localhost:5000/simulation|GET|Returns all information about a simulation|
 |http://localhost:5000/simulation|DEL|Delets a simulation|
@@ -18,23 +19,50 @@ nav_order: 1
 |http://localhost:5000/simulation/control|POST|Starts simulation|
 |http://localhost:5000/simulation/control|GET|Checks status of the simulation|
 |http://localhost:5000/idf|POST|Upload or edit an idf file|
+|http://localhost:5000/idf|GET|Return information about the idf file|
 |http://localhost:5000/weather|POST|Upload or edit weather data in epw file|
+|http://localhost:5000/weather|GET|Return all information about the epw file|
 |http://localhost:5000/occupancy|POST|Upload or edit occupancy data in csv format|
+|http://localhost:5000/occupancy|GET|Return information about the occupancy data in csv format|
 |http://localhost:5000/result|GET|Retrieving the result of a simulation|
 |http://localhost:5000/result|DEL|Deletes the result of a simulation|
 |http://localhost:5000/result/csv|GET|Returns the results in csv format|
 |http://localhost:5000/result/overview|GET|Get an overview of all available results|
 |http://localhost:5000/metadata|GET|Retrieve metadata about a simulation|
 |http://localhost:5000/simulation/control/onlyidf| POST | Starts simulation with only an idf file|
-|http://localhost:5000/series/create|GET/POST|Creates a simulation series|
-|http://localhost:5000/series/weather|GET/POST|Upload or edit the weather file for a simulation series|
-|http://localhost:5000/series/occupancy|GET/POST|Upload or edit a csv file for the occupancy for a simulation series|
-|http://localhost:5000/series/idf|POST and GET?|Uploads or edit an idf file of a simulation series|
-|http://localhost:5000/series/run|GET and POST?|Start a simulaiton for a series|
-|http://localhost:5000/series/results|GET and POST?|Retrieving the results of a simulationseries|
+|http://localhost:5000/simulation/control/onlyidf| GET | TODO|
+|http://localhost:5000/reopensim|GET| TODO|
+|http://localhost:5000/reopensim|POST| TODO|
+|http://localhost:5000/series/create|POST|Creates a simulation series|
+|http://localhost:5000/series/weather|POST|Upload or edit the weather file for a simulation series|
+|http://localhost:5000/series/occupancy|POST|Upload or edit a csv file for the occupancy for a simulation series|
+|http://localhost:5000/series/idf|POST|Uploads or edit an idf file of a simulation series|
+|http://localhost:5000/series/run|GET|Start a simulaiton for a series|
+|http://localhost:5000/series/run|POST|Start a simulaiton for a series|
+|http://localhost:5000/series/results|GET|Retrieving the results of a simulationseries|
 
+
+## GET Status
+Returns the status of the mongo DB in docker. If the DB in the docker is successfully running it will return true. 
+
+URL: http://localhost:5000/status
+
+Method: GET
+
+Parameters: none
+
+Example Request Body: 
+```
+{}
+```
+
+Example Response: 
+```
+ "success": true
+```
 
 ## POST Simulation
+Generates a new simulation ID and initiates a new simulation in the backend. 
 
 URL: http://localhost:5000/simulation
 
@@ -53,6 +81,8 @@ Example Respone:
 ```
 
 ## GET Simulation
+Returns all information about a simulation. 
+TODO: input or result collection? and check response 
 
 URL: http://localhost:5000/simulation
 
@@ -97,6 +127,8 @@ Example Response for request with error:
 ```
 
 ## DELETE Simulation
+Delets a simulation. 
+TODO: input simulaiton? 
 
 URL: http://localhost:5000/simulation
 
@@ -135,7 +167,8 @@ Example Response for request with error:
 
 ## GET Overview
 
-Overview on all simulations
+Overview of all initiated simulations
+TODO: check response
 
 URL: http://localhost:5000/simulation/overview 
 
@@ -164,7 +197,7 @@ Example Response:
 
 ## POST Simulation control
 
-start a simulation
+Starts a new simulation
 
 URL: http://localhost:5000/simulation/control
 
@@ -213,7 +246,7 @@ Example response:
 
 ## GET Simulation control
 
-Check status of simulation
+Checks status of the simulation
 
 URL: http://localhost:5000/simulation/control
 
@@ -241,7 +274,7 @@ Example response:
 
 ## POST IDF file
 
-Upload of a idf file
+Upload or edit of an idf file
 
 URL: http://localhost:5000/idf
 
@@ -280,10 +313,39 @@ If request has an error, the following error message might appear (Depending on 
 
 TODO: check if successful is still the same and check for error message
 TODO: add upload of idf file
+TODO: explain string
+
+## GET IDF file
+
+Returns information of an idf file in the input simulation database. 
+
+URL: http://localhost:5000/idf
+
+Method: GET
+
+Parameters: 
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|ID of simulation|
+
+Example request body: 
+{
+    
+ "id": "63977ba6ed0627cf228854e2",
+}
+
+Example for successful response
+
+```
+    "success": true
+```
+
+TODO: check input parameters and response 
 
 ## POST Weather file
 
-Upload or Edit of Weather data (epw-file)
+Upload or edit Weather data (epw-file)
 
 URL: http://localhost:5000/weather
 
@@ -310,10 +372,40 @@ Example response:
 ```
 
 TODO add upload of epw file
+TODO: check request and response 
+
+## GET Weather file
+
+Returns information about weather data (epw-file)
+
+URL: http://localhost:5000/weather
+
+Method: GET
+
+Parameters: 
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|ID of simulation|
+
+Example request body: 
+
+```
+    "id": "63977ba6ed0627cf228854e2",
+``` 
+
+Example response: 
+
+```
+    "success": true
+```
+
+TODO add upload of epw file
+TODO: check request and response 
 
 ## POST Occupancy
 
-Upload or edit of occupancy data in csv file
+Upload or edit of occupancy data in csv format
 
 URL: http://localhost:5000/occupancy
 
@@ -341,9 +433,39 @@ Example response:
 ```
 TODO: add how to upload an csv file
 
+## GET Occupancy
+
+Returns information about occupancy data in csv format
+
+URL: http://localhost:5000/occupancy
+
+Method: GET
+
+Parameters: 
+
+|Name|Format|Description|
+|id|String|ID of simulation|
+
+Example request body: 
+```
+{
+     "id": "63977ba6ed0627cf228854e2",
+}
+```
+
+Example response: 
+```
+{
+    "success": true
+}
+```
+TODO: add how to upload an csv file
+
 ## GET Result
 
 Retrieve results of a simulation
+
+TODO: database/input/results? 
 
 URL: http://localhost:5000/result 
 
@@ -377,11 +499,65 @@ TODO: Check response => Beispiel aus vorhandenen Handbuch stimmt nicht mehr mit 
 
 ## DELETE Result
 
+Deletes results of a simulation in the result_simulation database. 
+
+URL: http://localhost:5000/result 
+
+Method: DELETE
+
+Parameters: 
+
+|Name|Format|Description|
+|id|String|ID of simulation|
+
+Example of request body: 
+```
+{
+    
+ "id": "63977ba6ed0627cf228854e2"
+}
+```
+Example response: 
+```
+{
+  
+}
+```
+
+TODO: check response 
+
 ## GET CSV Result
+
+Returns the results in csv format. 
+
+URL: http://localhost:5000/result/csv 
+
+Method: GET
+
+Parameters: 
+
+|Name|Format|Description|
+|id|String|ID of simulation|
+
+Example of request body: 
+```
+{
+    
+ "id": "63977ba6ed0627cf228854e2"
+}
+```
+Example response: 
+```
+{
+  
+}
+```
+
+TODO: check response 
 
 ## GET Result overview
 
-Retrieve overview from all available results
+Get an overview of all available results. 
 
 URL: http://localhost:5000/result/overview
 
@@ -413,9 +589,11 @@ Example response:
 ]
 ```
 
+TODO: check response 
+
 ## GET Metadata
 
-Retrieve metadata of a simulation
+Retrieve metadata of a simulation.
 
 URL: http://localhost:5000/metadata
 
@@ -449,3 +627,344 @@ Example response:
     "width": 6.66
 }
 ```
+
+TODO: update response
+
+## POST Simulation control onlyidf
+
+Start a simulation with only an idf and epw file. 
+
+URL: http://localhost:5000/simulation/control/onlyidf
+
+Method: POST
+
+Parameters: TODO
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|Id of simulation|
+
+Example request body: 
+```
+{
+    "id": "63977ba6ed0627cf228854e2"
+}
+```
+
+Example response: 
+``` 
+{
+
+}
+```
+
+TODO: check request and response 
+
+## GET Simulation control onlyidf
+
+TODO
+
+URL: http://localhost:5000/simulation/control/onlyidf
+
+Method: GET
+
+Parameters: TODO
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|Id of simulation|
+
+Example request body: 
+```
+{
+    "id": "63977ba6ed0627cf228854e2"
+}
+```
+
+Example response: 
+``` 
+{
+
+}
+```
+
+TODO: check request and response 
+
+## GET reopensim
+
+TODO
+
+URL: http://localhost:5000/reopensim
+
+Method: GET
+
+Parameters: TODO
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|Id of simulation|
+
+Example request body: 
+```
+{
+    "id": "63977ba6ed0627cf228854e2"
+}
+```
+
+Example response: 
+``` 
+{
+
+}
+```
+
+TODO: check request and response
+
+|http://localhost:5000/series/create|POST|Creates a simulation series|
+|http://localhost:5000/series/weather|POST|Upload or edit the weather file for a simulation series|
+|http://localhost:5000/series/occupancy|POST|Upload or edit a csv file for the occupancy for a simulation series|
+|http://localhost:5000/series/idf|POST|Uploads or edit an idf file of a simulation series|
+|http://localhost:5000/series/run|GET|Start a simulaiton for a series|
+|http://localhost:5000/series/run|POST|Start a simulaiton for a series|
+|http://localhost:5000/series/results|GET|Retrieving the results of a simulationseries|
+
+## POST reopensim
+
+TODO
+
+URL: http://localhost:5000/reopensim
+
+Method: POST
+
+Parameters: TODO
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|Id of simulation|
+
+Example request body: 
+```
+{
+    "id": "63977ba6ed0627cf228854e2"
+}
+```
+
+Example response: 
+``` 
+{
+
+}
+```
+
+TODO: check request and response
+
+## POST Series create
+
+Creates a simulation series
+
+URL: http://localhost:5000/series/create
+
+Method: POST
+
+Parameters: TODO
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|Id of simulation|
+
+Example request body: 
+```
+{
+    "id": "63977ba6ed0627cf228854e2"
+}
+```
+
+Example response: 
+``` 
+{
+
+}
+```
+
+TODO: check request and response
+
+## POST Series weather
+
+Upload or edit the weather file for a simulation series
+
+URL: http://localhost:5000/series/weather
+
+Method: POST
+
+Parameters: TODO
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|Id of simulation|
+
+Example request body: 
+```
+{
+    "id": "63977ba6ed0627cf228854e2"
+}
+```
+
+Example response: 
+``` 
+{
+
+}
+```
+
+TODO: check request and response
+
+## POST Series occupancy
+
+Upload or edit a csv file for the occupancy for a simulation series
+
+URL: http://localhost:5000/series/occupancy
+
+Method: POST
+
+Parameters: TODO
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|Id of simulation|
+
+Example request body: 
+```
+{
+    "id": "63977ba6ed0627cf228854e2"
+}
+```
+
+Example response: 
+``` 
+{
+
+}
+```
+
+TODO: check request and response
+
+## POST Series idf
+
+Uploads or edit an idf file of a simulation series
+
+URL: http://localhost:5000/series/idf
+
+Method: POST
+
+Parameters: TODO
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|Id of simulation|
+
+Example request body: 
+```
+{
+    "id": "63977ba6ed0627cf228854e2"
+}
+```
+
+Example response: 
+``` 
+{
+
+}
+```
+
+TODO: check request and response
+
+## GET Series run
+
+Start a simulaiton for a series
+
+URL: http://localhost:5000/series/run
+
+Method: GET
+
+Parameters: TODO
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|Id of simulation|
+
+Example request body: 
+```
+{
+    "id": "63977ba6ed0627cf228854e2"
+}
+```
+
+Example response: 
+``` 
+{
+
+}
+```
+
+TODO: check request and response
+
+## POST Series run
+
+Start a simulaiton for a series
+
+URL: http://localhost:5000/series/run
+
+Method: POST
+
+Parameters: TODO
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|Id of simulation|
+
+Example request body: 
+```
+{
+    "id": "63977ba6ed0627cf228854e2"
+}
+```
+
+Example response: 
+``` 
+{
+
+}
+```
+
+TODO: check request and response
+
+
+## GET Series results
+
+Retrieving the results of a simulationseries
+
+URL: http://localhost:5000/series/results
+
+Method: GET
+
+Parameters: TODO
+
+|Name|Format|Description|
+|-|-|-|
+|id|String|Id of simulation|
+
+Example request body: 
+```
+{
+    "id": "63977ba6ed0627cf228854e2"
+}
+```
+
+Example response: 
+``` 
+{
+
+}
+```
+
+TODO: check request and response
