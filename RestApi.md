@@ -1,7 +1,8 @@
 ---
 layout: default
-title: REST API
-nav_order: 4
+title: Endpointsa
+parent: REST API
+nav_order: 1
 ---
 (Author: Katharina Sammet) 
 # Endpoints
