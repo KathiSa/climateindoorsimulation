@@ -21,6 +21,7 @@ Requirements to install the software Indoor Climate Simulation
 * Installation of EnergyPlus (Version 22-2-0)
 * Current Version of Docker
 * Windows or Linux
+* Installation of Node.js (https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows)
 
 ## Note 
 Das Skript führt entweder eine komplette Installation oder lediglich einen Start der 
