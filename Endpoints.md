@@ -11,7 +11,7 @@ nav_order: 1
 
 |URI|Method|Description|
 |-|-|-|
-|http://localhost:5000/status|GET|TODO|
+|[http://localhost:5000/status](#get-status)|GET|Returns information about the status of the mongo DB in docker|
 |http://localhost:5000/simulation|POST|Generates a new simulation ID and initiates a new simulation in the backend|
 |http://localhost:5000/simulation|GET|Returns all information about a simulation|
 |http://localhost:5000/simulation|DEL|Delets a simulation|
@@ -58,11 +58,18 @@ Example Request Body:
 
 Example Response: 
 ```
- "success": true
+ "success": True
 ```
 
+If Mongo DB in docker is not running the response will be: 
+```
+{'errors': {'success': False,
+  'message': 'Failed to connect to MongoDB. Check Docker Container!'}}
+```
+
+
 ## POST Simulation
-Generates a new simulation ID and initiates a new simulation in the backend. 
+Generates a new simulation ID and initiates a new simulation in the backend. The simulation ID and date of creation is inserted in the DB in the collection input_simulation.
 
 URL: http://localhost:5000/simulation
 
@@ -75,14 +82,13 @@ Example Request Body:
 {}
 ```
 
-Example Respone: 
+Example Response: 
 ```
 "63977ba6ed0627cf228854e2"
 ```
 
 ## GET Simulation
-Returns all information about a simulation. 
-TODO: input or result collection? and check response 
+Returns all information about a simulation from the input_simulation collection in the database. 
 
 URL: http://localhost:5000/simulation
 
@@ -102,33 +108,35 @@ Example Request Body:
 ```
 
 Example Respone: 
+The content of the response depends on the moment when this request is made. After the creation of the simulation id the response will only contain date of creation and idf_filename. After the user inserts the metadata and files, this variables will contain the information. 
 ```
-{
- "csv_data":“...8MDA6MDA6MDB8MHwwDQowfDAwOjAxOjA...“,
- "idf_filename": "SimInput14706816",
- "infiltration_rate": 0.0019,
- "length": 7.77,
- "start_day": 30,
- "start_month": 12,
- "start_year": 2022,
- "width": 6.66
-}
+{'csv_data': '',
+ 'date_of_creation': '2023-06-25-13:20',
+ 'end_day': '',
+ 'end_month': '',
+ 'end_year': '',
+ 'epw_data': '',
+ 'height': '',
+ 'idf_data': '',
+ 'idf_filename': 'SimInput02022628',
+ 'infiltration_rate': '',
+ 'length': '',
+ 'orientation': '',
+ 'start_day': '',
+ 'start_month': '',
+ 'start_year': '',
+ 'width': '',
+ 'zone_name': ''}
 ```
 
 Example Response for request with error: 
 ```
-{
- "errors": {
- "success": false,
- "message": {'id': ['Field may not be null.']}
- }
-}
-
+{'errors': {'success': False,
+  'message': {'id': ['Missing data for required field.']}}}
 ```
 
 ## DELETE Simulation
-Delets a simulation. 
-TODO: input simulaiton? 
+Delets a simulation from the input_simulation collection in the database. 
 
 URL: http://localhost:5000/simulation
 
@@ -150,18 +158,14 @@ Example Request Body:
 Example Respone: 
 ```
 {
- "success": true
+ "success": True
 }
 ```
 
 Example Response for request with error: 
 ```
-{
- "errors": {
- "success": false,
- "message": {'id': ['Field may not be null.']}
- }
-}
+{'errors': {'success': False,
+  'message': 'The provided simID is not a valid simID in the database. simID does not exist'}}
 
 ```
 
