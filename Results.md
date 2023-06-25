@@ -43,6 +43,8 @@ For easier navigation, all possible interaction are also displayed at the upper 
 
 ![Figg. 2](images/ViewResults3Marker.PNG)
 
+1. Interaction menu
+
 If you no longer need the graph and want to create a new plot, simply close the newly opened plot window/tab and return to the original results page. Here you have the possibility to again create a completely new plot with different content.
 
 ## How to create a plot
@@ -58,6 +60,9 @@ Step-by-step instructions for creating individual graphs
 6. Click on the "Generate Plot" button (Fig. 3, marker 6)
 
 ## How to download the results
+
+7. Download the simulation results via corresponding buttons as csv-file or eso-file
+   
 If you want to use the simulated values furthermore yourself, we offer a download of all the data in csv- and eso-format. To do this, click on the "download csv" and "download eso" buttons (Fig. 3, marker 7).
 
 ## Proceed
