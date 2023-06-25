@@ -205,7 +205,7 @@ Example Response:
 
 ## POST Simulation control
 
-Starts a new simulation
+Starts a new simulation. Files need to uploaded before and parameter need to be set. 
 
 URL: http://localhost:5000/simulation/control
 
@@ -219,6 +219,7 @@ Parameters:
 |height|float|height of room|
 |lenght|float|lenght of room|
 |width|float|width of room|
+|orientation|int|between 0 ° and 360 °, used to turn the room|
 |start_day|int|start date of simulation (day)|
 |start_month|int|start date of simulation (month)|
 |start_year|int|start date of simulation (year)|
@@ -226,6 +227,7 @@ Parameters:
 |end_month|int|end date of simulation (month)|
 |end_year|int|end date of simulation (year)|
 |infiltration_rate|flaot|Infiltration rate for simulation|
+|zone_name|String|Zone name in idf file of the room which should be simulated|
 
 Example of request body: 
 ```
@@ -235,6 +237,7 @@ Example of request body:
  "height": 8.88,
  "length": 7.77,
  "width": 6.66,
+ "orientation":0,
  "start_day": 1,
  "start_month": 12,
  "start_year": 2022,
@@ -242,13 +245,14 @@ Example of request body:
  "end_month": 12,
  "end_year": 2022,
  "infiltration_rate": 0.0019
+ "zone_name": ""
 }
 ```
 
 Example response: 
 ```
 {
- "success": true
+ "success": True
 }
 ```
 
@@ -274,11 +278,14 @@ Example request body:
 ```
 
 Example response: 
+If simulation is done, the status will be: 
 ```
 {
     "status": "done"
 }
 ```
+If the simulation is still running the simulation will be: 
+
 
 ## POST IDF file
 
