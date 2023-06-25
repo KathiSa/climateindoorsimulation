@@ -18,12 +18,12 @@ nav_order: 1
 |[http://localhost:5000/simulation/overview](#get-overview)|GET|Overview of all initiated simulations|
 |http://localhost:5000/simulation/control|POST|Starts simulation|
 |http://localhost:5000/simulation/control|GET|Checks status of the simulation|
-|http://localhost:5000/idf|POST|Upload or edit an idf file|
-|http://localhost:5000/idf|GET|Return information about the idf file|
-|http://localhost:5000/weather|POST|Upload or edit weather data in epw file|
-|http://localhost:5000/weather|GET|Return all information about the epw file|
-|http://localhost:5000/occupancy|POST|Upload or edit occupancy data in csv format|
-|http://localhost:5000/occupancy|GET|Return information about the occupancy data in csv format|
+|[http://localhost:5000/idf](#post-idf-file)|POST|Upload or edit an idf file|
+|[http://localhost:5000/idf](#get-idf-file)|GET|Return information about the idf file|
+|[http://localhost:5000/weather](#post-weather-file)|POST|Upload or edit weather data in epw file|
+|[http://localhost:5000/weather](#get-weather-file)|GET|Return all information about the epw file|
+|[http://localhost:5000/occupancy](#post-occupancy)|POST|Upload or edit occupancy data in csv format|
+|[http://localhost:5000/occupancy](#get-occupancy)|GET|Return information about the occupancy data in csv format|
 |http://localhost:5000/result|GET|Retrieving the result of a simulation|
 |http://localhost:5000/result|DEL|Deletes the result of a simulation|
 |http://localhost:5000/result/csv|GET|Returns the results in csv format|
@@ -282,7 +282,9 @@ Example response:
 
 ## POST IDF file
 
-Upload or edit of an idf file
+Upload or edit an idf file. 
+
+IMPORTANT: String need to be a base64-String!
 
 URL: http://localhost:5000/idf
 
@@ -305,23 +307,8 @@ Example request body:
 Example for successful response
 
 ```
-    "success": true
+    "success": True
 ```
-
-If request has an error, the following error message might appear (Depending on the input of the use, the tool will give a response message regarding the input): 
-
-```
-{
-     "errors": {
- "success": false,
- "message": "provided id was not 24 characters long"
- }
-}
-```
-
-TODO: check if successful is still the same and check for error message
-TODO: add upload of idf file
-TODO: explain string
 
 ## GET IDF file
 
@@ -343,17 +330,17 @@ Example request body:
  "id": "63977ba6ed0627cf228854e2",
 }
 
-Example for successful response
+Example for successful response (contens of the idf file)
 
 ```
-    "success": true
+'  Version,22.2;\n\n  Timestep,6;\n\n  LifeCycleCost:Parameters,\n    Life Cycle Cost Parameters,  !- Name\n    EndOfYear,               !- Discounting Convention\n    ConstantDollar,          !- Inflation Approach\n    0.03,                    !- Real Discount Rate\n    ,                        !- Nominal Discount Rate\n    ,                        !- Inflation\n    ,                        !- Base Date Month\n    2011,                    !- Base Date Year\n    ,                        !- Service Date Month\n    2011,                    !- Service Date Year\n    25,                      !- Length of Study Period in Years\n    ,                        !- Tax rate\n    None;                    !- Depreciation Method\n\n  LifeCycleCost:UsePriceEscalation,\n    U.S. Avg  Commercial-Electricity,  !- LCC Price Escal........ ....... .....
 ```
-
-TODO: check input parameters and response 
 
 ## POST Weather file
 
-Upload or edit Weather data (epw-file)
+Upload or edit Weather data (epw-file).
+
+IMPORTANT: String need to be a base64-String!
 
 URL: http://localhost:5000/weather
 
@@ -376,11 +363,8 @@ Example request body:
 Example response: 
 
 ```
-    "success": true
+    "success": True
 ```
-
-TODO add upload of epw file
-TODO: check request and response 
 
 ## GET Weather file
 
@@ -405,15 +389,14 @@ Example request body:
 Example response: 
 
 ```
-    "success": true
+'LOCATION,Munich-Theresienwiese,BY,DEU,SRC-TMYx,108650,48.16320,11.54290,1.0,520.0\r\nDESIGN CONDITIONS,1,2021 ASHRAE Handbook -- Fundamentals - Chapter 14 Climatic Design Information,,Heating,2,-11.9,-9.2,-15.1,1.1,-10.4,-12.8,1.3,-7.9,10.3,9.2,9.2,7.1,1.8,90,0.476,Cooling,7,8.8,29.5,19.0,27.7,18.1,26.1,17.5,19.7,27.4,18.9,26.1,18.2,24.4,2.6,270,17.2,13.1,21.6,16.4,12.5,21.1,15.8,11.9,20.8,58.6,27.5,55.9,26.3,53.3,24.5,22.7,Extremes,7.8,6.4,5.3,-13.4,33.1,4.3,2.0,-16.5,34.6,-19.0,35.8,-21.4,36.9,-24.5,38.4\r\nTYPICAL/EXTREME PERIODS,6,Summer - Week Nearest Max Temperature For Period,Extreme,8/10,8/16,Summer - Week Nearest Average Temperature For Period,Typical,8/ 3,8/ 9,Winter - Week Nearest Min Temperature For Period,Extreme,12/ 8,12/14,Winter - Week Nearest Average Temperature For Period,Typical,2/17,2/23,Autumn - Week Nearest Average Temperature For Period,Typical,9/29,10/ 5,Spr..... ...... .......
 ```
-
-TODO add upload of epw file
-TODO: check request and response 
 
 ## POST Occupancy
 
-Upload or edit of occupancy data in csv format
+Upload or edit of occupancy data in csv format.
+
+IMPORTANT: String need to be a base64-String!
 
 URL: http://localhost:5000/occupancy
 
@@ -439,7 +422,6 @@ Example response:
     "success": true
 }
 ```
-TODO: add how to upload an csv file
 
 ## GET Occupancy
 
@@ -464,10 +446,9 @@ Example request body:
 Example response: 
 ```
 {
-    "success": true
+   'day|time|occupants|win1\n0|00:00:00|0|0\n0|00:01:00|0|0\n0|00:02:00|0|0\n0|00:03:00|0|0\n0|00:04:00|0|0\n0|00:05:00|0|0\n0|00:06:00|0|0\n0|00:07:00|0|0\n0|00:08:00|0|0\n0|00:09:00|0|0\n0|00:10:00|0|0\n0|00:11:00|0|0\n0|00:12:00|0|0\n0|00:13:00|0|0\n0|00:14:00|0|0\n0|00:15:00|0|0\n0|00:16:00|0|0\n0|00:17:00|0|0\n0|00:18:00|0|0\n0|00:19:00|0|0\n0|00:20:00|0|0\n0|00:21:00|0|0\n0|00:22:00|0|0\n0|00:23:00|0|0\n0|00:24:00|0|0\n0|00:25:00|0|0\n0|00:26:00|0|0\n0|00:27:00|0|0\n0|00:28:00|0|0\n0|00:29:00|0|0\n0|00:30:00|0|0\n0|00:31:00|0|0\n0|00:32:00|0|0\n0|00:33:00|0|0\n0|00:34:00|0|0\n0|00:35:00|0|0\n0|00:36:00|0|0\n0|00:37:00|0|0\n0|00:38:00|0|0\n0|00:39:00|0|0\n0|00:40:00|0|0\n0|00:41:00|0|0\n0|00:42:00|0|0\n0|00:43:00|0|0\n0|00:44:00|0|0\n0|00:45:00|0|0\n0|00:46:...... ...... ......
 }
 ```
-TODO: add how to upload an csv file
 
 ## GET Result
 
