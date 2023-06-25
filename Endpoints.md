@@ -12,10 +12,10 @@ nav_order: 1
 |URI|Method|Description|
 |-|-|-|
 |[http://localhost:5000/status](#get-status)|GET|Returns information about the status of the mongo DB in docker|
-|http://localhost:5000/simulation|POST|Generates a new simulation ID and initiates a new simulation in the backend|
-|http://localhost:5000/simulation|GET|Returns all information about a simulation|
-|http://localhost:5000/simulation|DEL|Delets a simulation|
-|http://localhost:5000/simulation/overview|GET|Overview of all initiated simulations|
+|[http://localhost:5000/simulation](#post-simulation)|POST|Generates a new simulation ID and initiates a new simulation in the backend|
+|[http://localhost:5000/simulation](#get-simulation)|GET|Returns all information about a simulation|
+|[http://localhost:5000/simulation](#delete-simulation)|DEL|Delets a simulation|
+|[http://localhost:5000/simulation/overview](#get-overview)|GET|Overview of all initiated simulations|
 |http://localhost:5000/simulation/control|POST|Starts simulation|
 |http://localhost:5000/simulation/control|GET|Checks status of the simulation|
 |http://localhost:5000/idf|POST|Upload or edit an idf file|
@@ -172,7 +172,6 @@ Example Response for request with error:
 ## GET Overview
 
 Overview of all initiated simulations
-TODO: check response
 
 URL: http://localhost:5000/simulation/overview 
 
@@ -187,16 +186,21 @@ Example Request Body:
 
 Example Response: 
 ```
-{
- "_id": "6393475ebb23fdae39e9faf0",
- "date_of_creation": "2022-12-09-15:34",
- "idf_filename": "SimInput06397981"
- },
- {
- "_id": "63977ba6ed0627cf228854e2",
- "date_of_creation": "2022-12-12-20:06",
- "idf_filename": "SimInput14706816"
- }
+[{'_id': '643072a6b167660e37cb196f',
+  'date_of_creation': '2023-04-07-21:44',
+  'idf_filename': 'SimInput38925173'},
+ {'_id': '6430832b8937612757b4ffbd',
+  'date_of_creation': '2023-04-07-22:55',
+  'idf_filename': 'SimInput07572191'},
+ {'_id': '64359a098937612757b4ffcc',
+  'date_of_creation': '2023-04-11-19:34',
+  'idf_filename': 'SimInput01535043'},
+ {'_id': '6436b4388937612757b4ffce',
+  'date_of_creation': '2023-04-12-15:38',
+  'idf_filename': 'SimInput00868007'},
+.......
+.......
+]
 ```
 
 ## POST Simulation control
