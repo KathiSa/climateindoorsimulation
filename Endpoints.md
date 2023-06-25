@@ -16,17 +16,17 @@ nav_order: 1
 |[http://localhost:5000/simulation](#get-simulation)|GET|Returns all information about a simulation|
 |[http://localhost:5000/simulation](#delete-simulation)|DEL|Delets a simulation|
 |[http://localhost:5000/simulation/overview](#get-overview)|GET|Overview of all initiated simulations|
-|http://localhost:5000/simulation/control|POST|Starts simulation|
-|http://localhost:5000/simulation/control|GET|Checks status of the simulation|
+|[http://localhost:5000/simulation/control](#post-simulation-control)|POST|Starts a simulation|
+|[http://localhost:5000/simulation/control](#get-simulation-control)|GET|Checks status of the simulation|
 |[http://localhost:5000/idf](#post-idf-file)|POST|Upload or edit an idf file|
 |[http://localhost:5000/idf](#get-idf-file)|GET|Return information about the idf file|
 |[http://localhost:5000/weather](#post-weather-file)|POST|Upload or edit weather data in epw file|
 |[http://localhost:5000/weather](#get-weather-file)|GET|Return all information about the epw file|
 |[http://localhost:5000/occupancy](#post-occupancy)|POST|Upload or edit occupancy data in csv format|
 |[http://localhost:5000/occupancy](#get-occupancy)|GET|Return information about the occupancy data in csv format|
-|http://localhost:5000/result|GET|Retrieving the result of a simulation|
-|http://localhost:5000/result|DEL|Deletes the result of a simulation|
-|http://localhost:5000/result/csv|GET|Returns the results in csv format|
+|[http://localhost:5000/result](#get-result)|GET|Retrieving the result of a simulation|
+|[http://localhost:5000/result](#delete-result)|DEL|Deletes the result of a simulation|
+|[http://localhost:5000/result/csv](#get-csv-result)|GET|Returns the results in csv format|
 |http://localhost:5000/result/overview|GET|Get an overview of all available results|
 |http://localhost:5000/metadata|GET|Retrieve metadata about a simulation|
 |http://localhost:5000/simulation/control/onlyidf| POST | Starts simulation with only an idf file|
@@ -205,7 +205,9 @@ Example Response:
 
 ## POST Simulation control
 
-Starts a new simulation. Files need to uploaded before and parameter need to be set. 
+Starts a new simulation. Files need to uploaded before and parameter needs to be set. 
+
+IMPORTANT: The zone name needs to be the zone name from the idf file. If the zone name does not match the zone name from the uploaded idf file an EnergyPlus Error will occur!
 
 URL: http://localhost:5000/simulation/control
 
@@ -245,7 +247,7 @@ Example of request body:
  "end_month": 12,
  "end_year": 2022,
  "infiltration_rate": 0.0019
- "zone_name": ""
+ "zone_name": "RL_Office_27214585"
 }
 ```
 
@@ -285,7 +287,11 @@ If simulation is done, the status will be:
 }
 ```
 If the simulation is still running the simulation will be: 
-
+```
+{
+    'status': 'in Progress'
+}
+```
 
 ## POST IDF file
 
@@ -459,9 +465,7 @@ Example response:
 
 ## GET Result
 
-Retrieve results of a simulation
-
-TODO: database/input/results? 
+Retrieve results of a simulation. This will retrieve the information from the simulation_result collection in the database. 
 
 URL: http://localhost:5000/result 
 
@@ -485,17 +489,14 @@ Example response:
     "_id": "639322941bf5b614046cfc70",
  "date_of_creation": "2022-12-09-12:57",
  "eso_data": "...UHJvZ3JhbSBWZXJzaW9uLE...”
- "filename": "SimOutput08740758",
- "idf_data": "... MHwwfDANCjB8MDA6MTg6MDB8MH...”
  "sim_id": "63977ba6ed0627cf228854e2",
  "status": "done"
 }
 ```
-TODO: Check response => Beispiel aus vorhandenen Handbuch stimmt nicht mehr mit aktuellen Eintrag in der Datenbank überein
 
 ## DELETE Result
 
-Deletes results of a simulation in the result_simulation database. 
+Deletes results of a simulation in the simulation_result database. 
 
 URL: http://localhost:5000/result 
 
@@ -515,12 +516,8 @@ Example of request body:
 ```
 Example response: 
 ```
-{
-  
-}
+  {'success': True}
 ```
-
-TODO: check response 
 
 ## GET CSV Result
 
@@ -544,12 +541,8 @@ Example of request body:
 ```
 Example response: 
 ```
-{
-  
-}
+<Response [200]>
 ```
-
-TODO: check response 
 
 ## GET Result overview
 
