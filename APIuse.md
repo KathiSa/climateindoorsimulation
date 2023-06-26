@@ -14,7 +14,7 @@ This notebook can be downloaded [here](https://github.com/KathiSa/indoorclimates
 
 |Table of contens|
 |-|
-|[Import statements](#import-statements)
+|[Import statements](#import-statements)|
 |[Check if docker is running](#check-if-docker-is-running)|
 |[Create a new simulation](#create-a-new-simulation)|
 |[Upload files for simulation](#upload-files-for-simulation)|
@@ -280,6 +280,7 @@ csv_data = io.BytesIO(response.content)
 df = pd.read_csv(csv_data)
 df.head()
 ```
+
 |#|date|zone_air_temperature	|zone_co2_concentration	|zone_rel_humidity|outdoor_air_pressure	|outdoor_air_drybulb	|occupancy	|window|
 |-|-|-|-|-|-|-|-|-|
 |0	|2022-06-01 00:00	|22.444013	|1108.273413	|63.958120	|95590.316667	|13.03	|0	|0|
