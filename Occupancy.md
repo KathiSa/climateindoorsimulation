@@ -19,3 +19,6 @@ nav_order: 4
 
 
 ![Occupancy upload file success](images/ocp_upload_success.png)
+
+
+![Occupancy create custom occupancy](images/ocp_create_custom.png)
