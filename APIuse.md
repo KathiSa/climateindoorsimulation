@@ -514,18 +514,18 @@ Information: a series will take some time depending on the variations! Uploads o
 
 ```
 params = {
-    "height": 3,
+    "height": 7,
     "height_max": 8,
     "height_iter": 1,
-    "length": 10,
+    "length": 11,
     "length_max": 12,
     "length_iter": 1,
-    "width": 2,
+    "width": 4,
     "width_max": 6,
     "width_iter": 1,
     "orientation": 0,
-    "orientation_max": 360,
-    "orientation_iter": 90,
+    "orientation_max": 0,
+    "orientation_iter": 0,
     "start_day": 17,
     "start_month": 5,
     "start_year": 2023,
@@ -555,8 +555,8 @@ Response:
 649995ebb04d0bcba8f239a4
 ```
 
-Height: 3 - 4 - 5 - 6 - 7 - 8 Length: 10 - 11 - 12 Width: 2 - 3 - 4 - 5 - 6 Orientation: 0 - 90 - 180 - 270 - 360 => 450 Variationen (6*3*5*5)
-This example will run 450 simulation. Then the simulation is startet it will take a while!
+Height: 7 - 8 Length: 11 - 12 Width: 4 - 5 - 6 => 12 Variationen (2*2*3)
+This example will run 12 simulation. When the simulation is startet it can take a while! It depends on the number of simulations!
 
 Add files to simulation 
 
