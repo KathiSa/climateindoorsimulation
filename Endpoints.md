@@ -39,7 +39,7 @@ nav_order: 1
 |[http://localhost:5000/series/idf](#post-series-idf)|POST|Uploads or edit an idf file of a simulation series|
 |[http://localhost:5000/series/run](#get-series-run)|GET|Returns the status of a simulaiton series|
 |[http://localhost:5000/series/run](#post-series-run)|POST|Start a simulaiton for a series|
-|http://localhost:5000/series/results|GET|Retrieving the results of a simulationseries|
+|[http://localhost:5000/series/results](#get-series-results)|GET|Retrieving the results of a simulation series|
 
 
 ## GET Status
@@ -62,6 +62,7 @@ Example Response:
 ```
 
 If Mongo DB in docker is not running the response will be: 
+
 ```
 {'errors': {'success': False,
   'message': 'Failed to connect to MongoDB. Check Docker Container!'}}
@@ -108,7 +109,7 @@ Example Request Body:
 ```
 
 Example Respone: 
-The content of the response depends on the moment when this request is made. After the creation of the simulation id the response will only contain date of creation and idf_filename. After the user inserts the metadata and files, this variables will contain the information. 
+The content of the response depends on the moment when this request is made. After the creation of the simulation ID the response will only contain date of creation and idf_filename. After the user inserts the metadata and files, this variables will contain the information. 
 ```
 {'csv_data': '',
  'date_of_creation': '2023-06-25-13:20',
@@ -259,7 +260,6 @@ Example response:
 ```
 
 ## GET Simulation control
-
 Checks status of the simulation
 
 URL: http://localhost:5000/simulation/control
@@ -294,7 +294,6 @@ If the simulation is still running the simulation will be:
 ```
 
 ## POST IDF file
-
 Upload or edit an idf file. 
 
 IMPORTANT: String need to be a base64-String!
@@ -324,7 +323,6 @@ Example for successful response
 ```
 
 ## GET IDF file
-
 Returns information of an idf file in the input simulation database. 
 
 URL: http://localhost:5000/idf
@@ -339,7 +337,6 @@ Parameters:
 
 Example request body: 
 {
-    
  "id": "63977ba6ed0627cf228854e2",
 }
 
@@ -350,8 +347,7 @@ Example for successful response (contens of the idf file)
 ```
 
 ## POST Weather file
-
-Upload or edit Weather data (epw-file).
+Upload or edit weather data (epw-file).
 
 IMPORTANT: String need to be a base64-String!
 
@@ -380,7 +376,6 @@ Example response:
 ```
 
 ## GET Weather file
-
 Returns information about weather data (epw-file)
 
 URL: http://localhost:5000/weather
@@ -406,7 +401,6 @@ Example response:
 ```
 
 ## POST Occupancy
-
 Upload or edit of occupancy data in csv format.
 
 IMPORTANT: String need to be a base64-String!
@@ -437,7 +431,6 @@ Example response:
 ```
 
 ## GET Occupancy
-
 Returns information about occupancy data in csv format
 
 URL: http://localhost:5000/occupancy
@@ -464,7 +457,6 @@ Example response:
 ```
 
 ## GET Result
-
 Retrieve results of a simulation. This will retrieve the information from the simulation_result collection in the database. 
 
 URL: http://localhost:5000/result 
@@ -479,14 +471,13 @@ Parameters:
 Example of request body: 
 ```
 {
-    
  "id": "63977ba6ed0627cf228854e2"
 }
 ```
 Example response: 
 ```
 {
-    "_id": "639322941bf5b614046cfc70",
+ "_id": "639322941bf5b614046cfc70",
  "date_of_creation": "2022-12-09-12:57",
  "eso_data": "...UHJvZ3JhbSBWZXJzaW9uLE...”
  "sim_id": "63977ba6ed0627cf228854e2",
@@ -495,7 +486,6 @@ Example response:
 ```
 
 ## DELETE Result
-
 Deletes results of a simulation in the simulation_result database. 
 
 URL: http://localhost:5000/result 
@@ -509,8 +499,7 @@ Parameters:
 
 Example of request body: 
 ```
-{
-    
+{ 
  "id": "63977ba6ed0627cf228854e2"
 }
 ```
@@ -520,7 +509,6 @@ Example response:
 ```
 
 ## GET CSV Result
-
 Returns the results in csv format. 
 
 URL: http://localhost:5000/result/csv 
@@ -534,8 +522,7 @@ Parameters:
 
 Example of request body: 
 ```
-{
-    
+{   
  "id": "63977ba6ed0627cf228854e2"
 }
 ```
@@ -545,7 +532,6 @@ Example response:
 ```
 
 ## GET Result overview
-
 Get an overview of all available results. 
 
 URL: http://localhost:5000/result/overview
@@ -581,7 +567,6 @@ Example response:
 ```
 
 ## GET Metadata
-
 Retrieve metadata of a simulation.
 
 URL: http://localhost:5000/metadata
@@ -618,7 +603,6 @@ Example response:
 ```
 
 ## POST Simulation control onlyidf
-
 Start a simulation with only an idf and epw file. 
 
 URL: http://localhost:5000/simulation/control/onlyidf
@@ -629,7 +613,7 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation|
+|id|String|ID of simulation|
 
 Example request body: 
 ```
@@ -644,8 +628,7 @@ Example response:
 ```
 
 ## GET Simulation control onlyidf
-
-Returns the status of a simulation (same response as simulation/control GET). 
+Returns the status of a simulation (with only an idf and epw file). 
 
 URL: http://localhost:5000/simulation/control/onlyidf
 
@@ -670,7 +653,6 @@ Example response:
 ```
 
 ## GET reopensim
-
 Returns all information about a simulation, which should be reopend. The metadata, idf, epw and csv file data is returned. 
 
 URL: http://localhost:5000/reopensim
@@ -709,7 +691,6 @@ Example response:
 ```
 
 ## POST reopensim
-
 Will retrieve all data from the old simulation (from the simulation id which was passed with this request) and create a simulation ID in the database. It then automatically uploads all data from the old simulation to this new simulation. Afterwards the data can be changed if needed. 
 
 URL: http://localhost:5000/reopensim
@@ -720,7 +701,7 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of a simulation which should be reopend|
+|id|String|ID of a simulation which should be reopend|
 
 Example request body: 
 ```
@@ -735,7 +716,6 @@ Example response (this sim ID is the sim ID of the new simulation):
 ```
 
 ## POST Series create
-
 Creates a simulation series
 
 URL: http://localhost:5000/series/create
@@ -803,7 +783,6 @@ Example response:
 ```
 
 ## POST Series weather
-
 Upload or edit the weather file for a simulation series (epw file). 
 
 URL: http://localhost:5000/series/weather
@@ -814,7 +793,7 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation|
+|id|String|ID of simulation series|
 |data|String (base64)|epw file as base64-String|
 
 Example request body: 
@@ -830,7 +809,6 @@ Example response:
 ```
 
 ## POST Series occupancy
-
 Upload or edit a csv file for the occupancy for a simulation series. 
 
 URL: http://localhost:5000/series/occupancy
@@ -841,7 +819,7 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation|
+|id|String|Id of simulation series|
 |data|String(base64)| csv file as base64-String|
 
 Example request body: 
@@ -858,7 +836,6 @@ Example response:
 ```
 
 ## POST Series idf
-
 Uploads or edit an idf file of a simulation series. 
 
 URL: http://localhost:5000/series/idf
@@ -869,7 +846,7 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation|
+|id|String|Id of simulation series|
 |data|String(base64)|idf file as base64-String|
 
 Example request body: 
@@ -885,7 +862,6 @@ Example response:
 ```
 
 ## GET Series run
-
 Returns the status of a simulation series. 
 
 URL: http://localhost:5000/series/run
@@ -896,7 +872,7 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation|
+|id|String|ID of simulation series|
 
 Example request body: 
 ```
@@ -911,12 +887,11 @@ Example response:
 ```
 or
 ```
-
+{'status': 'done'}
 ```
 
 
 ## POST Series run
-
 Start a simulaiton for a series
 
 URL: http://localhost:5000/series/run
@@ -927,7 +902,7 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation|
+|id|String|Id of simulation series|
 
 Example request body: 
 ```
@@ -942,18 +917,17 @@ Example response:
 ```
 
 ## GET Series results
-
-Retrieving the results of a simulationseries
+Retrieving the results of a simulation series. This will return a list of all single simulations which were executed in this series. 
 
 URL: http://localhost:5000/series/results
 
 Method: GET
 
-Parameters: TODO
+Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation|
+|id|String|ID of simulation series|
 
 Example request body: 
 ```
@@ -964,9 +938,5 @@ Example request body:
 
 Example response: 
 ``` 
-{
 
-}
 ```
-
-TODO: check request and response
