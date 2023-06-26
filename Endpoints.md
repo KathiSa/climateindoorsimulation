@@ -19,7 +19,7 @@ nav_order: 1
 |[http://localhost:5000/simulation/control](#post-simulation-control)|POST|Starts a simulation|
 |[http://localhost:5000/simulation/control](#get-simulation-control)|GET|Checks status of the simulation|
 |[http://localhost:5000/idf](#post-idf-file)|POST|Upload or edit an idf file|
-|[http://localhost:5000/idf](#get-idf-file)|GET|Return information about the idf file|
+|[http://localhost:5000/idf](#get-idf-file)|GET|Returns information about the idf file|
 |[http://localhost:5000/weather](#post-weather-file)|POST|Upload or edit weather data in epw file|
 |[http://localhost:5000/weather](#get-weather-file)|GET|Return all information about the epw file|
 |[http://localhost:5000/occupancy](#post-occupancy)|POST|Upload or edit occupancy data in csv format|
@@ -38,12 +38,12 @@ nav_order: 1
 |[http://localhost:5000/series/occupancy](#post-series-occupancy)|POST|Upload or edit a csv file for the occupancy for a simulation series|
 |[http://localhost:5000/series/idf](#post-series-idf)|POST|Uploads or edit an idf file of a simulation series|
 |[http://localhost:5000/series/run](#get-series-run)|GET|Returns the status of a simulaiton series|
-|[http://localhost:5000/series/run](#post-series-run)|POST|Start a simulaiton for a series|
+|[http://localhost:5000/series/run](#post-series-run)|POST|Start a simulation for a series|
 |[http://localhost:5000/series/results](#get-series-results)|GET|Retrieving the results of a simulation series|
 
 
 ## GET Status
-Returns the status of the mongo DB in docker. If the DB in the docker is successfully running it will return true. 
+Returns the status of the mongo DB in docker. If the DB in docker is successfully running it will return true. 
 
 URL: http://localhost:5000/status
 
@@ -99,17 +99,16 @@ Parameters:
 
 |Term|Format|Description|
 |-|-|-|
-|ID|String|The ID of the simulation. The ID is used to query information|
+|ID|String|The ID of the simulation.|
 
 Example Request Body: 
 ```
-{
- "id": "63977ba6ed0627cf228854e2"
-}
+{ "id": "63977ba6ed0627cf228854e2" }
 ```
 
-Example Respone: 
-The content of the response depends on the moment when this request is made. After the creation of the simulation ID the response will only contain date of creation and idf_filename. After the user inserts the metadata and files, this variables will contain the information. 
+Example Response: 
+
+The content of the response depends on the moment when this request is made. After the creation of the simulation ID the response will only contain date of creation and idf_filename. After the user inserts the metadata and files, this variables will contain the information as well. 
 ```
 {'csv_data': '',
  'date_of_creation': '2023-06-25-13:20',
@@ -151,16 +150,12 @@ Parameters:
 
 Example Request Body: 
 ```
-{
- "id": "63977ba6ed0627cf228854e2"
-} 
+{ "id": "63977ba6ed0627cf228854e2" } 
 ```
 
 Example Respone: 
 ```
-{
- "success": True
-}
+{ "success": True }
 ```
 
 Example Response for request with error: 
@@ -172,7 +167,7 @@ Example Response for request with error:
 
 ## GET Overview
 
-Overview of all initiated simulations
+Overview of all initiated simulations in the database. 
 
 URL: http://localhost:5000/simulation/overview 
 
@@ -208,7 +203,7 @@ Example Response:
 
 Starts a new simulation. Files need to uploaded before and parameter needs to be set. 
 
-IMPORTANT: The zone name needs to be the zone name from the idf file. If the zone name does not match the zone name from the uploaded idf file an EnergyPlus Error will occur!
+IMPORTANT: The zone name needs to be the zone name from the idf file. If the zone name does not match the zone name from the uploaded idf file an EnergyPlus error will occur!
 
 URL: http://localhost:5000/simulation/control
 
@@ -234,9 +229,7 @@ Parameters:
 
 Example of request body: 
 ```
-{
-    
- "id": "63977ba6ed0627cf228854e2",
+{"id": "63977ba6ed0627cf228854e2",
  "height": 8.88,
  "length": 7.77,
  "width": 6.66,
@@ -248,15 +241,12 @@ Example of request body:
  "end_month": 12,
  "end_year": 2022,
  "infiltration_rate": 0.0019
- "zone_name": "RL_Office_27214585"
-}
+ "zone_name": "RL_Office_27214585"}
 ```
 
 Example response: 
 ```
-{
- "success": True
-}
+{ "success": True}
 ```
 
 ## GET Simulation control
@@ -274,23 +264,17 @@ Parameter:
 
 Example request body: 
 ```
-{ 
- "id": "63977ba6ed0627cf228854e2"
-}
+{  "id": "63977ba6ed0627cf228854e2" }
 ```
 
 Example response: 
 If simulation is done, the status will be: 
 ```
-{
-    "status": "done"
-}
+{"status": "done"}
 ```
 If the simulation is still running the simulation will be: 
 ```
-{
-    'status': 'in Progress'
-}
+{'status': 'in Progress'}
 ```
 
 ## POST IDF file
@@ -310,16 +294,15 @@ Parameters:
 |data|String(base64)|idf file as base64-String|
 
 Example request body: 
-{
-    
- "id": "63977ba6ed0627cf228854e2",
- "data": "...MHwwfDANCjB8MDA6MTg6MDB8MH..."
-}
+```
+{"id": "63977ba6ed0627cf228854e2",
+ "data": "...MHwwfDANCjB8MDA6MTg6MDB8MH..."}
+```
 
 Example for successful response
 
 ```
-    "success": True
+    {"success": True}
 ```
 
 ## GET IDF file
@@ -336,14 +319,30 @@ Parameters:
 |id|String|ID of simulation|
 
 Example request body: 
-{
- "id": "63977ba6ed0627cf228854e2",
-}
+```
+{"id": "63977ba6ed0627cf228854e2"}
+```
 
 Example for successful response (contens of the idf file)
 
 ```
-'  Version,22.2;\n\n  Timestep,6;\n\n  LifeCycleCost:Parameters,\n    Life Cycle Cost Parameters,  !- Name\n    EndOfYear,               !- Discounting Convention\n    ConstantDollar,          !- Inflation Approach\n    0.03,                    !- Real Discount Rate\n    ,                        !- Nominal Discount Rate\n    ,                        !- Inflation\n    ,                        !- Base Date Month\n    2011,                    !- Base Date Year\n    ,                        !- Service Date Month\n    2011,                    !- Service Date Year\n    25,                      !- Length of Study Period in Years\n    ,                        !- Tax rate\n    None;                    !- Depreciation Method\n\n  LifeCycleCost:UsePriceEscalation,\n    U.S. Avg  Commercial-Electricity,  !- LCC Price Escal........ ....... .....
+'  Version,22.2;\n\n  Timestep,6;\n\n  LifeCycleCost:Parameters,\n
+Life Cycle Cost Parameters,
+!- Name\n    EndOfYear,
+!- Discounting Convention\n    ConstantDollar,
+!- Inflation Approach\n    0.03,
+!- Real Discount Rate\n    ,
+!- Nominal Discount Rate\n    ,
+!- Inflation\n    ,
+!- Base Date Month\n    2011,
+!- Base Date Year\n    ,
+!- Service Date Month\n    2011,
+!- Service Date Year\n    25,
+!- Length of Study Period in Years\n    ,
+!- Tax rate\n    None;
+!- Depreciation Method\n\n  LifeCycleCost:UsePriceEscalation,\n
+U.S. Avg  Commercial-Electricity,
+!- LCC Price Escal........ ....... ..... .... 
 ```
 
 ## POST Weather file
@@ -365,14 +364,14 @@ Parameters:
 Example request body: 
 
 ```
-    "id": "63977ba6ed0627cf228854e2",
-    "data": "...fDANCjB8MDA6NDU6MD..."
+    {"id": "63977ba6ed0627cf228854e2",
+    "data": "...fDANCjB8MDA6NDU6MD..."}
 ``` 
 
 Example response: 
 
 ```
-    "success": True
+    {"success": True}
 ```
 
 ## GET Weather file
@@ -391,13 +390,23 @@ Parameters:
 Example request body: 
 
 ```
-    "id": "63977ba6ed0627cf228854e2",
+    {"id": "63977ba6ed0627cf228854e2"}
 ``` 
 
 Example response: 
 
 ```
-'LOCATION,Munich-Theresienwiese,BY,DEU,SRC-TMYx,108650,48.16320,11.54290,1.0,520.0\r\nDESIGN CONDITIONS,1,2021 ASHRAE Handbook -- Fundamentals - Chapter 14 Climatic Design Information,,Heating,2,-11.9,-9.2,-15.1,1.1,-10.4,-12.8,1.3,-7.9,10.3,9.2,9.2,7.1,1.8,90,0.476,Cooling,7,8.8,29.5,19.0,27.7,18.1,26.1,17.5,19.7,27.4,18.9,26.1,18.2,24.4,2.6,270,17.2,13.1,21.6,16.4,12.5,21.1,15.8,11.9,20.8,58.6,27.5,55.9,26.3,53.3,24.5,22.7,Extremes,7.8,6.4,5.3,-13.4,33.1,4.3,2.0,-16.5,34.6,-19.0,35.8,-21.4,36.9,-24.5,38.4\r\nTYPICAL/EXTREME PERIODS,6,Summer - Week Nearest Max Temperature For Period,Extreme,8/10,8/16,Summer - Week Nearest Average Temperature For Period,Typical,8/ 3,8/ 9,Winter - Week Nearest Min Temperature For Period,Extreme,12/ 8,12/14,Winter - Week Nearest Average Temperature For Period,Typical,2/17,2/23,Autumn - Week Nearest Average Temperature For Period,Typical,9/29,10/ 5,Spr..... ...... .......
+'LOCATION,Munich-Theresienwiese,BY,DEU,SRC-TMYx,108650,48.16320,11.54290,1.0,520.0\r\n
+DESIGN CONDITIONS,1,2021 ASHRAE Handbook -- Fundamentals - Chapter 14 Climatic Design
+Information,,Heating,2,-11.9,-9.2,-15.1,1.1,-10.4,-12.8,1.3,-7.9,10.3,9.2,9.2,7.1,
+1.8,90,0.476,Cooling,7,8.8,29.5,19.0,27.7,18.1,26.1,17.5,19.7,27.4,18.9,26.1,18.2,
+24.4,2.6,270,17.2,13.1,21.6,16.4,12.5,21.1,15.8,11.9,20.8,58.6,27.5,55.9,26.3,53.3,24.5,
+22.7,Extremes,7.8,6.4,5.3,-13.4,33.1,4.3,2.0,-16.5,34.6,-19.0,35.8,-21.4,36.9,-24.5,
+38.4\r\nTYPICAL/EXTREME PERIODS,6,Summer - Week Nearest Max Temperature For Period,
+Extreme,8/10,8/16,Summer - Week Nearest Average Temperature For Period,Typical,8/ 3,8/ 9,
+Winter - Week Nearest Min Temperature For Period,Extreme,12/ 8,12/14,Winter -
+Week Nearest Average Temperature For Period,Typical,2/17,2/23,Autumn -
+Week Nearest Average Temperature For Period,Typical,9/29,10/ 5,Spr..... ...... .......
 ```
 
 ## POST Occupancy
@@ -417,17 +426,13 @@ Parameters:
 
 Example request body: 
 ```
-{
-     "id": "63977ba6ed0627cf228854e2",
-    "data": "...B8MDE6MDM6MDB8MHwwDQowfDAx..."
-}
+{"id": "63977ba6ed0627cf228854e2",
+"data": "...B8MDE6MDM6MDB8MHwwDQowfDAx..."}
 ```
 
 Example response: 
 ```
-{
-    "success": true
-}
+{"success": true}
 ```
 
 ## GET Occupancy
@@ -444,16 +449,12 @@ Parameters:
 
 Example request body: 
 ```
-{
-     "id": "63977ba6ed0627cf228854e2",
-}
+{"id": "63977ba6ed0627cf228854e2"}
 ```
 
 Example response: 
 ```
-{
-   'day|time|occupants|win1\n0|00:00:00|0|0\n0|00:01:00|0|0\n0|00:02:00|0|0\n0|00:03:00|0|0\n0|00:04:00|0|0\n0|00:05:00|0|0\n0|00:06:00|0|0\n0|00:07:00|0|0\n0|00:08:00|0|0\n0|00:09:00|0|0\n0|00:10:00|0|0\n0|00:11:00|0|0\n0|00:12:00|0|0\n0|00:13:00|0|0\n0|00:14:00|0|0\n0|00:15:00|0|0\n0|00:16:00|0|0\n0|00:17:00|0|0\n0|00:18:00|0|0\n0|00:19:00|0|0\n0|00:20:00|0|0\n0|00:21:00|0|0\n0|00:22:00|0|0\n0|00:23:00|0|0\n0|00:24:00|0|0\n0|00:25:00|0|0\n0|00:26:00|0|0\n0|00:27:00|0|0\n0|00:28:00|0|0\n0|00:29:00|0|0\n0|00:30:00|0|0\n0|00:31:00|0|0\n0|00:32:00|0|0\n0|00:33:00|0|0\n0|00:34:00|0|0\n0|00:35:00|0|0\n0|00:36:00|0|0\n0|00:37:00|0|0\n0|00:38:00|0|0\n0|00:39:00|0|0\n0|00:40:00|0|0\n0|00:41:00|0|0\n0|00:42:00|0|0\n0|00:43:00|0|0\n0|00:44:00|0|0\n0|00:45:00|0|0\n0|00:46:...... ...... ......
-}
+{'day|time|occupants|win1\n0|00:00:00|0|0\n0|00:01:00|0|0\n0|00:02:00|0|0\n0|00:03:00|0|0\n0|00:04:00|0|0\n0|00:05:00|0|0\n0|00:06:00|0|0\n0|00:07:00|0|0\n0|00:08:00|0|0\n0|00:09:00|0|0\n0|00:10:00|0|0\n0|00:11:00|0|0\n0|00:12:00|0|0\n0|00:13:00|0|0\n0|00:14:00|0|0\n0|00:15:00|0|0\n0|00:16:00|0|0\n0|00:17:00|0|0\n0|00:18:00|0|0\n0|00:19:00|0|0\n0|00:20:00|0|0\n0|00:21:00|0|0\n0|00:22:00|0|0\n0|00:23:00|0|0\n0|00:24:00|0|0\n0|00:25:00|0|0\n0|00:26:00|0|0\n0|00:27:00|0|0\n0|00:28:00|0|0\n0|00:29:00|0|0\n0|00:30:00|0|0\n0|00:31:00|0|0\n0|00:32:00|0|0\n0|00:33:00|0|0\n0|00:34:00|0|0\n0|00:35:00|0|0\n0|00:36:00|0|0\n0|00:37:00|0|0\n0|00:38:00|0|0\n0|00:39:00|0|0\n0|00:40:00|0|0\n0|00:41:00|0|0\n0|00:42:00|0|0\n0|00:43:00|0|0\n0|00:44:00|0|0\n0|00:45:00|0|0\n0|00:46:...... ...... ......}
 ```
 
 ## GET Result
@@ -470,19 +471,15 @@ Parameters:
 
 Example of request body: 
 ```
-{
- "id": "63977ba6ed0627cf228854e2"
-}
+{"id": "63977ba6ed0627cf228854e2"}
 ```
 Example response: 
 ```
-{
- "_id": "639322941bf5b614046cfc70",
+{ "_id": "639322941bf5b614046cfc70",
  "date_of_creation": "2022-12-09-12:57",
  "eso_data": "...UHJvZ3JhbSBWZXJzaW9uLE...”
  "sim_id": "63977ba6ed0627cf228854e2",
- "status": "done"
-}
+ "status": "done"}
 ```
 
 ## DELETE Result
@@ -499,9 +496,7 @@ Parameters:
 
 Example of request body: 
 ```
-{ 
- "id": "63977ba6ed0627cf228854e2"
-}
+{ "id": "63977ba6ed0627cf228854e2"}
 ```
 Example response: 
 ```
@@ -522,9 +517,7 @@ Parameters:
 
 Example of request body: 
 ```
-{   
- "id": "63977ba6ed0627cf228854e2"
-}
+{ "id": "63977ba6ed0627cf228854e2"}
 ```
 Example response: 
 ```
@@ -577,13 +570,11 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation|
+|id|String|ID of simulation|
 
 Example request body: 
 ```
-{
-    "id": "63977ba6ed0627cf228854e2"
-}
+{"id": "63977ba6ed0627cf228854e2"}
 ```
 
 Example response: 
@@ -617,9 +608,7 @@ Parameters:
 
 Example request body: 
 ```
-{
-    "id": "63977ba6ed0627cf228854e2"
-}
+{"id": "63977ba6ed0627cf228854e2"}
 ```
 
 Example response: 
@@ -638,13 +627,11 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation|
+|id|String|ID of simulation|
 
 Example request body: 
 ```
-{
-    "id": "63977ba6ed0627cf228854e2"
-}
+{"id": "63977ba6ed0627cf228854e2"}
 ```
 
 Example response: 
@@ -663,13 +650,11 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation|
+|id|String|ID of simulation|
 
 Example request body: 
 ```
-{
-    "id": "63977ba6ed0627cf228854e2"
-}
+{"id": "63977ba6ed0627cf228854e2"}
 ```
 
 Example response: 
@@ -686,12 +671,21 @@ Example response:
   'start_year': 2022,
   'width': 4.0,
   'zone_name': 'RL_Office_27214585'},
- '  Version,22.2;\n\n  Timestep,6;\n\n  LifeCycleCost:Parameters,\n    Life Cycle Cost Parameters,  !- Name\n    EndOfYear,               !- Discounting Convention\n    ConstantDollar,          !- Inflation Approach\n    0.03,                    !- Real Discount Rate\n    ,                        !- Nominal Discount Rate\n    ,                        !- Inflation\n    ,                        !- Base Date Month\n    2011,                    !- Base Date Year\n    ,                        !- Service Date Month\n    2011,                    !- S
-.... ..... ..... .... .... ..... .... ...
+ '  Version,22.2;\n\n  Timestep,6;\n\n  LifeCycleCost:Parameters,\n
+Life Cycle Cost Parameters,  !- Name\n    EndOfYear,
+!- Discounting Convention\n    ConstantDollar,
+!- Inflation Approach\n    0.03,
+!- Real Discount Rate\n    ,
+!- Nominal Discount Rate\n    ,
+!- Inflation\n    ,
+!- Base Date Month\n    2011,
+!- Base Date Year\n    ,
+!- Service Date Month\n    2011,
+!- S.... ..... ..... .... .... ..... .... ...
 ```
 
 ## POST reopensim
-Will retrieve all data from the old simulation (from the simulation id which was passed with this request) and create a simulation ID in the database. It then automatically uploads all data from the old simulation to this new simulation. Afterwards the data can be changed if needed. 
+Will retrieve all data from the old simulation (from the simulation ID which was passed with this request) and create a simulation ID in the database. It then automatically uploads all data from the old simulation to this new simulation. Afterwards the data can be changed if needed. 
 
 URL: http://localhost:5000/reopensim
 
@@ -705,14 +699,12 @@ Parameters:
 
 Example request body: 
 ```
-{
-    "id": "63977ba6ed0627cf228854e2"
-}
+{"id": "63977ba6ed0627cf228854e2"}
 ```
 
 Example response (this sim ID is the sim ID of the new simulation): 
 ``` 
-'64998873b04d0bcba8f22b76'
+{'64998873b04d0bcba8f22b76'}
 ```
 
 ## POST Series create
@@ -750,36 +742,32 @@ Parameters:
 
 Example request body: 
 ```
-{
-    "height": 3,
-    "height_max": 8,
-    "height_iter": 1,
-    "length": 10,
-    "length_max": 12,
-    "length_iter": 1,
-    "width": 2,
-    "width_max": 6,
-    "width_iter": 1,
-    "orientation": 0,
-    "orientation_max": 360,
-    "orientation_iter": 90,
-    "start_day": 17,
-    "start_month": 5,
-    "start_year": 2023,
-    "end_day": 17,
-    "end_month": 5,
-    "end_year": 2023,
-    "infiltration_rate": 0.0019,
-    "infiltration_rate_max": 0.0019,
-    "infiltration_rate_iter": 0
-}
+{"height": 3,
+"height_max": 8,
+"height_iter": 1,
+"length": 10,
+"length_max": 12,
+"length_iter": 1,
+"width": 2,
+"width_max": 6,
+"width_iter": 1,
+"orientation": 0,
+"orientation_max": 360,
+"orientation_iter": 90,
+"start_day": 17,
+"start_month": 5,
+"start_year": 2023,
+"end_day": 17,
+"end_month": 5,
+"end_year": 2023,
+"infiltration_rate": 0.0019,
+"infiltration_rate_max": 0.0019,
+"infiltration_rate_iter": 0}
 ```
 
 Example response: 
 ``` 
-{
-"649991e2b04d0bcba8f22b89"
-}
+{"649991e2b04d0bcba8f22b89"}
 ```
 
 ## POST Series weather
@@ -799,8 +787,8 @@ Parameters:
 Example request body: 
 
 ```
-    "id": "63977ba6ed0627cf228854e2",
-    "data": "...fDANCjB8MDA6NDU6MD..."
+{"id": "63977ba6ed0627cf228854e2",
+"data": "...fDANCjB8MDA6NDU6MD..."}
 ``` 
 
 Example response: 
@@ -819,15 +807,13 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation series|
+|id|String|ID of simulation series|
 |data|String(base64)| csv file as base64-String|
 
 Example request body: 
 ```
-{
-     "id": "63977ba6ed0627cf228854e2",
-    "data": "...B8MDE6MDM6MDB8MHwwDQowfDAx..."
-}
+{"id": "63977ba6ed0627cf228854e2",
+"data": "...B8MDE6MDM6MDB8MHwwDQowfDAx..."}
 ```
 
 Example response: 
@@ -846,16 +832,14 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation series|
+|id|String|ID of simulation series|
 |data|String(base64)|idf file as base64-String|
 
 Example request body: 
-{
-    
- "id": "63977ba6ed0627cf228854e2",
- "data": "...MHwwfDANCjB8MDA6MTg6MDB8MH..."
-}
-
+```
+{"id": "63977ba6ed0627cf228854e2",
+ "data": "...MHwwfDANCjB8MDA6MTg6MDB8MH..."}
+```
 Example response: 
 ``` 
 {'success': True}
@@ -876,16 +860,14 @@ Parameters:
 
 Example request body: 
 ```
-{
-    "id": "63977ba6ed0627cf228854e2"
-}
+{"id": "63977ba6ed0627cf228854e2"}
 ```
 
 Example response: 
 ``` 
 {'status': 'in Progress'}
 ```
-or
+or if simulation is finished: 
 ```
 {'status': 'done'}
 ```
@@ -902,13 +884,11 @@ Parameters:
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation series|
+|id|String|ID of simulation series|
 
 Example request body: 
 ```
-{
-    "id": "63977ba6ed0627cf228854e2"
-}
+{"id": "63977ba6ed0627cf228854e2"}
 ```
 
 Example response: 
@@ -931,12 +911,21 @@ Parameters:
 
 Example request body: 
 ```
-{
-    "id": "63977ba6ed0627cf228854e2"
-}
+{"id": "63977ba6ed0627cf228854e2"}
 ```
 
 Example response: 
 ``` 
-
+['6499c476475b75d3e877b615',
+ '6499c476475b75d3e877b619',
+ '6499c476475b75d3e877b61d',
+ '6499c476475b75d3e877b621',
+ '6499c476475b75d3e877b625',
+ '6499c476475b75d3e877b629',
+ '6499c476475b75d3e877b62d',
+ '6499c476475b75d3e877b631',
+ '6499c476475b75d3e877b635',
+ '6499c476475b75d3e877b639',
+ '6499c476475b75d3e877b63d',
+ '6499c476475b75d3e877b641']
 ```
