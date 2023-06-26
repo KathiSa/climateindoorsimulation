@@ -24,16 +24,16 @@ You can return to the start page of the program either via the logo in the upper
    
 # Reopen and redownload previous simulation results
 
-We offer you the feature to reopen the simulation results of a previous run simulation in the frontend. This allows you to easily visualize the results again in a plot or download the results as csv-file or eso-file. If you want to use this functionality, click on the button with the simulation ID of the simulation for which you want to open the results again (Fig. 1, marker 2).
+We offer you the feature to reopen the simulation results of a previous run simulation in the frontend. This allows you to easily visualize the results again in a plot or download the results as CSV file or ESO file. If you want to use this functionality, click on the button with the simulation ID of the simulation for which you want to open the results again (Fig. 1, marker 2).
 
 ![Figg. 3](images/SimHist3Marker.PNG)
 
 1. Reopend results for the simulation with this ID
 2. "Generate Plot" button, to generate a plot visualisation of the simulation results
-3. "Download CSV" button, to download simulation results as csv-file 
-4. "Download ESO" button, to download simulation results as eso-file 
+3. "Download CSV" button, to download simulation results as CSV file 
+4. "Download ESO" button, to download simulation results as ESO file 
 
-You will be redirected to the results page. You can see by the ID in the url that these are the results for the selected simulation (Fig. 3, marker 1). Now you can visualize the simulation results in a plot (Fig. 3, marker 2) or download the results as csv-file (Fig. 3, marker 3) or eso-file (Fig. 3, marker 4). 
+You will be redirected to the results page. You can see by the ID in the url that these are the results for the selected simulation (Fig. 3, marker 1). Now you can visualize the simulation results in a plot (Fig. 3, marker 2) or download the results as CSV file (Fig. 3, marker 3) or ESO file (Fig. 3, marker 4). 
 
 # Reopen an old simulation to change parameters and run again
 
