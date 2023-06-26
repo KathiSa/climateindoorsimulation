@@ -11,14 +11,14 @@ has_children: true
 This web application for EnergyPlus provides the user with the following functionality:
 
    * Simulation configuration
-      * Upload of an idf file
-      * Upload of an epw file
-      * Select the simulation period (Timeframe)
-         * Simulation of one day
-         * Simulation of several days upto four months
-      * Upload of an occupancy csv file or creating a custom occupancy
+      * Upload of an IDF file
+      * Upload of an EPW file
+      * Selection of the simulation period (Timeframe)
+         * Simulation over then span of one day
+         * Simulation over the span of several days up to a year
+      * Upload of an occupancy CSV file or creating a custom occupancy
       * Adjustment of room parameters (room dimensions and infiltration rate)
-   * Running of the simulation
+   * Running the simulation
    * Simulation results
       * Display of selected measured values in graphs
          * Zone air temperature
@@ -27,8 +27,8 @@ This web application for EnergyPlus provides the user with the following functio
          * Relative humidity
          * Barometric pressure (outdoor)
          * Occupancy
-      * Download simulation results as csv file or eso file
+      * Download of simulation results as CSV file or ESO file
    * Simulation History
-      * Overview over simulations previous run  
+      * Overview on previously run simulations
       * Reopen previous simulation results
       * Reopen previous simulations
