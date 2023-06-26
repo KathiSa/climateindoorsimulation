@@ -454,7 +454,7 @@ response = requests.get("http://localhost:5000/result", json={"id": simID})
 response)
 ```
 
-Return the status of an simulation which was run with only an dif and epw file (same response like simulation/control)
+Return the status of an simulation which was run with only an idf and epw file (same response like simulation/control)
 
 ```
 response = requests.get("http://localhost:5000/simulation/control/onlyidf", json={"id": simID})
@@ -467,7 +467,7 @@ Response:
 
 ## Reopen an old simulation
 
-It is possible to reopen an old simulation. This means all the input data which was used in the simulation will be available again and it is possible to edit the parameter and start a new simulation. This will not change the data of the old simulation id. It will always initiate a new simulation. 
+It is possible to reopen an old simulation. This means all the input data which was used in the simulation will be available again and it is possible to edit the parameter and start a new simulation. This will not change the data of the old simulation ID. It will always initiate a new simulation. 
 
 To reopen an old simulation, the sim ID from the database is needed. The GET request will return all input data. This is necessary to copy the parameters for the simulation. 
 
@@ -493,7 +493,7 @@ Response:
  '  Version,22.2;\n\n  Timestep,6;\n\n  LifeCycleCost:Parameters,\n    Life Cycle Cost Parameters,  !- Name\n    EndOfYear,               !- Discounting Convention\n    ConstantDollar,          !- Inflation Approach\n    0.03,                    !- Real Discount Rate\n    ,                        !- Nominal Discount Rate\n    ,                        !- Inflation\n    ,                        !- Base Date Month\n    2011,                    !- ..... ...... ...... .....
 ```
 
-With the post request a new simulation is created in the database. The parameter here is the sim ID from the old simulation. This request retrieves all inforamtion from the old simulation and inserts it in the database with a new sim ID. It will return the sim ID from the new simulation. With this sim ID it is possible to edit the data or upload new files. The csv, idf and epw file were all automatically uploaded in the dadabase with the new sim ID. To change the dada use the reqeusts form above (upload files, set metadata, etc.)
+With the post request a new simulation is created in the database. The parameter here is the sim ID from the old simulation. This request retrieves all inforamtion from the old simulation and inserts it in the database with a new sim ID. It will return the sim ID from the new simulation. With this sim ID it is possible to edit the data or upload new files. The csv, idf and epw file were all automatically uploaded in the dadabase with the new sim ID. To change the data use the requests from above (upload files, set metadata, etc.)
 
 
 ```
@@ -505,7 +505,7 @@ Response:
 '64998873b04d0bcba8f22b76'
 ```
 
-Copy now the sim ID and set the sim ID in the parameters. Copy the parameters from above (GET request)(but only parameter, not the information about the files) and now its possible run a new simulation. It is not required to upload the files here because the csv, idf and epw files from the old simulation were uploaded to the database. But it it necessary to insert here the paramerters again, because the POST reqeust from simulation/control expects the parameters in the reqeust body. 
+Copy now the sim ID and set the sim ID in the parameters. Copy the parameters from above (GET request)(but only parameter, not the information about the files) and now its possible to run a new simulation. It is not required to upload the files here because the csv, idf and epw files from the old simulation were uploaded to the database. But it it necessary to insert here the paramerters again, because the POST reqeust from simulation/control expects the parameters in the request body. 
 
 ```
 simID = "64998873b04d0bcba8f22b76"
@@ -544,7 +544,8 @@ Response:
 ## Simulation Series
 
 A simulation series will run mulitple simulation with the same idf, epw  and csv file but the room parameters can be adjusted. Here is an example on how to create a series. 
-Information: a series will take some time depending on the variations! Uploads of file, createa simulation etc. will all take more time than a single simulation!
+
+Information: a series will take some time depending on the variations! Upload of files, create a simulation etc. will all take more time than a single simulation!
 
 ```
 params = {
@@ -589,7 +590,7 @@ Response:
 649995ebb04d0bcba8f239a4
 ```
 
-Height: 7 - 8 Length: 11 - 12 Width: 4 - 5 - 6 => 12 Variationen (2*2*3)
+Height: 7 - 8 Length: 11 - 12 Width: 4 - 5 - 6 => 12 Variationen (2 * 2 * 3)
 This example will run 12 simulation. When the simulation is startet it can take a while! It depends on the number of simulations!
 
 Add files to simulation 
@@ -652,8 +653,13 @@ Return status of simulation
 response = requests.get("http://localhost:5000/series/run", json={"id": sim_ser_id})
 response.json()
 ```
+Response if simulation is still running: 
 ```
 {'status': 'in Progress'}
+```
+Response if all simulations were successful: 
+```
+{'status': 'done'}
 ```
 
 View results of series simulation run
@@ -661,6 +667,20 @@ View results of series simulation run
 ```
 response = requests.get("http://localhost:5000/series/results", json={"id": sim_ser_id})
 response.json()
-#result_list = response.json() if response.status_code == 200 else print("Failed with status code", response.status_code)
-#print(result_list)
+```
+
+Response (list of all created simulations in a series): 
+```
+['6499c476475b75d3e877b615',
+ '6499c476475b75d3e877b619',
+ '6499c476475b75d3e877b61d',
+ '6499c476475b75d3e877b621',
+ '6499c476475b75d3e877b625',
+ '6499c476475b75d3e877b629',
+ '6499c476475b75d3e877b62d',
+ '6499c476475b75d3e877b631',
+ '6499c476475b75d3e877b635',
+ '6499c476475b75d3e877b639',
+ '6499c476475b75d3e877b63d',
+ '6499c476475b75d3e877b641']
 ```
