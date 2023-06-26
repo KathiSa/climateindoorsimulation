@@ -16,3 +16,6 @@ nav_order: 4
 
 
 ![Occupancy upload file](images/ocp_upload_file.png)
+
+
+![Occupancy upload file success](images/ocp_upload_success.png)
