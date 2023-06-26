@@ -7,6 +7,13 @@ nav_order: 4
 (Author: Katharina Sammet) 
 # Occupancy
 
+|example files|
+|-|
+|[Empty occupancy file for 1 day](https://github.com/KathiSa/indoorclimatesimulation/blob/main/resources/Base_OCP.csv)|
+|[Example occupancy file for 1 day](https://github.com/KathiSa/indoorclimatesimulation/blob/main/resources/occupancy_1day.csv)|
+|[Example occupancy file for 7 days](https://github.com/KathiSa/indoorclimatesimulation/blob/main/resources/occupancy_7days.csv)|
+
+
 ## Occupancy settings
 
 ![Occupancy Start Page](images/ocp_start_page.png)
