@@ -33,12 +33,12 @@ nav_order: 1
 |[http://localhost:5000/simulation/control/onlyidf](#get-simulation-controlonlyidf)| GET | Checks the status of a simulation with only idf and epw file|
 |[http://localhost:5000/reopensim](#get-reopensim)|GET| Returns all information about a simulation which the user likes to reopen|
 |[http://localhost:5000/reopensim](#post-reopensim)|POST| Retrieves all information about an old simulation and opens a new simulation with new sim ID|
-|http://localhost:5000/series/create|POST|Creates a simulation series|
-|http://localhost:5000/series/weather|POST|Upload or edit the weather file for a simulation series|
-|http://localhost:5000/series/occupancy|POST|Upload or edit a csv file for the occupancy for a simulation series|
-|http://localhost:5000/series/idf|POST|Uploads or edit an idf file of a simulation series|
-|http://localhost:5000/series/run|GET|Start a simulaiton for a series|
-|http://localhost:5000/series/run|POST|Start a simulaiton for a series|
+|[http://localhost:5000/series/create](#post-series-create)|POST|Creates a simulation series|
+|[http://localhost:5000/series/weather](#post-series-weather)|POST|Upload or edit the weather file for a simulation series|
+|[http://localhost:5000/series/occupancy](#post-series-occupancy)|POST|Upload or edit a csv file for the occupancy for a simulation series|
+|[http://localhost:5000/series/idf](#post-series-idf)|POST|Uploads or edit an idf file of a simulation series|
+|[http://localhost:5000/series/run](#get-series-run)|GET|Returns the status of a simulaiton series|
+|[http://localhost:5000/series/run](#post-series-run)|POST|Start a simulaiton for a series|
 |http://localhost:5000/series/results|GET|Retrieving the results of a simulationseries|
 
 
@@ -742,127 +742,157 @@ URL: http://localhost:5000/series/create
 
 Method: POST
 
-Parameters: TODO
+Parameters: 
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation|
+|height|Float|Minimal height of room|
+|height_max|Float|Maximal height of room|
+|height_iter|Float|Intervall, in which the height variable will increase|
+|length|Float|Minimal lenght of room|
+|length_max|Float|Maximal length of room|
+|length_iter|Float|Intervall, in which the length variable will increase|
+|width|Float|Minimal width of room|
+|width_max|Float|Maximal width of room|
+|width_iter|Float|Intervall, in which the width variable will increase|
+|orientation|int|Minimal orienation of room|
+|orientation_max|int|Maximal orientation of room|
+|orientation_iter|int|Intervall, in which the orientation will increase|
+|start_day|int|start date of simulation (day)|
+|start_month|int|start date of simulation (month)|
+|start_year|int|start date of simulation (year)|
+|end_day|int|end date of simulation (day)|
+|end_month|int|end date of simulation (month)|
+|end_year|int|end date of simulation (year)|
+|infiltration_rate|float|Minimal infiltration rate of room|
+|infiltration_rate_max|float|Maximal infiltration rate of room|
+|infiltration_rate_iter|float|Iintervall, in which the infiltration rate will increase|
 
 Example request body: 
 ```
 {
-    "id": "63977ba6ed0627cf228854e2"
+    "height": 3,
+    "height_max": 8,
+    "height_iter": 1,
+    "length": 10,
+    "length_max": 12,
+    "length_iter": 1,
+    "width": 2,
+    "width_max": 6,
+    "width_iter": 1,
+    "orientation": 0,
+    "orientation_max": 360,
+    "orientation_iter": 90,
+    "start_day": 17,
+    "start_month": 5,
+    "start_year": 2023,
+    "end_day": 17,
+    "end_month": 5,
+    "end_year": 2023,
+    "infiltration_rate": 0.0019,
+    "infiltration_rate_max": 0.0019,
+    "infiltration_rate_iter": 0
 }
 ```
 
 Example response: 
 ``` 
 {
-
+"649991e2b04d0bcba8f22b89"
 }
 ```
 
-TODO: check request and response
-
 ## POST Series weather
 
-Upload or edit the weather file for a simulation series
+Upload or edit the weather file for a simulation series (epw file). 
 
 URL: http://localhost:5000/series/weather
 
 Method: POST
 
-Parameters: TODO
+Parameters: 
 
 |Name|Format|Description|
 |-|-|-|
 |id|String|Id of simulation|
+|data|String (base64)|epw file as base64-String|
 
 Example request body: 
+
 ```
-{
-    "id": "63977ba6ed0627cf228854e2"
-}
-```
+    "id": "63977ba6ed0627cf228854e2",
+    "data": "...fDANCjB8MDA6NDU6MD..."
+``` 
 
 Example response: 
 ``` 
-{
-
-}
+{'success': True}
 ```
-
-TODO: check request and response
 
 ## POST Series occupancy
 
-Upload or edit a csv file for the occupancy for a simulation series
+Upload or edit a csv file for the occupancy for a simulation series. 
 
 URL: http://localhost:5000/series/occupancy
 
 Method: POST
 
-Parameters: TODO
+Parameters:
 
 |Name|Format|Description|
 |-|-|-|
 |id|String|Id of simulation|
+|data|String(base64)| csv file as base64-String|
 
 Example request body: 
 ```
 {
-    "id": "63977ba6ed0627cf228854e2"
+     "id": "63977ba6ed0627cf228854e2",
+    "data": "...B8MDE6MDM6MDB8MHwwDQowfDAx..."
 }
 ```
 
 Example response: 
 ``` 
-{
-
-}
+{'success': True}
 ```
-
-TODO: check request and response
 
 ## POST Series idf
 
-Uploads or edit an idf file of a simulation series
+Uploads or edit an idf file of a simulation series. 
 
 URL: http://localhost:5000/series/idf
 
 Method: POST
 
-Parameters: TODO
+Parameters:
 
 |Name|Format|Description|
 |-|-|-|
 |id|String|Id of simulation|
+|data|String(base64)|idf file as base64-String|
 
 Example request body: 
-```
 {
-    "id": "63977ba6ed0627cf228854e2"
+    
+ "id": "63977ba6ed0627cf228854e2",
+ "data": "...MHwwfDANCjB8MDA6MTg6MDB8MH..."
 }
-```
 
 Example response: 
 ``` 
-{
-
-}
+{'success': True}
 ```
-
-TODO: check request and response
 
 ## GET Series run
 
-Start a simulaiton for a series
+Returns the status of a simulation series. 
 
 URL: http://localhost:5000/series/run
 
 Method: GET
 
-Parameters: TODO
+Parameters:
 
 |Name|Format|Description|
 |-|-|-|
@@ -877,12 +907,13 @@ Example request body:
 
 Example response: 
 ``` 
-{
-
-}
+{'status': 'in Progress'}
+```
+or
 ```
 
-TODO: check request and response
+```
+
 
 ## POST Series run
 
@@ -892,7 +923,7 @@ URL: http://localhost:5000/series/run
 
 Method: POST
 
-Parameters: TODO
+Parameters:
 
 |Name|Format|Description|
 |-|-|-|
@@ -907,13 +938,8 @@ Example request body:
 
 Example response: 
 ``` 
-{
-
-}
+{'success': True}
 ```
-
-TODO: check request and response
-
 
 ## GET Series results
 
