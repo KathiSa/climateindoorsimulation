@@ -27,8 +27,8 @@ nav_order: 1
 |[http://localhost:5000/result](#get-result)|GET|Retrieving the result of a simulation|
 |[http://localhost:5000/result](#delete-result)|DEL|Deletes the result of a simulation|
 |[http://localhost:5000/result/csv](#get-csv-result)|GET|Returns the results in csv format|
-|http://localhost:5000/result/overview|GET|Get an overview of all available results|
-|http://localhost:5000/metadata|GET|Retrieve metadata about a simulation|
+|[http://localhost:5000/result/overview](#get-result-overview)|GET|Get an overview of all available results|
+|[http://localhost:5000/metadata](#get-metadata)|GET|Retrieve metadata about a simulation|
 |http://localhost:5000/simulation/control/onlyidf| POST | Starts simulation with only an idf file|
 |http://localhost:5000/simulation/control/onlyidf| GET | TODO|
 |http://localhost:5000/reopensim|GET| TODO|
@@ -561,24 +561,24 @@ Example request body:
 
 Example response: 
 ```
-[{
- "_id": "6390d7bf988fcf505d032575",
- "date_of_creation": "2022-12-07-19:13",
- "filename": "SimOutput19305230",
- "input_simulation_id": "6390d798988fcf505d03255d",
- "status": "done"
- },
- {
- "_id": "6390dd1785dd1128d052a3bf",
- "date_of_creation": "2022-12-07-19:36",
- "filename": "SimOutput07974376",
- "input_simulation_id": "6390dced85dd1128d052a3a7",
- "status": "done"
- }
+[{'_id': '64993e61b7d43a7d7567209e',
+  'date_of_creation': '2023-06-26-09:29',
+  'filename': 'SimOutput37167285',
+  'input_simulation_id': '64993e3cb7d43a7d7567208f',
+  'status': 'done'},
+ {'_id': '64993cb7b7d43a7d7567208a',
+  'date_of_creation': '2023-06-26-09:22',
+  'filename': 'SimOutput31360632',
+  'input_simulation_id': '64993c94b7d43a7d7567207b',
+  'status': 'done'},
+ {'_id': '64993bd25b2b5cbc3201e909',
+  'date_of_creation': '2023-06-26-09:18',
+  'filename': 'SimOutput42576916',
+  'input_simulation_id': '64993b915b2b5cbc3201e8fa',
+  'status': 'done'},
+.... ..... .... ...
 ]
 ```
-
-TODO: check response 
 
 ## GET Metadata
 
@@ -603,21 +603,19 @@ Example request body:
 
 Example response: 
 ``` 
-{
-    "end_day": 31,
-    "end_month": 12,
-    "end_year": 2022,
-    "height": 8.88,
-    "infiltration_rate": 0.0019,
-    "length": 7.77,
-    "start_day": 30,
-    "start_month": 12,
-    "start_year": 2022,
-    "width": 6.66
-}
+{'end_day': 1,
+ 'end_month': 6,
+ 'end_year': 2022,
+ 'height': 3.0,
+ 'infiltration_rate': 0.0019,
+ 'length': 5.0,
+ 'orientation': 0,
+ 'start_day': 1,
+ 'start_month': 6,
+ 'start_year': 2022,
+ 'width': 4.0,
+ 'zone_name': 'RL_Office_27214585'}
 ```
-
-TODO: update response
 
 ## POST Simulation control onlyidf
 
