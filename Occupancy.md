@@ -27,3 +27,6 @@ nav_order: 4
 ![Custom Occupancy start](images/ocp_custom_start.png)
 
 ![Custom Occupancy Table](images/ocp_custom_table.png)
+
+
+![Custom Occupancy success upload](images/ocp_custom_success.png)
