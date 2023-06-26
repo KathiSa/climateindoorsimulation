@@ -22,3 +22,6 @@ nav_order: 4
 
 
 ![Occupancy create custom occupancy](images/ocp_create_custom.png)
+
+
+![Custom Occupancy start](images/ocp_custom_start.png)
