@@ -102,17 +102,14 @@ This table allows the user to enter data about the occupancy and windows in a ro
 
 The information which needs to be entered is first the date. This date should match the timeframe from above. Then the start time and end time for the desired time slot. In the field for people the number of occupants who are in the room during the time slot should be entered. In the colum window the user can choose either open window or closed window. If the current row is not needed the row can be deleted with the button "delete". With the button "add row" as many rows as needed can be added. After entering all the data the data need to be verified with the button "verify data". If the data is correct the message "verification successful!" is displayed. 
 
-In the example of the screenshot the number 2 will be inserted in the occupancy file for the occupants column and number 1 in the win1 column for the time from 07:00:00 till 11:00:00. 
+In the example of the screenshot the number 2 will be inserted in the occupancy file for the occupants column and number 1 in the win1 column for the time from 07:00:00 till 11:00:00. All time slots where no data was entered will be filled up with 0 occupants and 0 for closed windows. 
 
 ![Custom Occupancy success upload](images/ocp_custom_success.png)
 1. "Create Occupancy": After the data was verified in the table click "Create Occupancy" to upload data.
 2. "Success - Successfully created a custom occupancy": This message will be display after occupancy was created successfully
 
+To upload the custom occupancy data it is necesssary to click the button "Create occupancy". This button will only only work if the data in the table was verified successfully. If the occupancy file was created successfully the message "Success" will be displayed. After the file was created it is possible to proceed to the next page Room Parameters. If now the button "back to coosing an occupancy file" is clicked now, after the custom occupancy was created, the filename "Simulation_OCP.csv" will be displayed as uploaded file (following screenshot). 
+
 
 ![Custom Occupancy filename](images/ocp_custom_filename.png)
-1. If the user click "Back to coosing an occupancy file" after a Custom occupancy table was successfuly uplaoded the data is saved in the file "Simulation_OCP.csv". To change this and upload a new file click "choose file", the "Simulation_OCP.csv" file be deleted and a new file is uploaded. 
-
-
-![Custom occupancy overview](images/ocp_custom_overview.png)
-1. Overview page for simulation data
-2. Table with enterd custom occupancy data
+1. If the user click "Back to coosing an occupancy file" after a Custom occupancy table was successfuly uplaoded the data is saved in the file "Simulation_OCP.csv". To change this and upload a new file click "choose file", the "Simulation_OCP.csv" file be deleted and a new file is uploaded.
