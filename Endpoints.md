@@ -29,10 +29,10 @@ nav_order: 1
 |[http://localhost:5000/result/csv](#get-csv-result)|GET|Returns the results in csv format|
 |[http://localhost:5000/result/overview](#get-result-overview)|GET|Get an overview of all available results|
 |[http://localhost:5000/metadata](#get-metadata)|GET|Retrieve metadata about a simulation|
-|http://localhost:5000/simulation/control/onlyidf| POST | Starts simulation with only an idf file|
-|http://localhost:5000/simulation/control/onlyidf| GET | TODO|
-|http://localhost:5000/reopensim|GET| TODO|
-|http://localhost:5000/reopensim|POST| TODO|
+|[http://localhost:5000/simulation/control/onlyidf](#post-simulation-control-onlyidf)| POST | Starts simulation with only an idf and epw file|
+|[http://localhost:5000/simulation/control/onlyidf](#get-simulation-controlonlyidf)| GET | Checks the status of a simulation with only idf and epw file|
+|[http://localhost:5000/reopensim](#get-reopensim)|GET| Returns all information about a simulation which the user likes to reopen|
+|[http://localhost:5000/reopensim](#post-reopensim)|POST| Retrieves all information about an old simulation and opens a new simulation with new sim ID|
 |http://localhost:5000/series/create|POST|Creates a simulation series|
 |http://localhost:5000/series/weather|POST|Upload or edit the weather file for a simulation series|
 |http://localhost:5000/series/occupancy|POST|Upload or edit a csv file for the occupancy for a simulation series|
@@ -625,7 +625,7 @@ URL: http://localhost:5000/simulation/control/onlyidf
 
 Method: POST
 
-Parameters: TODO
+Parameters: 
 
 |Name|Format|Description|
 |-|-|-|
@@ -640,22 +640,18 @@ Example request body:
 
 Example response: 
 ``` 
-{
-
-}
+{'success': True}
 ```
-
-TODO: check request and response 
 
 ## GET Simulation control onlyidf
 
-TODO
+Returns the status of a simulation (same response as simulation/control GET). 
 
 URL: http://localhost:5000/simulation/control/onlyidf
 
 Method: GET
 
-Parameters: TODO
+Parameters: 
 
 |Name|Format|Description|
 |-|-|-|
@@ -670,22 +666,18 @@ Example request body:
 
 Example response: 
 ``` 
-{
-
-}
+ {'status': 'done'}
 ```
-
-TODO: check request and response 
 
 ## GET reopensim
 
-TODO
+Returns all information about a simulation, which should be reopend. The metadata, idf, epw and csv file data is returned. 
 
 URL: http://localhost:5000/reopensim
 
 Method: GET
 
-Parameters: TODO
+Parameters:
 
 |Name|Format|Description|
 |-|-|-|
@@ -700,34 +692,35 @@ Example request body:
 
 Example response: 
 ``` 
-{
-
-}
+[{'end_day': 1,
+  'end_month': 6,
+  'end_year': 2022,
+  'height': 3.0,
+  'infiltration_rate': 0.0019,
+  'length': 5.0,
+  'orientation': 0,
+  'start_day': 1,
+  'start_month': 6,
+  'start_year': 2022,
+  'width': 4.0,
+  'zone_name': 'RL_Office_27214585'},
+ '  Version,22.2;\n\n  Timestep,6;\n\n  LifeCycleCost:Parameters,\n    Life Cycle Cost Parameters,  !- Name\n    EndOfYear,               !- Discounting Convention\n    ConstantDollar,          !- Inflation Approach\n    0.03,                    !- Real Discount Rate\n    ,                        !- Nominal Discount Rate\n    ,                        !- Inflation\n    ,                        !- Base Date Month\n    2011,                    !- Base Date Year\n    ,                        !- Service Date Month\n    2011,                    !- S
+.... ..... ..... .... .... ..... .... ...
 ```
-
-TODO: check request and response
-
-|http://localhost:5000/series/create|POST|Creates a simulation series|
-|http://localhost:5000/series/weather|POST|Upload or edit the weather file for a simulation series|
-|http://localhost:5000/series/occupancy|POST|Upload or edit a csv file for the occupancy for a simulation series|
-|http://localhost:5000/series/idf|POST|Uploads or edit an idf file of a simulation series|
-|http://localhost:5000/series/run|GET|Start a simulaiton for a series|
-|http://localhost:5000/series/run|POST|Start a simulaiton for a series|
-|http://localhost:5000/series/results|GET|Retrieving the results of a simulationseries|
 
 ## POST reopensim
 
-TODO
+Will retrieve all data from the old simulation (from the simulation id which was passed with this request) and create a simulation ID in the database. It then automatically uploads all data from the old simulation to this new simulation. Afterwards the data can be changed if needed. 
 
 URL: http://localhost:5000/reopensim
 
 Method: POST
 
-Parameters: TODO
+Parameters: 
 
 |Name|Format|Description|
 |-|-|-|
-|id|String|Id of simulation|
+|id|String|Id of a simulation which should be reopend|
 
 Example request body: 
 ```
@@ -736,14 +729,10 @@ Example request body:
 }
 ```
 
-Example response: 
+Example response (this sim ID is the sim ID of the new simulation): 
 ``` 
-{
-
-}
+'64998873b04d0bcba8f22b76'
 ```
-
-TODO: check request and response
 
 ## POST Series create
 
