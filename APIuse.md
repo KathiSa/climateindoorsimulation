@@ -12,29 +12,18 @@ Here are some examples on how to use the REST API. It is recommended to use [Jup
 
 This notebook can be downloaded [here](https://github.com/KathiSa/indoorclimatesimulation/blob/main/resources/RestAPIsimulations.ipynb).
 
-[Check if docker is running](#check-if-docker-is-running)
-
-[Create a new simulation](#create-a-new-simulation)
-
-[Uploads files for simulation](#uploads-files-for-simulation)
-
-[Set parameter/metadata for simulation](#set-parameters/metadata-for-simulation)
-
-[Start a simulation](#start-a-simulation)
-
-[Results](#results)
-
-[Overview on all simulations in database](#overview-on-all-simulations-in-database)
-
-[Delete a simulation](#delete-a-simulation)
-
-[Delete result entry of a simulation](#delete-result-entry-of-a-simulation)
-
-[Simulation with only an idf and epw file](#simulation-with-only-an-idf-and-epw-file)
-
-[Reopen an old simulation](#reopen-an-old-simulation)
-
-[Simulation Series](#simulation-series)
+|[Check if docker is running](#check-if-docker-is-running)|
+|[Create a new simulation](#create-a-new-simulation)|
+|[Uploads files for simulation](#uploads-files-for-simulation)|
+|[Set parameter/metadata for simulation](#set-parameters/metadata-for-simulation)|
+|[Start a simulation](#start-a-simulation)|
+|[Results](#results)|
+|[Overview on all simulations in database](#overview-on-all-simulations-in-database)|
+|[Delete a simulation](#delete-a-simulation)|
+|[Delete result entry of a simulation](#delete-result-entry-of-a-simulation)|
+|[Simulation with only an idf and epw file](#simulation-with-only-an-idf-and-epw-file)|
+|[Reopen an old simulation](#reopen-an-old-simulation)|
+|[Simulation Series](#simulation-series)|
 
 
 ```
