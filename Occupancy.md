@@ -13,3 +13,6 @@ nav_order: 4
 
 
 ![Occupancy timeframe saved](images/ocp_timeframe_saved.png)
+
+
+![Occupancy upload file](images/ocp_upload_file.png)
