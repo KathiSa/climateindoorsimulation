@@ -56,6 +56,7 @@ The header should look like this.
 * Time: The column time includes every minute of the day
 * Occupants: This column provides the number of occupants which are present every minute in the room
 * win1: The colum win1 contains 0 or 1, 0 for window closed and 1 for window opend. This information is available for every minute of the day.
+* The separator need to be | like in the following screenshot
 
 ![occupancy csv file format](images/ocp_upload_file_format.jpg)
 
@@ -66,18 +67,25 @@ Another example file with no data for occupants and windows can be found [here](
 
 [Here](https://github.com/KathiSa/indoorclimatesimulation/blob/main/resources/occupancy_7days.csv) can be found an example for 7 days. 
 
+After the file is successfuly uploaded the following message with the filename is displayed. 
 
 ![Occupancy upload file success](images/ocp_upload_success.png)
 1. This message with the name of the occupancy file will be displayed if it was uploaded successfully.
 
 ## Create custom occupancy
+
+To create a custom occupancy without uploading a file choose the button "Create custom occupancy". 
+
 ![Occupancy create custom occupancy](images/ocp_create_custom.png)
 1. "Create custom occupancy": Button to change interface for enter custom occupancy
 
+The following table will be displayed. To go back to the previous page and upload a file click on "Back to coosing an occupancy file". With the button "add row" a new row will be added to the table. 
 
 ![Custom Occupancy start](images/ocp_custom_start.png)
 1. "Add row": Add a new row to the table to enter time, occupancy and window information
-2. "Back to coosing an occupancy file": Goes back to website to upload a occupancy file. 
+2. "Back to coosing an occupancy file": Goes back to website to upload a occupancy file.
+
+
 
 ![Custom Occupancy Table](images/ocp_custom_table.png)
 1. "Date": Enter Date. Date must match timeframe from above
@@ -90,6 +98,11 @@ Another example file with no data for occupants and windows can be found [here](
 8. "Add row": Add another row to this table
 9. "Verification successful!": Confirmation that the verification of the entered data is correct . This message will occur after the user pressed the button "verify data". 
 
+This table allows the user to enter data about the occupancy and windows in a room for the selected timeframe. 
+
+The information which needs to be entered is first the date. This date should match the timeframe from above. Then the start time and end time for the desired time slot. In the field for people the number of occupants who are in the room during the time slot should be entered. In the colum window the user can choose either open window or closed window. If the current row is not needed the row can be deleted with the button "delete". With the button "add row" as many rows as needed can be added. After entering all the data the data need to be verified with the button "verify data". If the data is correct the message "verification successful!" is displayed. 
+
+In the example of the screenshot the number 2 will be inserted in the occupancy file for the occupants column and number 1 in the win1 column for the time from 07:00:00 till 11:00:00. 
 
 ![Custom Occupancy success upload](images/ocp_custom_success.png)
 1. "Create Occupancy": After the data was verified in the table click "Create Occupancy" to upload data.
