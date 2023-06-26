@@ -22,13 +22,13 @@ The simulation overview allows you to view all inputs again before the simulatio
 
 ![Figg. 2](images/Overview1Marker.PNG)
 
-1. Overview over chosen files
-2. Overview over chosen simulation parameters
+1. Overview of chosen files
+2. Overview of chosen simulation parameters
 3. "Start Simulation" button, to start the simulation
-4. "View Results" button, to proceed to the next step after the simulation is run and finished
+4. "View Results" button, to proceed to the next step after the simulation has finished
 
 
-For instance, in the File Input section (Fig. 2, marker 1), you can again view which .idf and .epw file you selected at the beginning. If you have uploaded an occupancy file, the uploaded file will also be shown in this section. If you have created a custom occupancy, there will be a different section shown, but this will be explained further down. In the simulation parameters section of the overview (Fig. 2, marker 2), you will again see the room dimensions and infiltration rate you specified for the simulation. If you notice that you have made an incorrect entry here, you can return via the back button to the step parameter input and adjust the values accordingly. If you are satisfied with the input data, you can now start the simulation. To do this, click on the "Start Simulation" button (Fig. 2, marker 3). The view results button will be unclickable and greyed out until the simulation is run (Fig. 2, marker 4).
+For instance, in the File Input section (Fig. 2, marker 1), you can again view which IDF and EPW file you selected at the beginning. If you have uploaded an occupancy file, the uploaded file will also be shown in this section. If you have created a custom occupancy, there will be a different section shown, but this will be explained further down. In the simulation parameters section of the overview (Fig. 2, marker 2), you will again see the room dimensions and infiltration rate you specified for the simulation. If you notice that you have made an incorrect entry here, you can return via the back button to the step parameter input and adjust the values accordingly. If you are satisfied with the input data, you can now start the simulation. To do this, click on the "Start Simulation" button (Fig. 2, marker 3). The view results button will be unclickable and greyed out until the simulation is run (Fig. 2, marker 4).
 
 ![Figg. 3](images/Overview5Marker.PNG)
 
@@ -48,11 +48,11 @@ In the section occupancy (Fig. 3, marker 1), you can view the custom room occupa
 
 If you are started the simulation with a click on the "Start Simulation" button (Fig. 4, marker 5), the simulation will begin and the button will be greyed out. Once you have started the simulation, the simulation ID will be displayed at the top (Fig. 4, marker 1), allowing you to clearly distinguish between the different simulations. Within the next few seconds, you will now be continuously informed about the progress of the simulation.
 
-In order for EnergyPlus to run the simulation with the data you have provided, the first step is to transfer the data from the frontend (GUI) to the backend. This happens automatically and you will be informed in real time about the data packages transferred in sequence, such as the idf or epw file (Fig. 4, marker 2). Once this is done, Energyplus will start the execution of the simulation and you will be shown a loading circle while the simulation is running (Fig. 4, marker 4). While the simulation is running, you will be shown the simulation status "simulation in progress" (Fig. 4, marker 3).
+In order for EnergyPlus to run the simulation with the data you have provided, the first step is to transfer the data from the frontend (GUI) to the backend. This happens automatically and you will be informed in real time about the data packages transferred in sequence, such as the IDF or EPW file (Fig. 4, marker 2). Once this is done, Energyplus will start the execution of the simulation and you will be shown a loading circle while the simulation is running (Fig. 4, marker 4). While the simulation is running, you will be shown the simulation status "simulation in progress" (Fig. 4, marker 3).
 
 ![Figg. 5](images/Overview4Marker.PNG)
 
 1. Simulation status "finished", after simulation is run successfully
 2. "View results" button, to proceed to the next step
 
-After the simulation has been run successfully, you will receive a "simulation finished" success message (Fig. 5, marker 1). The "View Results" Button  (Fig. 5, marker 2) will take you to the next step of the web application where you can plot the results of the simulation and download the complete results as a csv-file or eso-file.
+After the simulation has been run successfully, you will receive a "simulation finished" success message (Fig. 5, marker 1). The "View Results" Button  (Fig. 5, marker 2) will take you to the next step of the web application where you can plot the results of the simulation and download the complete results as a CSV file or ESO file.
