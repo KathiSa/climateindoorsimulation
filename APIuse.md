@@ -4,6 +4,9 @@ title: Use of API
 parent: REST API
 nav_order: 2
 ---
+
+[TOC]
+
 (Author: Katharina Sammet) 
 # Use API
 
