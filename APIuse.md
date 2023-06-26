@@ -12,6 +12,8 @@ Here are some examples on how to use the REST API. It is recommended to use [Jup
 
 This notebook can be downloaded [here](https://github.com/KathiSa/indoorclimatesimulation/blob/main/resources/RestAPIsimulations.ipynb).
 
+|Table of contens|
+|-|
 |[Check if docker is running](#check-if-docker-is-running)|
 |[Create a new simulation](#create-a-new-simulation)|
 |[Uploads files for simulation](#uploads-files-for-simulation)|
