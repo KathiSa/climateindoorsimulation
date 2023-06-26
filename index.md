@@ -14,6 +14,6 @@ This program is intended to simplify the operation of EnergyPlus for the user. F
 
 This documentation provides you with information about the tool Indoor Climate Simulation. This tool simulates the indoor climate in rooms. The software “EnergyPlus” is used for the simulation. Additionaly the Python package “eppy” serves as a connector between EnergyPlus and Python.
 
-This programm consists of two parts: the frontend and the backend. The frontend includes a web server with a GUI to control the simulation. The backend includes the simulation via the “eppy” Python package. Data of the simulations is saved in an MongoDB instance. The backend provides additional functionalities with an REST API.
+This program consists of two parts: the frontend and the backend. The frontend includes a web server with a GUI to control the simulation. The backend includes the simulation via the “eppy” Python package. Data of the simulations is saved in an MongoDB instance. The backend provides additional functionalities with an REST API.
 
 TODO: BILD EINFÜGEN ENGLISCH ARCHITEKTUR!!!
