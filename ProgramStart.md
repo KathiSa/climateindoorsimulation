@@ -7,15 +7,15 @@ nav_order: 1
 (Author: Sophia Weißenberger) 
 # Start Program with Windows
 
-To start the program you have a few different options: 
-   * start everything at once
+To start the program you have two different options: 
+   * start everything at the same time (both frontend and backend)
    * start frontend and backend seperately
 
-You can find a step by step guide including pictures below!
+You can find a step by step guide including pictures below.
 
-## Simple guide for starting everything at once
+## Simple guide for starting everything at the same time
 
-Open a command window and navigate into you project folder. 
+Open a command window and navigate into your project folder. 
 
 Execute the following: 
 
@@ -23,15 +23,15 @@ Execute the following:
  python install.py
 ```
 
-Your backend and frontend is started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
+Your backend and frontend has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
 
-Note: You can find a step by step guide including pictures below!
+Note: You can find a step by step guide including pictures below.
 
 ## Simple guide for starting frontend and backend seperately
 
 ### Starting backend: 
 
-Open a command window and navigate into you project folder. 
+Open a command window and navigate into your project folder. 
 
 Execute the following:  
 
@@ -45,14 +45,13 @@ Execute the following:
 python -m app
 ```
 
-Backend is started. Now you can use the backend, for example to work with Jupyter Notebooks.
+Your backend has been started. Now you can use the backend, for example to work with Jupyter Notebooks.
 
-Note: You can find a step by step guide including pictures below!
+Note: You can find a step by step guide including pictures below.
 
 ### Starting frontend (optional): 
 
-
-Open another command window and navigate into you project folder. 
+Open another command window and navigate into your project folder. 
 
 Execute the following: 
 
@@ -67,12 +66,12 @@ python -m app
 ```
 
 
-Your frontend is started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
+Your frontend has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
 
-Note: You can find a step by step guide including pictures below!
+Note: You can find a step by step guide including pictures below.
 
 
-## Start everything at once (with pictures)
+## Start everything at the same time (with pictures)
 
 Step 1: Open a new command window.
 
@@ -80,7 +79,7 @@ Step 1: Open a new command window.
 
 Step 2: Navigate to the project folder.
 
-(Note: File path in the picture will differ and is only for visualisation purposes!)
+(Note: File path in the picture will differ and is only for visualisation purposes.)
 
 ![Figg. 2](images/ProgramStartAll2.PNG)
 
@@ -94,10 +93,9 @@ Execute the following:
 
 ![Figg. 4](images/ProgramStartAll4.PNG)
 
-
 Step 4: Backend and frontend start automatically
 
-In this step you have to do nothing. If the frontend started successfully another command window should open automatically. 
+In this step you have to do nothing. If the frontend started successfully, another command window should open automatically. 
 
 ![Figg. 5](images/ProgramStartAll5.PNG)
 
@@ -116,7 +114,7 @@ Step 1: Open a new command window.
 
 Step 2: Navigate to the project folder.
 
-(Note: File path in the picture will differ and is only for visualisation purposes!)
+(Note: File path in the picture will differ and is only for visualisation purposes.)
 
 ![Figg. 2](images/ProgramStartAll2.PNG)
 
@@ -138,7 +136,7 @@ python -m app
 
 ![Figg. 1](images/ProgramStartFB5.PNG)
 
-Backend is started. Now you can use the backend, for example to work with Jupyter Notebooks. 
+Your backend has been started. Now you can use the backend, for example to work with Jupyter Notebooks. 
 
 Step 4 (optional): Start frontend 
 
@@ -160,7 +158,7 @@ python -m app
 
 ![Figg. 1](images/ProgramStartFB7.PNG)
 
-Frontend is started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation. 
+Your frontend has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation. 
 
 # Start Program with Linux
 
