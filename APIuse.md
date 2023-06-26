@@ -17,10 +17,11 @@ This notebook can be downloaded [here](https://github.com/KathiSa/indoorclimates
 |[Import statements](#import-statements)
 |[Check if docker is running](#check-if-docker-is-running)|
 |[Create a new simulation](#create-a-new-simulation)|
-|[Uploads files for simulation](#uploads-files-for-simulation)|
+|[Upload files for simulation](#upload-files-for-simulation)|
 |[Set parameter/metadata for simulation](#set-parameters/metadata-for-simulation)|
 |[Start a simulation](#start-a-simulation)|
 |[Results](#results)|
+|[View simulations inputs of a simulation](#-view-simulation-inputs-of-a-simulation)|
 |[Overview on all simulations in database](#overview-on-all-simulations-in-database)|
 |[Delete a simulation](#delete-a-simulation)|
 |[Delete result entry of a simulation](#delete-result-entry-of-a-simulation)|
@@ -40,7 +41,7 @@ import time
 import io
 from datetime import datetime
 ```
-if an error occurs here please check if all packages are installed
+If an error occurs please check if all packages are installed. 
 
 ## Check if docker is running
 
@@ -65,7 +66,7 @@ Response:
 '64998548b04d0bcba8f22b4d'
 ```
 
-Set the sim ID 
+Set the sim ID as a variable. 
 
 ```
 simID = response.json()
@@ -75,7 +76,7 @@ Response:
 ```
 The simulation ID is 64998548b04d0bcba8f22b4d
 ```
-Return the information about a simulation with the sim ID from the previous request. 
+Returns the information about a simulation with the sim ID from the previous request. 
 ```
 response = requests.get("http://localhost:5000/simulation", json={"id": simID})
 response.json()
@@ -101,7 +102,7 @@ Response:
  'zone_name': ''}
 ```
 
-## Uploads files for simulation
+## Upload files for simulation
 
 Define the path for all simulation files. If the files are in the same directory as the notebook, its only necessary to define the names of the files. Otherwise use the full path to the files. 
 
@@ -158,7 +159,22 @@ response.json() if response.status_code == 200 else print("Failed with status co
 ```
 Response (contens of idf file): 
 ```
-'  Version,22.2;\n\n  Timestep,6;\n\n  LifeCycleCost:Parameters,\n    Life Cycle Cost Parameters,  !- Name\n    EndOfYear,               !- Discounting Convention\n    ConstantDollar,          !- Inflation Approach\n    0.03,                    !- Real Discount Rate\n    ,                        !- Nominal Discount Rate\n    ,                        !- Inflation\n    ,                        !- Base Date Month\n    2011,                    !- Base Date Year\n    ,                        !- Service Date Month\n    2011,                    !- Service Date Year\n    25,                      !- Length of Study Period in Years\n    ,                        !- Tax rate\n    None;                    !- Depreciation Method\n\n  LifeCycleCost:UsePriceEscalation,\n    U.S. Avg  Commercial.... ..... .....
+'Version,22.2;\n\n  Timestep,6;\n\n  LifeCycleCost:Parameters,\n
+Life Cycle Cost Parameters,
+!- Name\n    EndOfYear,
+!- Discounting Convention\n    ConstantDollar,
+!- Inflation Approach\n    0.03,
+!- Real Discount Rate\n    ,
+!- Nominal Discount Rate\n    ,
+!- Inflation\n    ,
+!- Base Date Month\n    2011,
+!- Base Date Year\n    ,
+!- Service Date Month\n    2011,
+!- Service Date Year\n    25,
+!- Length of Study Period in Years\n    ,
+!- Tax rate\n    None;
+!- Depreciation Method\n\n  LifeCycleCost:UsePriceEscalation,\n
+U.S. Avg  Commercial.... ..... ..... ..... 
 ```
 ```
 #epw file
@@ -167,7 +183,14 @@ response.json() if response.status_code == 200 else print("Failed with status co
 ```
 Response (contens of epw file): 
 ```
-'LOCATION,Munich-Theresienwiese,BY,DEU,SRC-TMYx,108650,48.16320,11.54290,1.0,520.0\r\nDESIGN CONDITIONS,1,2021 ASHRAE Handbook -- Fundamentals - Chapter 14 Climatic Design Information,,Heating,2,-11.9,-9.2,-15.1,1.1,-10.4,-12.8,1.3,-7.9,10.3,9.2,9.2,7.1,1.8,90,0.476,Cooling,7,8.8,29.5,19.0,27.7,18.1,26.1,17.5,19.7,27.4,18.9,26.1,18.2,24.4,2.6,270,17.2,13.1,21.6,16.4,12.5,21.1,15.8,11.9,20.8,58.6,27.5,55.9,26.3,53.3,24.5,22.7,Extremes,7.8,6.4,5.3,-13.4,33.1,4.3,2.0,-16.5,34.6,-19.0,35.8,-21.4,36.9,-24.5,38.4\r\nTYPICAL/EXTREME PERIODS,6,Summer - Week Nearest Max Temperature For Period,Extreme,8/10,8/16,Summer... ..... ..... ....
+'LOCATION,Munich-Theresienwiese,BY,DEU,SRC-TMYx,108650,48.16320,11.54290,1.0,520.0\r\n
+DESIGN CONDITIONS,1,2021 ASHRAE Handbook -- Fundamentals - Chapter 14 Climatic Design Information,,Heating,
+2,-11.9,-9.2,-15.1,1.1,-10.4,-12.8,1.3,-7.9,10.3,9.2,9.2,7.1,1.8,
+90,0.476,Cooling,7,8.8,29.5,19.0,27.7,18.1,26.1,17.5,19.7,27.4,18.9,26.1,18.2,24.4,2.6,270,17.2,
+13.1,21.6,16.4,12.5,21.1,15.8,11.9,20.8,58.6,27.5,55.9,26.3,53.3,24.5,22.7,
+Extremes,7.8,6.4,5.3,-13.4,33.1,4.3,2.0,-16.5,34.6,-19.0,35.8,-21.4,36.9,-24.5,38.4\r\n
+TYPICAL/EXTREME PERIODS,6,Summer - Week Nearest Max Temperature For Period,Extreme,8/10,8/16,
+Summer... ..... ..... .... .... 
 ```
 ```
 #csv file/occupancy
@@ -176,7 +199,16 @@ response.json() if response.status_code == 200 else print("Failed with status co
 ```
 Response (contens of csv file): 
 ```
-'day|time|occupants|win1\n0|00:00:00|0|0\n0|00:01:00|0|0\n0|00:02:00|0|0\n0|00:03:00|0|0\n0|00:04:00|0|0\n0|00:05:00|0|0\n0|00:06:00|0|0\n0|00:07:00|0|0\n0|00:08:00|0|0\n0|00:09:00|0|0\n0|00:10:00|0|0\n0|00:11:00|0|0\n0|00:12:00|0|0\n0|00:13:00|0|0\n0|00:14:00|0|0\n0|00:15:00|0|0\n0|00:16:00|0|0\n0|00:17:00|0|0\n0|00:18:00|0|0\n0|00:19:00|0|0\n0|00:20:00|0|0\n0|00:21:00|0|0\n0|00:22:00|0|0\n0|00:23:00|0|0\n0|00:24:00|0|0\n0|00:25:00|0|0\n0|00:26:00|0|0\n0|00:27:00|0|0\n0|00:28:00|0|0\n0|00:29:00|0|0\n0|00:30:00|0|0\n0|00:31:00|0|0\n0|00:32:00|0|0\n0|00:33:00|0|0\n0|00:34:00|0|0\n0|00:35:00|0|0\n0|00:36:00|0|0\n0|00:37:00|0|0\n0|00:38:00|0|0\n0|00:39:00|0|0\n0|00:40:00|0|0\n0|00:41:00|0|0\n0|00:42:00|0|0.... ..... ..... 
+'day|time|occupants|win1\n
+0|00:00:00|0|0\n
+0|00:01:00|0|0\n
+0|00:02:00|0|0\n
+0|00:03:00|0|0\n
+0|00:04:00|0|0\n
+0|00:05:00|0|0\n
+0|00:06:00|0|0\n
+.... ..... .....
+.... ..... .....
 ```
 
 ## Set parameters/metadata for simulation
@@ -234,10 +266,10 @@ Response:
 ```
 {'_id': '649850234b93c9929aa94e93',
  'date_of_creation': '2023-06-25-16:33',
- 'eso_data': 'UHJvZ3JhbSBWZXJzaW9uLEVuZXJneVBsdXMsIFZlcnNpb24gMjIuMi4wLWMyNDk3NTliYWQsIFlN\nRD0yMDIzLjA2LjI1IDE2OjMyDQoxLDUsRW52aXJvbm1lbnQgVGl0bGVbXSxMYXRpdHVkZVtkZWdd\nLExvbmdpdHVkZVtkZWddLFRpbWUgWm9uZVtdLEVsZXZhdGlvblttXQ0KMiw4LERheSBvZiBTaW11\nbGF0aW9uW10sTW9udGhbXSxEYXkgb2YgTW9udGhbXSxEU1QgSW5kaWNhdG9yWzE9eWVzIDA9bm9d\nLEhvdXJbXSxTdGFydE1pbnV0ZVtdLEVuZE1pbnV0ZVtdLERheVR5cGUNCjMsNSxDdW11bGF0aXZl\nIERheSBvZiB.... ...... ......
+ 'eso_data': 'UHJvZ3JhbSBWZXJzaW9.... ...... ......
 ```
 
-See the results in a table. This returns the results in csv format
+To see the results in a table this endpoint can be used.
 ```
 response = requests.get("http://localhost:5000/result/csv", json={"id": simID})
 response 
@@ -248,7 +280,8 @@ csv_data = io.BytesIO(response.content)
 df = pd.read_csv(csv_data)
 df.head()
 ```
-|	|date|zone_air_temperature	|zone_co2_concentration	|zone_rel_humidity|outdoor_air_pressure	|outdoor_air_drybulb	|occupancy	|window|
+|-|date|zone_air_temperature	|zone_co2_concentration	|zone_rel_humidity|outdoor_air_pressure	|outdoor_air_drybulb	|occupancy	|window|
+|-|-|-|-|-|-|-|-|-|-|
 |0	|2022-06-01 |00:00	|22.444013	|1108.273413	|63.958120	|95590.316667	|13.03	|0	|0|
 |1	|2022-06-01 |00:01	|22.440291	|1107.175398	|63.947149	|95588.633333	|12.96	|0	|0|
 |2	|2022-06-01 |00:02	|22.436333	|1106.078853	|63.936722	|95586.950000	|12.89	|0	|0|
@@ -256,7 +289,7 @@ df.head()
 |4	|2022-06-01 |00:04	|22.427712	|1103.890163	|63.917489	|95583.583333	|12.75	|0	|0|
 
 
-##View simulation inputs of a simulation 
+## View simulation inputs of a simulation 
 
 Returns the metadata of a simulation. This will only return the inforamtion after the simulation was run and the data was saved in the databse. 
 
