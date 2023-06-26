@@ -57,6 +57,9 @@ The header should look like this.
 * Occupants: This column provides the number of occupants which are present every minute in the room
 * win1: The colum win1 contains 0 or 1, 0 for window closed and 1 for window opend. This information is available for every minute of the day.
 
+![occupancy csv file format](images/ocp_upload_file_format.jpg)
+
+
 An example file for one day can be found [here](https://github.com/KathiSa/indoorclimatesimulation/blob/main/resources/occupancy_1day.csv). 
 
 Another example file with no data for occupants and windows can be found [here](https://github.com/KathiSa/indoorclimatesimulation/blob/main/resources/Base_OCP.csv). 
