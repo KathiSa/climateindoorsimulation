@@ -43,6 +43,7 @@ IMPORTANT: The occupany file needs to have a special format.
 The header should look like this.
 
 |day|time|occupants|win1|
+|-|-|-|-|
 |0|00:00:00|0|0|
 |0|00:01:00|0|0|
 |0|00:02:00|0|0|
