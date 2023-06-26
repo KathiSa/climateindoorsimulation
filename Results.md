@@ -61,9 +61,9 @@ Step-by-step instructions for creating individual graphs
 
 ## How to download the results
 
-7. Download the simulation results via corresponding buttons as csv-file or eso-file
+7. Download the simulation results via corresponding buttons as CSV file or ESO file
    
-If you want to use the simulated values furthermore yourself, we offer a download of all the data in csv- and eso-format. To do this, click on the "download csv" and "download eso" buttons (Fig. 3, marker 7).
+If you want to use the simulated values furthermore yourself, we offer a download of all the data in CSV and ESO format. To do this, click on the "download csv" and "download eso" buttons (Fig. 3, marker 7).
 
 ## Proceed
 When you have finished creating the graphs, you have three options with the buttons buttons at the bottom of the screen:
