@@ -7,4 +7,4 @@ nav_order: 4
 (Author: Katharina Sammet) 
 # Occupancy
 
-!(images/ocp_start_page.png)
+![Occupancy Start Page](images/ocp_start_page.png)
