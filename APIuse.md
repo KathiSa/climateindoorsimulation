@@ -195,7 +195,420 @@ Response:
 ```
 {'success': True}
 ```
+Check the status of the simulation: 
+```
+response = requests.get("http://localhost:5000/simulation/control", json={"id": simID})
+response.json()
+```
+Response: 
+```
+{'status': 'done'}
+```
+
+## Results
+
+Check the results for the simulation. This will fail until the simulation has completed sucessfully.  
+
+```
+response = requests.get("http://localhost:5000/result", json={"id": simID})
+response.json()
+```
+Response: 
+```
+{'_id': '649850234b93c9929aa94e93',
+ 'date_of_creation': '2023-06-25-16:33',
+ 'eso_data': 'UHJvZ3JhbSBWZXJzaW9uLEVuZXJneVBsdXMsIFZlcnNpb24gMjIuMi4wLWMyNDk3NTliYWQsIFlN\nRD0yMDIzLjA2LjI1IDE2OjMyDQoxLDUsRW52aXJvbm1lbnQgVGl0bGVbXSxMYXRpdHVkZVtkZWdd\nLExvbmdpdHVkZVtkZWddLFRpbWUgWm9uZVtdLEVsZXZhdGlvblttXQ0KMiw4LERheSBvZiBTaW11\nbGF0aW9uW10sTW9udGhbXSxEYXkgb2YgTW9udGhbXSxEU1QgSW5kaWNhdG9yWzE9eWVzIDA9bm9d\nLEhvdXJbXSxTdGFydE1pbnV0ZVtdLEVuZE1pbnV0ZVtdLERheVR5cGUNCjMsNSxDdW11bGF0aXZl\nIERheSBvZiB.... ...... ......
+```
+
+See the results in a table. This returns the results in csv format
+```
+response = requests.get("http://localhost:5000/result/csv", json={"id": simID})
+response 
+```
+To view the csv data in a table use the following:
+```
+csv_data = io.BytesIO(response.content)
+df = pd.read_csv(csv_data)
+df.head()
+```
+|	|date|zone_air_temperature	|zone_co2_concentration	|zone_rel_humidity|outdoor_air_pressure	|outdoor_air_drybulb	|occupancy	|window|
+|0	|2022-06-01 |00:00	|22.444013	|1108.273413	|63.958120	|95590.316667	|13.03	|0	|0|
+|1	|2022-06-01 |00:01	|22.440291	|1107.175398	|63.947149	|95588.633333	|12.96	|0	|0|
+|2	|2022-06-01 |00:02	|22.436333	|1106.078853	|63.936722	|95586.950000	|12.89	|0	|0|
+|3	|2022-06-01 |00:03	|22.432135	|1104.983774	|63.926852	|95585.266667	|12.82	|0	|0|
+|4	|2022-06-01 |00:04	|22.427712	|1103.890163	|63.917489	|95583.583333	|12.75	|0	|0|
 
 
+##View simulation inputs of a simulation 
+
+Returns the metadata of a simulation. This will only return the inforamtion after the simulation was run and the data was saved in the databse. 
+
+```
+response = requests.get("http://localhost:5000/metadata", json={"id": simID})
+response.json()
+```
+Response: 
+```
+{'end_day': 1,
+ 'end_month': 6,
+ 'end_year': 2022,
+ 'height': 3.0,
+ 'infiltration_rate': 0.0019,
+ 'length': 5.0,
+ 'orientation': 0,
+ 'start_day': 1,
+ 'start_month': 6,
+ 'start_year': 2022,
+ 'width': 4.0,
+ 'zone_name': 'RL_Office_27214585'}
+```
+
+## Overview on all simulations in database
+
+Overview on all performed simulations. The response will return all results from the simulation_result collection. 
+
+```
+response = requests.get("http://localhost:5000/result/overview")
+response.json()
+```
+Response: 
+```
+[{'_id': '64993e61b7d43a7d7567209e',
+  'date_of_creation': '2023-06-26-09:29',
+  'filename': 'SimOutput37167285',
+  'input_simulation_id': '64993e3cb7d43a7d7567208f',
+  'status': 'done'},
+ {'_id': '64993cb7b7d43a7d7567208a',
+  'date_of_creation': '2023-06-26-09:22',
+  'filename': 'SimOutput31360632',
+  'input_simulation_id': '64993c94b7d43a7d7567207b',
+  'status': 'done'},
+ {'_id': '64993bd25b2b5cbc3201e909',
+  'date_of_creation': '2023-06-26-09:18',
+  'filename': 'SimOutput42576916',
+  'input_simulation_id': '64993b915b2b5cbc3201e8fa',
+  'status': 'done'},
+.... ..... .....
+```
+
+## Delete a simulation
+
+Example how to delete a simulation from the input_simulation collection in the database (The results will not be deleted). 
+
+```
+simID = "6498250b03aeca892a58ab98"
+response = requests.delete("http://localhost:5000/simulation", json={"id": simID})
+response.json()
+```
+Response: 
+```
+{'success': True}
+```
+
+## Delete result entry of a simulation
+
+```
+simID = "64984fee4b93c9929aa94e83"
+response = requests.delete("http://localhost:5000/result", json={"id": simID})
+response.json()
+```
+Response: 
+```
+{'success': True}
+```
+
+## Simulation with only an idf and epw file
+
+It is possible to run a simulation and only upload an idf and epw file. But different endpoints need to be used. Here is an example: 
+
+First initiate a new simulation. 
+
+```
+response = requests.post("http://localhost:5000/simulation")
+response.json()
+```
+Response: 
+```
+'64998256b04d0bcba8f22b40'
+```
+
+And set the sim ID
+
+```
+simID = response.json()
+print("The simulation ID is", simID)
+```
+Response: 
+```
+The simulation ID is 64998256b04d0bcba8f22b40
+```
+Upload the idf and epw file: 
+```
+idf_file = 'example_room.idf'                    # room model
+epw_file = 'DE_Munich_Theresienwiese.epw'        # weather data
+```
+```
+#idf file
+with open(idf_file, 'rb') as f:
+    encoded_object = base64.encodebytes(f.read()).decode('utf-8')
+
+    params = {
+     "id":   simID,
+     "data": encoded_object
+    }
+    response = requests.post("http://localhost:5000/idf", json=params)
+
+    response.json() if response.status_code == 200 else print("Failed with status code", response.status_code)
+```
+```
+#epw file
+with open(epw_file, 'rb') as f:
+    encoded_object = base64.encodebytes(f.read()).decode('utf-8')
+    
+    params = {
+     "id":   simID,
+     "data": encoded_object
+    }
+    response = requests.post("http://localhost:5000/weather", json=params)
+
+    response.json() if response.status_code == 200 else print("Failed with status code", response.status_code)
+```
+
+Start the simulation with the correct endpoint: 
+
+```
+response = requests.post("http://localhost:5000/simulation/control/onlyidf", json={"id": simID})
+response.json()
+```
+Response: 
+```
+{'success': True}
+```
+
+Check the status of the simulation.
+
+```
+response = requests.get("http://localhost:5000/simulation/control", json={"id": simID})
+response.json()
+```
+Response: 
+```
+{'status': 'done'}
+```
+
+Check if results are in database. This will fail until the simulation has completed successfully
+
+```
+response = requests.get("http://localhost:5000/result", json={"id": simID})
+response)
+```
+
+Return the status of an simulation which was run with only an dif and epw file (same response like simulation/control)
+
+```
+response = requests.get("http://localhost:5000/simulation/control/onlyidf", json={"id": simID})
+response.json()
+```
+Response: 
+```
+{'status': 'done'}
+```
+
+## Reopen an old simulation
+
+It is possible to reopen an old simulation. This means all the input data which was used in the simulation will be available again and it is possible to edit the parameter and start a new simulation. This will not change the data of the old simulation id. It will always initiate a new simulation. 
+
+To reopen an old simulation, the sim ID from the database is needed. The GET request will return all input data. This is necessary to copy the parameters for the simulation. 
+
+```
+simID = "64998548b04d0bcba8f22b4d"
+response = requests.get("http://localhost:5000/reopensim", json={"id": simID})
+response.json()
+```
+Response: 
+```
+[{'end_day': 1,
+  'end_month': 6,
+  'end_year': 2022,
+  'height': 3.0,
+  'infiltration_rate': 0.0019,
+  'length': 5.0,
+  'orientation': 0,
+  'start_day': 1,
+  'start_month': 6,
+  'start_year': 2022,
+  'width': 4.0,
+  'zone_name': 'RL_Office_27214585'},
+ '  Version,22.2;\n\n  Timestep,6;\n\n  LifeCycleCost:Parameters,\n    Life Cycle Cost Parameters,  !- Name\n    EndOfYear,               !- Discounting Convention\n    ConstantDollar,          !- Inflation Approach\n    0.03,                    !- Real Discount Rate\n    ,                        !- Nominal Discount Rate\n    ,                        !- Inflation\n    ,                        !- Base Date Month\n    2011,                    !- ..... ...... ...... .....
+```
+
+With the post request a new simulation is created in the database. The parameter here is the sim ID from the old simulation. This request retrieves all inforamtion from the old simulation and inserts it in the database with a new sim ID. It will return the sim ID from the new simulation. With this sim ID it is possible to edit the data or upload new files. The csv, idf and epw file were all automatically uploaded in the dadabase with the new sim ID. To change the dada use the reqeusts form above (upload files, set metadata, etc.)
 
 
+```
+response = requests.post("http://localhost:5000/reopensim", json={"id": simID})
+response.json()
+```
+Response: 
+```
+'64998873b04d0bcba8f22b76'
+```
+
+Copy now the sim ID and set the sim ID in the parameters. Copy the parameters from above (GET request)(but only parameter, not the information about the files) and now its possible run a new simulation. It is not required to upload the files here because the csv, idf and epw files from the old simulation were uploaded to the database. But it it necessary to insert here the paramerters again, because the POST reqeust from simulation/control expects the parameters in the reqeust body. 
+
+```
+simID = "64998873b04d0bcba8f22b76"
+params = {
+ "id": simID,
+ 'end_day': 1,
+ 'end_month': 6,
+ 'end_year': 2022,
+ 'height': 3.0,
+ 'infiltration_rate': 0.0019,
+ 'length': 5.0,
+ 'orientation': 0,
+ 'start_day': 1,
+ 'start_month': 6,
+ 'start_year': 2022,
+ 'width': 4.0,
+ 'zone_name': 'RL_Office_27214585'}
+
+response = requests.post("http://localhost:5000/simulation/control", json=params)
+response.json()
+```
+Response: 
+```
+{'success': True}
+```
+Check status of simulation
+```
+response = requests.get("http://localhost:5000/simulation/control", json={"id": simID})
+response.json()
+```
+Response: 
+```
+{'status': 'done'}
+```
+## Simulation Series
+
+A simulation series will run mulitple simulation with the same idf, epw  and csv file but the room parameters can be adjusted. Here is an example on how to create a series. 
+Information: a series will take some time depending on the variations! Uploads of file, createa simulation etc. will all take more time than a single simulation!
+
+```
+params = {
+    "height": 3,
+    "height_max": 8,
+    "height_iter": 1,
+    "length": 10,
+    "length_max": 12,
+    "length_iter": 1,
+    "width": 2,
+    "width_max": 6,
+    "width_iter": 1,
+    "orientation": 0,
+    "orientation_max": 360,
+    "orientation_iter": 90,
+    "start_day": 17,
+    "start_month": 5,
+    "start_year": 2023,
+    "end_day": 17,
+    "end_month": 5,
+    "end_year": 2023,
+    "infiltration_rate": 0.0019,
+    "infiltration_rate_max": 0.0019,
+    "infiltration_rate_iter": 0
+}
+response = requests.post("http://localhost:5000/series/create", json=params)
+response.json()
+```
+Response: 
+```
+'649995ebb04d0bcba8f239a4'
+```
+
+Set sim ID
+
+```
+sim_ser_id = response.json()
+print(sim_ser_id)
+```
+Response: 
+```
+649995ebb04d0bcba8f239a4
+```
+
+Height: 3 - 4 - 5 - 6 - 7 - 8 Length: 10 - 11 - 12 Width: 2 - 3 - 4 - 5 - 6 Orientation: 0 - 90 - 180 - 270 - 360 => 450 Variationen (6*3*5*5)
+This example will run 450 simulation. Then the simulation is startet it will take a while!
+
+Add files to simulation 
+
+```
+idf_file = 'example_room.idf'                    # room model
+epw_file = 'DE_Munich_Theresienwiese.epw'        # weather data
+csv_file = 'occupancy_1day.csv'                  # occupancy data
+```
+```
+with open(csv_file, 'rb') as f:
+    encoded_object = base64.encodebytes(f.read()).decode('utf-8')
+
+    params = {
+        "id": sim_ser_id,
+        "data": encoded_object
+    }
+    response = requests.post("http://localhost:5000/series/occupancy", json=params)
+
+response.json() if response.status_code == 200 else print("Failed with status code", response.status_code)
+```
+```
+with open(idf_file, 'rb') as f:
+    encoded_object = base64.encodebytes(f.read()).decode('utf-8')
+
+    params = {
+        "id": sim_ser_id,
+        "data": encoded_object
+    }
+    response = requests.post("http://localhost:5000/series/idf", json=params)
+
+response.json() if response.status_code == 200 else print("Failed with status code", response.status_code)
+```
+```
+with open(epw_file, 'rb') as f:
+    encoded_object = base64.encodebytes(f.read()).decode('utf-8')
+
+    params = {
+        "id": sim_ser_id,
+        "data": encoded_object
+    }
+    response = requests.post("http://localhost:5000/series/weather", json=params)
+
+response.json() if response.status_code == 200 else print("Failed with status code", response.status_code)
+```
+
+Start a simulation series
+
+```
+response = requests.post("http://localhost:5000/series/run", json={"id": sim_ser_id})
+response.json()
+```
+Response: 
+```
+{'success': True}
+```
+Return status of simulation
+
+```
+response = requests.get("http://localhost:5000/series/run", json={"id": sim_ser_id})
+response.json()
+```
+```
+{'status': 'in Progress'}
+```
+
+View results of series simulation run
+
+```
+response = requests.get("http://localhost:5000/series/results", json={"id": sim_ser_id})
+response.json()
+#result_list = response.json() if response.status_code == 200 else print("Failed with status code", response.status_code)
+#print(result_list)
+```
