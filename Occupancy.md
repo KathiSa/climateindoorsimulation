@@ -17,29 +17,37 @@ nav_order: 4
 ## Occupancy settings
 
 ![Occupancy Start Page](images/ocp_start_page.png)
+*Figure 1: occupancy start page*
+
 1. "Return to home" This Button will redirect to the landing page
 2. "Back" This button goes back to the previous page "File Input"
-3. "Proceed to simulation Parameters" Redirects to the next page "Room Parameters" (only if timeframe and occupancy file are uploaded)
+3. "Proceed to simulation Parameters" Redirects to the next page "Room" (only if timeframe and occupancy file are uploaded)
 
-After the idf and epw file are uploaded the next step is to create a timeframe and upload an occupancy of the room. This page let the user set the timeframe and a file with occupany information. With the buttons on the bottom is is possible to navigate to the previous page, back to the landing page and proceed to the next page. To proceed to the next page, the simulation parameter page, all information on this site need to be uploaded or created. It the timeframe or file is missing it is not possible to proceed to the next site. 
+After the idf and epw file are uploaded the next step is to create a timeframe and upload an occupancy of the room. This page let the user set the timeframe and a create or upload a file with occupany information. With the buttons on the bottom is is possible to navigate to the previous page, back to the landing page and proceed to the next page. To proceed to the next page, the simulation room parameter page, all information on this site need to be uploaded or created. If the timeframe or file is missing it is not possible to proceed to the next site. 
 
 ## Set timeframe
 ![Occupancy set Timeframe](images/ocp_timeframe.png)
+*Figure 2: occupancy - set timeframe*
+
 1. "Start date":  Set start date for the simulation
 2. "End date": Set end date for the simulation
 3. "Enter time frame":  Saves timeframe
 
-Here the user need to enter a timeframe for the simulation. Be aware that the timeframe should match the occupancy upload. If the timeframe is longer than the occupancy will be filled up with no people and closed windows. If the occupancy is longer than the timeframe the occupancy will be cut of. 
+Here the user needs to enter a timeframe for the simulation. Be aware that the timeframe should match the occupancy upload. If the timeframe is longer than the occupancy, the remaining days will be filled up with no people and closed windows. If the occupancy is longer than the timeframe the occupancy will be cut of. 
 
-IMPORTANT! It is not possible to simulate a timeframe longer than a year. Is is also only possible to simulate dates within a year. For example, it is not possible to simulate a timeframe from 12.12.2023 - 15.01.2023. This is due to EnergyPlus. EnergyPlus only saved the day and month but not the year for the simulation! The maximal lenght  for a simulation is therefore exactly a year. 
+IMPORTANT! It is not possible to simulate a timeframe longer than a year. Is is only possible to simulate dates within a year. For example, it is not possible to simulate a timeframe from 12.12.2023 - 15.01.2023. This is due to EnergyPlus. EnergyPlus only saved the day and month but not the year for the simulation! The maximal lenght for a simulation is therefore exactly a year. 
 
 
 ![Occupancy timeframe saved](images/ocp_timeframe_saved.png)
+*Figure 3: occupancy - saved timeframe*
+
 1. Showcases the selected and saved timeframe
 2. "Delete selected timeframe": To change current timeframe, delete timeframe and enter new one
 
 ## Upload custom occupancy file
 ![Occupancy upload file](images/ocp_upload_file.png)
+*Figure 4: occupancy - upload file*
+
 1. "Choose file": Button will open directory from home computer to choose a file to upload
 2. "Upload custom occupancy": After selecting a file, click here to upload file.
 
@@ -66,6 +74,7 @@ The header should look like this.
 * The separator need to be | like in the following screenshot
 
 ![occupancy csv file format](images/ocp_upload_file_format.jpg)
+*Figure 5: occupancy - example file*
 
 
 An example file for one day can be found [here](https://github.com/KathiSa/indoorclimatesimulation/blob/main/resources/occupancy_1day.csv). 
@@ -77,6 +86,8 @@ Another example file with no data for occupants and windows can be found [here](
 After the file is successfuly uploaded the following message with the filename is displayed. 
 
 ![Occupancy upload file success](images/ocp_upload_success.png)
+*Figure 6: occupancy - successful upload*
+
 1. This message with the name of the occupancy file will be displayed if it was uploaded successfully.
 
 ## Create custom occupancy
@@ -84,17 +95,23 @@ After the file is successfuly uploaded the following message with the filename i
 To create a custom occupancy without uploading a file choose the button "Create custom occupancy". 
 
 ![Occupancy create custom occupancy](images/ocp_create_custom.png)
+*Figure 7: occupancy - create custom occupancy*
+
 1. "Create custom occupancy": Button to change interface for enter custom occupancy
 
 The following table will be displayed. To go back to the previous page and upload a file click on "Back to coosing an occupancy file". With the button "add row" a new row will be added to the table. 
 
 ![Custom Occupancy start](images/ocp_custom_start.png)
+*Figure 8: custom occupancy - start page*
+
 1. "Add row": Add a new row to the table to enter time, occupancy and window information
 2. "Back to coosing an occupancy file": Goes back to website to upload a occupancy file.
 
 
 
 ![Custom Occupancy Table](images/ocp_custom_table.png)
+*Figure 9: custom occupancy table*
+
 1. "Date": Enter Date. Date must match timeframe from above
 2. "Start": Start time when people enter room, window is opend or both. 
 3. "End": End time when people leave room, close window or both. 
@@ -112,6 +129,8 @@ The information which needs to be entered is first the date. This date should ma
 In the example of the screenshot the number 2 will be inserted in the occupancy file for the occupants column and number 1 in the win1 column for the time from 07:00:00 till 11:00:00. All time slots where no data was entered will be filled up with 0 occupants and 0 for closed windows. 
 
 ![Custom Occupancy success upload](images/ocp_custom_success.png)
+*Figure 10: custom occupancy - successful upload*
+
 1. "Create Occupancy": After the data was verified in the table click "Create Occupancy" to upload data.
 2. "Success - Successfully created a custom occupancy": This message will be display after occupancy was created successfully
 
@@ -119,4 +138,6 @@ To upload the custom occupancy data it is necesssary to click the button "Create
 
 
 ![Custom Occupancy filename](images/ocp_custom_filename.png)
+*Figure 11: custom occupancy - filename*
+
 1. If the user click "Back to coosing an occupancy file" after a Custom occupancy table was successfuly uplaoded the data is saved in the file "Simulation_OCP.csv". To change this and upload a new file click "choose file", the "Simulation_OCP.csv" file be deleted and a new file is uploaded.
