@@ -68,6 +68,8 @@ python -m app
 
 Your frontend has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
 
+INFORMATION: If you started only the frontend and not the backend, running a simulation will not work! The frontend does not work without the backend!
+
 Note: You can find a step by step guide including pictures below.
 
 
