@@ -60,14 +60,14 @@ The configuration of the most important software parameters for the backend can 
 
 | Parameter | Description | Section |
 |----------|----------|----------|
-|epluspath|Pfad zur EnergyPlus Installation auf der lokalen Maschine. Dieser Pfad muss hier angegeben werden. Beispiel: C:/EnergyPlusV22-2-0| EnergyPlus
-|iddpath|Pfad zur .idd Datei von EnergyPlus. Dieser Pfad muss angegeben werden, um Simulationen starten zu können. Der Pfad muss hierbei in den Ordner der EnergyPlus Installation führen. Idd-Files, welche in anderen Verzeichnissen liegen, werden zu Fehlermeldungen führen. Beispiel: C:/EnergyPlusV22-2-0/Energy+.idd|EnergyPlus|
-|idfzone|Die zu nutzende Zone innerhalb einer .idf Datei. Dieser Wert liegt standardmäßig bei „RL_Office_27214585“. Dieser Wert basiert auf dem Standard-IDF Gebäude3.idf. Wird ein komplett eigenes .idf genutzt und nicht nur Raum und Fenstermaße angepasst, so muss dieser Name entsprechend vom Admin geändert werden. Beispiel: RL_OFFICE-27214585|EnergyPlus|
-|co2outdoorvalue|Ergebnis der WarmUp Simulation. Parameter gibt die Ausgangs Co2 Werte an, welche beim Start einer Simulation bereits gelten sollen. Angabe des Wertes im ppm. Standardmäßig auf 437 eingestellt. Wird benötigt, um Plots der Co2 Werte erstellen zu können.Beispiel: 437|EnergyPlus|
-|co2generationrate|Zugrundeliegende Standard-Co2 Generationsrate. Standardmäßig auf 0.0000000382 eingestellt. Beispiel: 0.0000000382|EnergyPlus|
-|activitylevel|Das Aktivitätslevel möglicher vorhandener Personen in einer Simulation. Basiert auf der American Society of Heating, Refrigerating and Air-Conditioning (ANSHRAE) des American National Standard Institutes (ANSI). Aktivitätslevel beschreiben in Tätigkeiten einer Person und die damit verbundenen Generationsraten von Co2 in einem Raum. Tabelle ersichtlich in ANSI/ASHRAE 55-2010. Standardmäßig auf 108 (Mischung aus 55 % Lesen, 40% Tippen, 3% Ablage sitzend und 2% Umhergehen) eingestellt. Beispiel: 108|EnergyPlus|
-|outputdirectoryname|Name des zu erstellenden und zu nutzenden Output Directorys für Output-EnergyPlus Files. Standardmäßig auf „eppy_output“ eingestellt. Beispiel: eppy_output|EnergyPlus|
-|connection_string|Pfad, um sich mit der Raumklima MongoDB zu verbinden. Standardmäßig auf Port der Standardinstallation mit Docker eingestellt. Der lokal verfügbare Container Port muss angegeben werden. Das vorgeschaltete „mongodb://“ wird immer benötigt und sollte nach nicht abgeändert werden. Beispiel: mongodb://localhost:27017|MongoDB|
+|epluspath|Path to the EnergyPlus installation on the local machine. This path must be specified here. Example: C:/EnergyPlusV22-2-0| EnergyPlus
+|iddpath|Path to the .idd file of EnergyPlus. This path must be specified to start simulations. The path must lead to the folder of the EnergyPlus installation. Idd-files which are located in other directories will lead to error messages. Example: C:/EnergyPlusV22-2-0/Energy+.idd|EnergyPlus|
+|idfzone|The zone to use within an .idf file. This value defaults to "RL_Office_27214585". This value is based on the default .idf Gebäude3.idf. If a completely custom .idf is used and not only room and window dimensions are adjusted, this name must be changed accordingly by the admin. Example: RL_OFFICE-27214585|EnergyPlus|
+|co2outdoorvalue|Result of the WarmUp simulation. Parameter specifies the output Co2 values that should already apply at the start of a simulation. Specification of the value in ppm. Set to 437 by default. Is needed to create plots of the Co2 values. Example: 437|EnergyPlus|
+|co2generationrate|Underlying default Co2 generation rate. Set to 0.0000000382 by default. Example: 0.0000000382|EnergyPlus|
+|activitylevel|The activity level of possible existing people in a simulation. Based on the American Society of Heating, Refrigerating and Air-Conditioning (ANSHRAE) of the American National Standard Institute (ANSI). Activity levels describe in activities of a person and the associated generation rates of Co2 in a space. Table shown in ANSI/ASHRAE 55-2010. Default set to 108 (mix of 55% reading, 40% typing, 3% filing sitting and 2% walking around). Example: 108|EnergyPlus|
+|outputdirectoryname|Name of the output directory to be created and used for output EnergyPlus files. Set to "eppy_output" by default. Example: eppy_output|EnergyPlus|
+|connection_string|Path to connect to the room climate MongoDB. Set by default to port of default installation with Docker. The locally available container port must be specified. The upstream "mongodb://" is always required and should be changed after not. Example: mongodb://localhost:27017|MongoDB|
 
 
 The configuration of the parameters for the frontend will be made in the frontend_config.ini. This file is located in the folder "indoor-climate-simulation/frontend".
@@ -82,5 +82,5 @@ The configuration of the parameters for the frontend will be made in the fronten
 |zone|This value is by default "RL_Office_27214585". This value is based on the standard idf Gebäude3.idf. If a completely own .idf is used and not only room and window dimensions are adjusted, this name must be changed accordingly by the admin. |simulation|
 
 
-
+For more information regarding configurations (e.g. config.ini), please refer to .
 
