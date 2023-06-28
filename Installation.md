@@ -70,17 +70,16 @@ The configuration of the most important software parameters for the backend can 
 |connection_string|Pfad, um sich mit der Raumklima MongoDB zu verbinden. Standardmäßig auf Port der Standardinstallation mit Docker eingestellt. Der lokal verfügbare Container Port muss angegeben werden. Das vorgeschaltete „mongodb://“ wird immer benötigt und sollte nach nicht abgeändert werden. Beispiel: mongodb://localhost:27017|MongoDB|
 
 
-Die Konfiguration der Parameter für das Frontend werden in der frontend_config.ini 
-vorgenommen. Diese Datei befindet sich im Ordner „„raumklimadaten-simulation-a1/frontend
+The configuration of the parameters for the frontend will be made in the frontend_config.ini. This file is located in the folder "indoor-climate-simulation/frontend".
 
 
 |Parameter|Beschreibung|Bereich|
 |-|-|-|
-|IP|Die IP Adresse unter der das Frontend erreichbar ist. |Frontend|
-|Port|Der Port unter dem das Frontend erreichbar ist. |Frontend|
-|Adress|Die Adresse unter der das Frontend mit dem Backend kommunizieren kann. |Backend|
-|Port|Der Port unter dem das Frontend mit dem Backend kommunizieren kann|Backend|
-|Zone|Dieser Wert liegt standardmäßig bei „RL_Office_27214585“. Dieser Wert basiert auf dem Standard-IDF Gebäude3.idf. Wird ein komplett eigenes .idf genutzt und nicht nur Raum und Fenstermaße angepasst, so muss dieser Name entsprechend vom Admin geändert werden. |Simulation|
+|ip|Die IP Adresse unter der das Frontend erreichbar ist. |Frontend|
+|port|Der Port unter dem das Frontend erreichbar ist. |Frontend|
+|adress|Die Adresse unter der das Frontend mit dem Backend kommunizieren kann. |Backend|
+|port|Der Port unter dem das Frontend mit dem Backend kommunizieren kann|Backend|
+|zone|Dieser Wert liegt standardmäßig bei „RL_Office_27214585“. Dieser Wert basiert auf dem Standard-IDF Gebäude3.idf. Wird ein komplett eigenes .idf genutzt und nicht nur Raum und Fenstermaße angepasst, so muss dieser Name entsprechend vom Admin geändert werden. |Simulation|
 
 
 
