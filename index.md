@@ -16,3 +16,4 @@ This documentation provides you with information about the tool Indoor Climate S
 This program consists of two parts: the frontend and the backend. The frontend includes a web server with a GUI to control the simulation. The backend includes the simulation via the “eppy” Python package. Data of the simulations is saved in an MongoDB instance. The backend provides additional functionalities with a REST API.
 
 ![Architecture](images/Architecture.jpg)
+*Architecture*
