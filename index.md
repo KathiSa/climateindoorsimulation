@@ -31,7 +31,7 @@ Our software system, the 'EnergyPlus Room Simulator' tool, provides a user-frien
 
 (Author: Katharina Sammet)
 
-The tool can support science-related tasks like detecting occupancy in building rooms. In [Paper] the authors discussed an approach to use machine learning to detect presence and number of people in a room. They proposed that an approach which combines real world data and simulation data can reduce the required training data by half and contribute to a more robust model. Our tool can provide the needed simulation data for this technique and offers users without in-depth, technical knowledge to generate simulations and as well a REST API which can be used to automate simulations. 
+The tool can support science-related tasks like detecting occupancy in building rooms. In [this](https://dl.acm.org/doi/10.1145/3408308.3431124) paper the authors discussed an approach to use machine learning to detect presence and number of people in a room. They proposed that an approach which combines real world data and simulation data can reduce the required training data by half and contribute to a more robust model. Our tool can provide the needed simulation data for this technique and offers users without in-depth, technical knowledge to generate simulations and as well a REST API which can be used to automate simulations. 
 
 ![Screenshot](images/Room.jpg)
 *EnergyPlus Room Simulator (Screenshot)*
