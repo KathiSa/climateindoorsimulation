@@ -11,7 +11,7 @@ Author: Sophia Weißenberger
 Now that you have successfully specified the input data as well as the time period and room occupancy, you can make selected adjustments in the IDF file in the following step. It is important to emphasize that these adjustments are not mandatory. If no changes are made, the values in the the IDF file will remain unchanged, or default values will be used and you can move on to the next step (Fig. 1, marker 3).
 
 ![Figg. 1](images/RoomParameter1Marker.PNG)
-*Figure 1: adjust room parameters*
+*Figure 1: Room - adjust room parameters*
 
 1. Open Adjust Room Dimension (+ IDF visualisation)
 2. Open Adjust Infiltration Rate
