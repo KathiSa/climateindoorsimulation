@@ -75,11 +75,11 @@ The configuration of the parameters for the frontend will be made in the fronten
 
 |Parameter|Beschreibung|Bereich|
 |-|-|-|
-|ip|Die IP Adresse unter der das Frontend erreichbar ist. |frontend|
-|port|Der Port unter dem das Frontend erreichbar ist. |frontend|
-|adress|Die Adresse unter der das Frontend mit dem Backend kommunizieren kann. |backend|
-|port|Der Port unter dem das Frontend mit dem Backend kommunizieren kann|backend|
-|zone|Dieser Wert liegt standardmäßig bei „RL_Office_27214585“. Dieser Wert basiert auf dem Standard-IDF Gebäude3.idf. Wird ein komplett eigenes .idf genutzt und nicht nur Raum und Fenstermaße angepasst, so muss dieser Name entsprechend vom Admin geändert werden. |simulation|
+|ip|The IP address where the frontend can be reached. |frontend|
+|port|The port where the frontend can be reached. |frontend|
+|adress|The address where the frontend can communicate with the backend. |backend|
+|port|The port where the frontend can communicate with the backend. |backend|
+|zone|This value is by default "RL_Office_27214585". This value is based on the standard idf Gebäude3.idf. If a completely own .idf is used and not only room and window dimensions are adjusted, this name must be changed accordingly by the admin. |simulation|
 
 
 
