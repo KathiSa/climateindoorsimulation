@@ -73,6 +73,28 @@ INFORMATION: If you started only the frontend and not the backend, running a sim
 Note: You can find a step by step guide including pictures below.
 
 
+### Starting Spider (optional): 
+
+Open another command window and navigate into your project folder. 
+
+Execute the following: 
+
+```
+cd ladybug_spider/spider-idf-viewer/v-2020-10-09/
+```
+
+Execute the following:  
+
+```
+node server.js
+```
+
+
+The Spider server has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation and use the frontend functionality to visualise your idf file in the step "Room".
+
+Note: You can find a step by step guide including pictures below.
+
+
 ## Start everything at the same time (with pictures)
 
 Step 1: Open a new command window.
@@ -108,7 +130,7 @@ You should see the following:
 
 ![Figg. 6](images/ProgramStartAll6.PNG)
 
-## Start frontend and backend seperately (with pictures) 
+## Start frontend, backend and spider seperately (with pictures) 
 
 Step 1: Open a new command window.
 
@@ -161,6 +183,30 @@ python -m app
 ![Figg. 1](images/ProgramStartFB7.PNG)
 
 Your frontend has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation. 
+
+
+Step 5 (optional): Start spider
+
+Repeat Step 1 and 2: Open a new command window and navigate to the project folder. 
+
+
+Execute the following: 
+
+```
+cd ladybug_spider/spider-idf-viewer/v-2020-10-09/
+```
+
+![Figg. 1](images/ProgramStartFB7.PNG)
+
+Execute the following:  
+
+```
+node server.js
+```
+
+![Figg. 1](images/ProgramStartFB7.PNG)
+
+The Spider server has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation and use the frontend functionality to visualise your idf file in the step "Room".
 
 # Start Program with Linux
 
