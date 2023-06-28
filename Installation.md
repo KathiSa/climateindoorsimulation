@@ -51,14 +51,10 @@ IP = 0.0.0.0
 Port = 80
 ```
 
-Durch die eingestellt IP-Adresse 0.0.0.0 läuft der Webserver auf allen verfügbaren Netzwerk Adaptern. Oft sind innerhalb eines Netzwerks nur wenige Ports durch die Firewall 
-zugelassen. Standardmäßig ist im Frontend der Port 100 konfiguriert, da dieser kein 
-Standard ist und daher oft blockiert wird, empfiehlt es sich den Port auf den Standard http Port 80 zu ändern.
-Für die genauer Abfolge der Befehle um die komplette Anwendung, sowie EnergyPlus unter 
-Linux zu installieren bitte die README.md Datei des Projekts beachten.
+By setting the IP address to 0.0.0.0, the web server runs on all available network adapters. Often only a few ports are allowed by the firewall within a network. The port 100 is configured in the frontend as default. Because this is not standard and therefore is often blocked, it is recommended to change the port to the standard http port 80. For the exact sequence of commands to install the complete application and EnergyPlus on Linux please refer to the README.md file of the project.
 
 
-# Parametrisierung & Konfiguration
+# Parameterization & Configuration
 
 Die Konfiguration der wichtigsten Softwareparameter für das Backend kann in der config.ini, 
 welche sich im Ordner „raumklimadaten-simulation-a1/backend“ befindet, vorgenommen 
