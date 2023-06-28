@@ -68,10 +68,10 @@ The header should look like this.
 
 
 * Day: The first column contains the day (0 equals day 1, 1 equals day 2, etc.)
-* Time: The column time includes every minute of the day
+* Time: The column time includes every minute of the day (for example see example files!)
 * Occupants: This column provides the number of occupants which are present every minute in the room
 * win1: The colum win1 contains 0 or 1, 0 for window closed and 1 for window opend. This information is available for every minute of the day.
-* The separator need to be | like in the following screenshot
+* The separator need to be '|' like in the following screenshot
 
 An occupancy file need to follow this format otherwise an error will occur when the file is uploaded. 
 
