@@ -3,7 +3,7 @@ layout: default
 title: Installation
 nav_order: 2
 ---
-(Author: Diana) 
+(Author: Diana Marjanovic) 
 # Installation
 
 Requirements to install the software Indoor Climate Simulation:
