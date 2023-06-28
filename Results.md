@@ -9,6 +9,7 @@ Author: Sophia Weißenberger
 # Results
 
 ![Figg. 1](images/ViewResults1.PNG)
+*Figure 1: View Results*
 
 
 After a successful simulation, you can display several simulated measured values in a graphical representation. Currently, graphs are offered for the following values:
@@ -21,7 +22,7 @@ After a successful simulation, you can display several simulated measured values
   * Window openings
   * Occupancy
 
-As soon as you open the results page (View Results) you get a selection screen, on which you have several setting options. We offer you the option to to design the graphs according to your needs. You can select the following:
+As soon as you open the results page (View Results) you get a selection screen, on which you have several setting options. We offer you the option to design the graphs according to your needs. You can select the following:
 
   * Graph with one or two measured values displayed
      * First measured value is plotted on the Y-axis 1
@@ -42,6 +43,7 @@ The graphs you create open in a separate window/browser tab. In this one you can
 For easier navigation, all possible interaction are also displayed at the upper right edge of the graph (Fig 2, marker 1).
 
 ![Figg. 2](images/ViewResults3Marker.PNG)
+*Figure 2: Example Graph*
 
 1. Interaction menu
 
@@ -50,6 +52,7 @@ If you no longer need the graph and want to create a new plot, simply close the 
 ## How to create a plot
 
 ![Figg. 3](images/ViewResults2Marker.PNG)
+*Figure 3: View Result settings for plots*
 
 Step-by-step instructions for creating individual graphs
 1. Select the first measured value (Y-axis (1)) (Fig. 3, marker 1)
@@ -58,15 +61,14 @@ Step-by-step instructions for creating individual graphs
 4. (Optional) Give each measured value an individual name (Fig. 3, marker 4)
 5. (Optional) Give an individual name to the created graph (Fig. 3, marker 5)
 6. Click on the "Generate Plot" button (Fig. 3, marker 6)
+7. Download the simulation results via corresponding buttons as CSV file or ESO file
 
 ## How to download the results
-
-7. Download the simulation results via corresponding buttons as CSV file or ESO file
    
 If you want to use the simulated values furthermore yourself, we offer a download of all the data in CSV and ESO format. To do this, click on the "download csv" and "download eso" buttons (Fig. 3, marker 7).
 
 ## Proceed
-When you have finished creating the graphs, you have three options with the buttons buttons at the bottom of the screen:
+When you have finished creating the graphs, you have three options with the buttons at the bottom of the screen:
    * Return to the landing page (Home) using the "Return to landing page" button.
-   * Go a step back using the "Back" button to return to the step before.
+   * Go a step back using the "Back" button to return to the step before (Be aware: the sim ID of the last run simulation is not shown anymore!).
    * View the simulation history using the "Show Simulation History" button.
