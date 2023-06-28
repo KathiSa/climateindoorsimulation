@@ -311,3 +311,58 @@ You should see the following:
 
 ![Figure. 5](images/Start1_5.png)
 
+
+## Start frontendand backend seperately (with pictures) 
+
+Step 1: Open a new command window.
+
+![Figure. 1](images/Start1_1.png)
+
+Step 2: Navigate to the project folder.
+
+(Note: File path in the picture will differ and is only for visualisation purposes.)
+
+![Figure. 2](images/Start1_2.png)
+
+Step 3: Start backend 
+
+Execute the following: 
+
+```
+cd backend
+```
+
+![Figure. 3](images/Start2_1.png)
+
+Execute the following: 
+
+```
+python3 -m app
+```
+
+![Figure. 4](images/Start2_2.png)
+
+Your backend has been started. 
+
+Step 4 (optional): Start frontend 
+
+Repeat Step 1 and 2: Open a new command window and navigate to the project folder. 
+
+Execute the following: 
+
+```
+cd frontend
+```
+
+![Figure. 5](images/Start2_3.png)
+
+Execute the following: 
+
+```
+python3 -m app
+```
+
+The result should be like backend!
+
+Your frontend has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation. 
+
