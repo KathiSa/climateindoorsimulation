@@ -9,6 +9,7 @@ Author: Sophia Weißenberger
 # File Input
 
 ![Figg. 1](images/FileUpload1Marked.PNG)
+*Figure 1: File Input*
 
 1. Steps in the Simulation Process
 2. "+" button, to open "Use example IDF File" segment
@@ -27,6 +28,7 @@ In the GUI you have two options to provide a suitable IDF file for the simulatio
 ### Step-by-step instructions for choosing the required IDF file
 
 ![Figg. 2](images/FileUpload3Marked.PNG)
+*Figure 2: File Input - open IDF section*
 
 1. "Use example" button
 2. "Datei auswählen"/ "Select File" button
@@ -68,6 +70,7 @@ If you do not have access to weather data in EPW format, we refer you to followi
 ### Step-by-step instructions for choosing the required EPW file
 
 ![Figg. 3](images/FileUpload5Marked.PNG)
+*Figure 3: File Input - open EPW section*
 
 1. "Use example" button
 2. "Datei auswählen"/ "Select File" button
@@ -102,6 +105,7 @@ After successfully uploading the IDF and EPW files (Fig. 4, marker 1), there are
 2. With the "Start simulation with only provided idf and epw file" button you can skip the remaining steps and jump directly to the step where you can start the simulation without having to make any further configurations (Fig. 4, marker 3).
 
 ![Figg. 4](images/FileUpload6Marker.PNG)
+*Figure 4: File Input - Successful upload*
 
 1. Uploaded files
 2. "Proceed to occupancy" button, to proceed to the next step
@@ -111,4 +115,5 @@ If you choose "Start simulation with only provided idf and epw file" you will be
 
 
 ![Figg. 5](images/FileUpload7.PNG)
+*Figure 5: Overview*
 
