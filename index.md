@@ -27,7 +27,7 @@ Nowadays, people spend a lot of time indoors. Be it during work in offices, thei
 # Motivation
 (Author: Diana Marjanovic) 
 
-Our software system, the 'EnergyPlus Room Simulator' tool, provides a user-friendly GUI and allows people without in-depth technical knowledge to execute room climate simulations with EnergyPlus. Our User Interface (see Figure 1) helps step-by-step to quickly create indoor climate simulations. The different options for configuring a simulation as well as the possibility to have the simulation results output for analysis using graphs that can be adjusted to one's requirements show the versatility of our tool.
+Our software system, the 'EnergyPlus Room Simulator' tool, provides a user-friendly GUI and allows people without in-depth technical knowledge to execute room climate simulations with EnergyPlus. Our User Interface (see screenshot below) helps step-by-step to quickly create indoor climate simulations. The different options for configuring a simulation as well as the possibility to have the simulation results output for analysis using graphs that can be adjusted to one's requirements show the versatility of our tool.
 
 (Author: Katharina Sammet)
 
