@@ -128,7 +128,7 @@ Step 5: Open [http://localhost:100/](http://localhost:100/) in your browser
 
 You should see the following: 
 
-![Figg. 6](images/ProgramStartAll6.PNG)
+![Figg. 6](images/ProgramStartAllSpider.PNG)
 
 ## Start frontend, backend and spider seperately (with pictures) 
 
@@ -196,7 +196,7 @@ Execute the following:
 cd ladybug_spider/spider-idf-viewer/v-2020-10-09/
 ```
 
-![Figg. 1](images/ProgramStartFB7.PNG)
+![Figg. 1](images/ProgramStartSpider.PNG)
 
 Execute the following:  
 
@@ -204,7 +204,7 @@ Execute the following:
 node server.js
 ```
 
-![Figg. 1](images/ProgramStartFB7.PNG)
+![Figg. 1](images/ProgramStartSpider2.PNG)
 
 The Spider server has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation and use the frontend functionality to visualise your idf file in the step "Room".
 
