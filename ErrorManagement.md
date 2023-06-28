@@ -3,7 +3,7 @@ layout: default
 title: Error Management
 nav_order: 5
 ---
-(Author: Philipp)
+(Author: Philipp Bogdain)
 # Error Management
 
 This part of the documentation is dedicated to the error management.  
