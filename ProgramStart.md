@@ -17,11 +17,18 @@ You can find a step by step guide including pictures below.
 
 Open a command window and navigate into your project folder. 
 
-Execute the following: 
+Execute the following (for Windows): 
 
 ```
  python install.py
 ```
+
+Execute the following (for Linux): 
+
+```
+ python3 install.py
+```
+
 
 Your backend and frontend has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
 
