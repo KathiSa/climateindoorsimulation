@@ -8,7 +8,7 @@ has_children: true
 (Author: Sophia Weißenberger) 
 # Program Features
 
-This web application for EnergyPlus provides the user with the following functionality:
+This web application provides the user with the following functionality:
 
    * Simulation configuration
       * Upload of an IDF file
@@ -19,6 +19,7 @@ This web application for EnergyPlus provides the user with the following functio
       * Upload of an occupancy CSV file or creating a custom occupancy
       * Adjustment of room parameters (room dimensions and infiltration rate)
    * Running the simulation
+   * Running a simulation only with an IDF and EPW file without further adjustments
    * Simulation results
       * Display of selected measured values in graphs
          * Zone air temperature
@@ -32,3 +33,6 @@ This web application for EnergyPlus provides the user with the following functio
       * Overview on previously run simulations
       * Reopen previous simulation results
       * Reopen previous simulations
+    * REST API
+      * include all functions from above
+      * run a simulation series with multiple variations of room variables
