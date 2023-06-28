@@ -43,7 +43,7 @@ The graphs you create open in a separate window/browser tab. In this one you can
 For easier navigation, all possible interaction are also displayed at the upper right edge of the graph (Fig 2, marker 1).
 
 ![Figg. 2](images/ViewResults3Marker.PNG)
-*Figure 2: Example Graph*
+*Figure 2: Example Plot*
 
 1. Interaction menu
 
