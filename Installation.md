@@ -25,12 +25,7 @@ To install the software for the first time, the "install.py" script in the indoo
 
 Input
 
-Um Simulationen mit EnergyPlus durchzuführen, werden einige Daten benötigt. Konkret 
-handelt es sich um eine .idf Datei, eine .csv Datei der Occupancy und um einige benötigte 
-Metadaten wie Startdatum, Enddatum, Infiltrationsrate, Raum und Fenstermaße. All diese 
-Daten werden persistent in der MongoDB Collection simulation-input gespeichert. Diese 
-Einträge werden dabei noch mit einem Filename und einem Zeitstempel versehen, welcher 
-ebenfalls gespeichert wird. 
+To run simulations with EnergyPlus, some data is needed. Specifically, it is an .idf file, a .csv file of Occupancy and some required metadata such as start date, end date, infiltration rate, room and window dimensions. All this data is persistently stored in the MongoDB Collection simulation-input. These entries get a filename and a timestamp, which is also stored.
 
 
 Output
