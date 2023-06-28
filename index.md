@@ -17,3 +17,10 @@ This program consists of two parts: the frontend and the backend. The frontend i
 
 ![Architecture](images/Architecture.jpg)
 *Architecture*
+
+
+# Introduction
+(Author: Diana Marjanovic) 
+
+# Motivation
+(Author: Diana Marjanovic & Katharina Sammet) 
