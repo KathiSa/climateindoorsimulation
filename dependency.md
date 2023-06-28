@@ -3,7 +3,7 @@ layout: default
 title: Dependencies
 nav_order: 6
 ---
-(Author: Philipp) 
+(Author: Philipp Bogdain) 
 # Dependencies
 
 The following Python libraries are installed with the first installation:
