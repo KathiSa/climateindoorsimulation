@@ -56,9 +56,7 @@ By setting the IP address to 0.0.0.0, the web server runs on all available netwo
 
 # Parameterization & Configuration
 
-Die Konfiguration der wichtigsten Softwareparameter für das Backend kann in der config.ini, 
-welche sich im Ordner „raumklimadaten-simulation-a1/backend“ befindet, vorgenommen 
-werden. Folgende Parameter können eingestellt werden:
+The configuration of the most important software parameters for the backend can be done in the config.ini, which is located in the folder "indoor-climate-simulation/backend". The following parameters can be set:
 
 | Parameter | Beschreibung | Bereich |
 |----------|----------|----------|
