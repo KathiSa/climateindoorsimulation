@@ -9,7 +9,7 @@ nav_order: 2
 Requirements to install the software Indoor Climate Simulation:
 
 * Installation of Python 3.10
-* Installation of EnergyPlus (Version 22-2-0) (https://energyplus.net/)
+* [Installation of EnergyPlus (Version 22-2-0)](https://energyplus.net/)
 * Current Version of Docker (https://www.docker.com/)
 * Windows or Linux as operating system
 * Installation of Node.js (https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows)
