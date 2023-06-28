@@ -1,15 +1,11 @@
-# comment
 # possible themes on https://pages.github.com/themes/ (use github themes)
-#theme: architect
 
-#use of other themes: 
 remote_theme: just-the-docs/just-the-docs
-#remote_theme: rexrile/PrettyDocs-Theme
 
 #https://github.com/just-the-docs/just-the-docs
 #https://themes.3rdwavemedia.com/bootstrap-templates/startup/prettydocs-free-bootstrap-theme-for-developers-and-startups/
 #https://github.com/xriley/PrettyDocs-Theme
 # GitHub pages Dokumentation: https://docs.github.com/en/pages/quickstart
 
-title: EnergyPlus Room Simulation
-description: Documentation for the Tool EnergyPlus Room Simulation
+title: EnergyPlus Room Simulator
+description: Documentation for the Tool EnergyPlus Room Simulator
