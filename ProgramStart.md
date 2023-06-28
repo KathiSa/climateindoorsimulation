@@ -249,7 +249,7 @@ Execute the following:
 python3 -m app
 ```
 
-Your backend has been started. Now you can use the backend, for example to work with Jupyter Notebooks.
+Your backend has been started.
 
 Note: You can find a step by step guide including pictures below.
 
@@ -274,4 +274,40 @@ Your frontend has been started. Now you can open [http://localhost:100/](http://
 INFORMATION: If you started only the frontend and not the backend, running a simulation will not work! The frontend does not work without the backend!
 
 Note: You can find a step by step guide including pictures below.
+
+
+## Start everything at the same time (with pictures)
+
+Step 1: Open a new command window.
+
+![Figg. 1](images/ProgramStartAll1.PNG)
+
+Step 2: Navigate to the project folder.
+
+(Note: File path in the picture will differ and is only for visualisation purposes.)
+
+![Figg. 2](images/ProgramStartAll2.PNG)
+
+Step 3: Run script install.py 
+
+Execute the following: 
+
+```
+ python install.py
+```
+
+![Figg. 4](images/ProgramStartAll4.PNG)
+
+Step 4: Backend and frontend start automatically
+
+In this step you have to do nothing. If the frontend started successfully, another command window should open automatically. 
+
+![Figg. 5](images/ProgramStartAllSpider.PNG)
+
+
+Step 5: Open [http://localhost:100/](http://localhost:100/) in your browser
+
+You should see the following: 
+
+![Figg. 6](images/ProgramStartAll6.PNG)
 
