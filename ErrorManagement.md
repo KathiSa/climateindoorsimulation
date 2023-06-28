@@ -26,6 +26,60 @@ Example eplusout.err error file for this example:
     **  Fatal  ** Error occurred on EPW while searching for first day, stopped at 1991/12/31 1:0 IO Error='no error'
 ```
 
+### Frontend
+A major part in the frontend is the visualization of the room.  
+The open-source project ["Ladybug Spider"](http://www.ladybug.tools/spider-2021/spider-2021-11-02.html) is integrated and running on a Node.js Server.  
+![Fig. 1](images/spide_error.png)
+
+Figure 1 shows the case where an error occurred during startup of the server (marking 1).  
+There are multiple possible error sources:
+- Server is not running
+- Node.js is not installed
+- Network port is allocated to another program  
+
+To see if the server is running, check the open command consoles. One of them should be dedicated to the visualization.  
+A typical reason for the console to close is the second point in the list. The server is started by calling the node server.  
+Without the installation an error is thrown, and the console is closed immediately. Check the Node.js installation.  
+Another explanation for the visualization not to work lies in the connection between frontend and the visualization program.  
+The Node.js Server is running on port 50715. It is possible that the port is already allocated to another program. In this case it is not possible to switch port without changing the programming. Try closing the other program if the visualization is of immediate importance.
+Use the browser of your choice to find out how to look up, which ports are in use for your operating system.
+
+#### Port allocation
+While it is not possible for the user to easily change the port of the visualization server, it is for the other parts of the program. In the front- and backend are config files, where the port is defined for these two parts.  
+
+File path: ./frontend/frontend_config.ini
+```
+[Frontend]
+IP = 127.0.0.1
+Port = 100
+
+[Backend]
+Address = localhost
+Port = 5000
+```
+
+In this file the port for the front- and backend can be changed.  
+
+The last port used is for the Docker container running MongoDB. It is configured to be on 27017.
+It is not recommended to change it, but in case there is the need, the following steps are required:
+1. Delete the old Docker container if one exists
+2. Change port in the docker container / Alternative: change the parameters in the "./installation.bat" (Windows) or "./installation.sh" (Linux) files.  
+
+From:
+```
+docker run --name simulation_db -p 27017:27017 -d mongo:6.0.2
+```
+To the desired port:
+```
+docker run --name simulation_db -p <port>:<port> -d mongo:6.0.2
+```
+3. Change the path in the backend config file. (./backend/config.ini)
+```
+[MongoDB]
+connection_string = mongodb://localhost:<port>
+``` 
+
+
 ### Backend:
 Many control instances for the uploaded data are integrated into the frontend. Thus, using only the REST-API to interact with the backend requires extra careful verification of the parameters.
 - Run Period:
