@@ -11,6 +11,7 @@ Once you launch the application and open [http://localhost:100/](http://localhos
 
 
 ![Figg. 1](images/NewSimulationMarker.PNG)
+*Figure 1*
 
 1. "Start Simulation" button 
 2. "Return to current simulation" button
