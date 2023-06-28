@@ -46,11 +46,18 @@ Execute the following:
 cd backend
 ```
 
-Execute the following:  
+Execute the following (for Windows):  
 
 ```
 python -m app
 ```
+
+Execute the following (for Linux):  
+
+```
+python3 -m app
+```
+
 
 Your backend has been started. Now you can use the backend, for example to work with Jupyter Notebooks.
 
@@ -66,12 +73,17 @@ Execute the following:
 cd frontend
 ```
 
-Execute the following:  
+Execute the following (for Windows):  
 
 ```
 python -m app
 ```
 
+Execute the following (for Linux):  
+
+```
+python3 -m app
+```
 
 Your frontend has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
 
