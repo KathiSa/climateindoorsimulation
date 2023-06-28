@@ -10,9 +10,9 @@ Requirements to install the software Indoor Climate Simulation:
 
 * Installation of Python 3.10
 * [Installation of EnergyPlus (Version 22-2-0)](https://energyplus.net/)
-* Current Version of Docker (https://www.docker.com/)
+* [Current Version of Docker](https://www.docker.com/)
 * Windows or Linux as operating system
-* Installation of Node.js (https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows)
+* [Installation of Node.js](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows)
 
 ## Note 
 The script performs either a complete installation or just a start of the resources and the program. The full installation includes creating a Python VENV virtual environment, downloading and starting the MongoDB image and container, installing all required Python packages, and starting the frontend and backend. Just the starting involves starting the existing MongoDB Docker container and the program. The important thing to note here is that for a complete installation, a system path will be checked for equality. This check is only successful if no virtual environment is enabled. So, to do a completely fresh installation, all existing, currently activated virtual environments must be deactivated. For just starting the programs (if an installation has already been executed), whereas, you must manually activate the dedicated VENV that is created by the installation before starting the script.
