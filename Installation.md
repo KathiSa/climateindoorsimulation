@@ -15,18 +15,7 @@ Requirements to install the software Indoor Climate Simulation:
 * Installation of Node.js (https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows)
 
 ## Note 
-Das Skript führt entweder eine komplette Installation oder lediglich einen Start der 
-Ressourcen und des Programms durch. Die komplette Installation beinhaltet das Erstellen 
-eines virtuellen Python VENV Environments, das Herunterladen und Starten des MongoDB 
-Images und Containers, das Installieren aller benötigten Python Packages und das Starten 
-von Frontend und Backend. Das bloße Starten beinhaltet das Starten des bestehenden 
-MongoDB Docker Containers und des Programms. Wichtig ist hierbei: Für eine komplette 
-Installation wird auf ein Systempfad auf Gleichheit überprüft. Diese Prüfung ist nur dann 
-erfolgreich, wenn kein virtuelles Environment aktiviert ist. Um eine komplett frische 
-Installation durchzuführen, müssen also alle bestehenden, aktuell aktivierten virtuellen
-Umgebungen deaktiviert werden. Für einen bloßen Start der Programme (falls eine 
-Installation bereits durchgeführt wurde) muss hingegen vor dem Start des Skripts das 
-dedizierte, von der Installation kreierte VENV manuell aktiviert werden.
+The script performs either a complete installation or just a start of the resources and the program. The full installation includes creating a Python VENV virtual environment, downloading and starting the MongoDB image and container, installing all required Python packages, and starting the frontend and backend. Just the starting involves starting the existing MongoDB Docker container and the program. The important thing to note here is that for a complete installation, a system path will be checked for equality. This check is only successful if no virtual environment is enabled. So, to do a completely fresh installation, all existing, currently activated virtual environments must be deactivated. For just starting the programs (if an installation has already been executed), whereas, you must manually activate the dedicated VENV that is created by the installation before starting the script.
 
 ## Instructions
 
