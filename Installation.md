@@ -82,5 +82,5 @@ The configuration of the parameters for the frontend will be made in the fronten
 |zone|This value is by default "RL_Office_27214585". This value is based on the standard idf Gebäude3.idf. If a completely own .idf is used and not only room and window dimensions are adjusted, this name must be changed accordingly by the admin. |simulation|
 
 
-For more information regarding configurations (e.g. config.ini), please refer to .
+For more information regarding configurations (e.g. config.ini), please refer to [Error Management](https://kathisa.github.io/indoorclimatesimulation/ErrorManagement.html).
 
