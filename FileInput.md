@@ -21,7 +21,7 @@ After starting a new simulation you will be redirected to the "File Input" page.
 
 ## IDF files
 
-IDF files are the core of every EnergyPlus simulation. The simulation is primarily based on the information within this file. A IDF file is mandatory for a simulation. The file contains information about the global location, the room geometry, specific information about the building an the presence of people in the simulated room (in the following called "Occupancy").
+IDF files are the core of every EnergyPlus simulation. The simulation is primarily based on the information within this file. A IDF file is mandatory for a simulation. The file contains information about the global location, the room geometry, specific information about the building and the presence of people in the simulated room (in the following called "Occupancy").
 
 In the GUI you have two options to provide a suitable IDF file for the simulation.
 
@@ -53,14 +53,14 @@ Note: The IDF file is based on a generic IDF file, which can be further modified
       * Then click on the 'Upload' button (Fig. 2, marker 4). Important: Your file will be uploaded only after clicking this button.
       * After a successful upload, the name of the uploaded file is now displayed in the the web interface (Fig. 4, marker 1).
    * Deleting an existing IDF file
-      * If you want to remove an uploaded file, you do not have to delete it. You can choose a new file and the old file will be overwritten.
+      * If you want to remove an uploaded file, you can not delete it. You can choose a new file and the old file will be overwritten.
       
 
 
 ## EPW files
 
-EPW files (short for "EnergyPlus Weather Data File") are EnergyPlus-specific weather files. EPW files are the main data source of the simulation regarding the
-the simulation of an outdoor climate. A EPW file is mandatory for a simulation.
+EPW files (short for "EnergyPlus Weather Data File") are EnergyPlus-specific weather files. EPW files are the main data source of the simulation regarding the the simulation of an outdoor climate. A EPW file is mandatory for a simulation.
+
 EPW files contain time series with different authentic climate data measured at a certain location. The EPW file for the simulation must be uploaded in the GUI.
 
 If you do not have access to weather data in EPW format, we refer you to following resources:
@@ -95,7 +95,7 @@ You have two options to provide a suitable EPW file for the simulation:
       * Then click on the 'Upload' button (Fig. 3, marker 4). Important: Your file will be uploaded only after clicking this button.
       * After a successful upload, the name of the uploaded file is now displayed in the the web interface (Fig. 4, marker 1).
    * Deleting an existing EPW file
-      * If you want to remove an uploaded file, you do not have to delete it. You can choose a new file and the old file will be overwritten.
+      * If you want to remove an uploaded file, you can not delete it. You can choose a new file and the old file will be overwritten.
 
 ## Proceed or use optional feature: Run simulation only via IDF & EPW file
 
@@ -111,9 +111,9 @@ After successfully uploading the IDF and EPW files (Fig. 4, marker 1), there are
 2. "Proceed to occupancy" button, to proceed to the next step
 3. "Start simulation with only provided idf and epw file" button, to skip further steps
 
-If you choose "Start simulation with only provided idf and epw file" you will be send to the step seen in the following picture an you can start the simulation without further need for configurations (Fig. 5).
+If you choose "Start simulation with only provided idf and epw file" you will be send to the step seen in the following picture and you can start the simulation without further need for configurations (Fig. 5).
 
 
 ![Figg. 5](images/FileUpload7.PNG)
-*Figure 5: Overview*
+*Figure 5: Overview simulation with only an idf and epw file*
 
