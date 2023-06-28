@@ -17,18 +17,11 @@ You can find a step by step guide including pictures below.
 
 Open a command window and navigate into your project folder. 
 
-Execute the following (for Windows): 
+Execute the following: 
 
 ```
  python install.py
 ```
-
-Execute the following (for Linux): 
-
-```
- python3 install.py
-```
-
 
 Your backend and frontend has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
 
@@ -46,18 +39,11 @@ Execute the following:
 cd backend
 ```
 
-Execute the following (for Windows):  
+Execute the following:  
 
 ```
 python -m app
 ```
-
-Execute the following (for Linux):  
-
-```
-python3 -m app
-```
-
 
 Your backend has been started. Now you can use the backend, for example to work with Jupyter Notebooks.
 
@@ -73,16 +59,10 @@ Execute the following:
 cd frontend
 ```
 
-Execute the following (for Windows):  
+Execute the following:  
 
 ```
 python -m app
-```
-
-Execute the following (for Linux):  
-
-```
-python3 -m app
 ```
 
 Your frontend has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
@@ -227,6 +207,71 @@ node server.js
 
 The Spider server has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation and use the frontend functionality to visualise your idf file in the step "Room".
 
-# Start Program with Linux
 
-TODO: TODOOOOOOOO 
+# Start Program with Linux
+(Author: Diana Marjanovic)
+
+To start the program you have two different options: 
+   * start everything at the same time (both frontend and backend)
+   * start frontend and backend seperately
+
+You can find a step by step guide including pictures below.
+
+## Simple guide for starting everything at the same time
+
+Open a command window and navigate into your project folder. 
+
+Execute the following: 
+
+```
+ python3 install.py
+```
+
+Your backend and frontend has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
+
+Note: You can find a step by step guide including pictures below.
+
+## Simple guide for starting frontend and backend seperately
+
+### Starting backend: 
+
+Open a command window and navigate into your project folder. 
+
+Execute the following:  
+
+```
+cd backend
+```
+
+Execute the following:  
+
+```
+python3 -m app
+```
+
+Your backend has been started. Now you can use the backend, for example to work with Jupyter Notebooks.
+
+Note: You can find a step by step guide including pictures below.
+
+### Starting frontend (optional): 
+
+Open another command window and navigate into your project folder. 
+
+Execute the following: 
+
+```
+cd frontend
+```
+
+Execute the following:  
+
+```
+python3 -m app
+```
+
+Your frontend has been started. Now you can open [http://localhost:100/](http://localhost:100/) in your browser and use the frontend to run a simulation.
+
+INFORMATION: If you started only the frontend and not the backend, running a simulation will not work! The frontend does not work without the backend!
+
+Note: You can find a step by step guide including pictures below.
+
