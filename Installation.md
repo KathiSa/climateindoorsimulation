@@ -30,17 +30,8 @@ To run simulations with EnergyPlus, some data is needed. Specifically, it is an 
 
 Output
 
-Das Programm führt EnergyPlus Simulationen durch. Ergebnisse solcher Simulationen sind 
-einige Output-Dateien von EnergyPlus. Diese werden im Projektordner im eppy-output 
-Verzeichnis abgelegt, wobei diese bei jedem Simulationslauf überschrieben werden. Die für 
-die Simulation genutzten .idf Dateien sind hiervon nicht übertroffen. Diese werden mit 
-einem tag versehen und dauerhaft im Ordner gespeichert. Die wichtigste Datei, die .eso Datei 
-wird mit einem tag versehen und im Ordner „eso-output“ abgelegt. Diese werden nicht 
-überschrieben, was bedeutet, dass mit jeder erfolgreichen Simulation eine weitere .eso Datei 
-in diesem Ordner erstellt wird. Die zur Simulation genutzte .idf und die .csv Datei werden 
-hingegeben persistent in der MongoDB Collection „simulation-output“ gespeichert. Auch 
-hier wird ebenfalls ein Zeitstempel, sowie ein Filename zusätzlich zu den oben genannten 
-Daten gespeichert.
+The program executes EnergyPlus simulations. Results of such simulations are some output files of EnergyPlus. These are stored in the project folder in the eppy-output directory, and will be overwritten with each simulation run. The .idf files that are used for the simulation are not surpassed by this. These are tagged and stored permanently in the folder. The most important file, the .eso file will be tagged and stored in the "eso-output" folder. These will not be overwritten, which means that with each successful simulation an additional .eso file will be created in this folder. For the simulation used .idf and .csv files are persistently stored in the MongoDB collection "simulation-output". Also here a timestamp, as well as a filename is stored in addition to the above mentioned data.
+
 
 ## Installation with Linux
 
