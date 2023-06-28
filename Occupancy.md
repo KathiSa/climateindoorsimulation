@@ -74,6 +74,7 @@ The header should look like this.
 * The separator need to be '|' like in the following screenshot
 
 An occupancy file need to follow this format otherwise an error will occur when the file is uploaded. 
+The header should be: day, time, occupants, win1.
 
 ![occupancy csv file format](images/ocp_upload_file_format.jpg)
 *Figure 5: occupancy - example file*
