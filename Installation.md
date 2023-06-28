@@ -35,12 +35,7 @@ The program executes EnergyPlus simulations. Results of such simulations are som
 
 ## Installation with Linux
 
-Für die Installation unter Linux gibt es ein paar Eigenheiten zu beachten. Die .bat Skripte 
-sind unter Linux nicht ausführbar. Dafür werden extra Shell-Skripte mit der Endung „.sh“ 
-bereitgestellt. Die Installation Erfolg mit diesen Skripten analog zu den Bash-Skripten. Zum 
-Starten des Backend muss allerdings die config.ini im Backend-Verzeichnis angepasst 
-werden. Im Folgenden ist die Beispiel-Konfiguration in der EnergyPlus im /opt/ Verzeichnis 
-installiert wurde.
+For the installation under Linux there are a few peculiarities to consider. The .bat scripts are not executable under Linux. For this, extra shell scripts with the extension ".sh" are available. The installation happens with these scripts analogous to the bash scripts. To start the backend, the config.ini in the backend directory must be adjusted. Here is the example configuration in which EnergyPlus was installed in the /opt/ directory:
 
 ```
 [EnergyPlus]
@@ -48,8 +43,7 @@ EplusPath = /opt/EnergyPlus-22.2.0
 iddPath = /opt/EnergyPlus-22.2.0/Energy+.idd
 ```
 
-Erfolgt die Installation auf einem Server und soll von Clients erreichbar sein, muss außerdem 
-die frontend_config.ini im Frontend-Verzeichnis angepasst werden.
+If the installation is made on a server and should be accessible by clients, the frontend_config.ini in the frontend directory must also be adjusted:
 
 ```
 [Frontend]
