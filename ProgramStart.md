@@ -280,13 +280,13 @@ Note: You can find a step by step guide including pictures below.
 
 Step 1: Open a new command window.
 
-![Figure. 1](images/Start1_1.PNG)
+![Figure. 1](images/Start1_1.png)
 
 Step 2: Navigate to the project folder.
 
 (Note: File path in the picture will differ and is only for visualisation purposes.)
 
-![Figure. 2](images/Start1_2.PNG)
+![Figure. 2](images/Start1_2.png)
 
 Step 3: Run script install.py 
 
@@ -296,18 +296,18 @@ Execute the following:
  python3 install.py
 ```
 
-![Figure. 3](images/Start1_3.PNG)
+![Figure. 3](images/Start1_3.png)
 
 Step 4: Backend and frontend start automatically
 
 In this step you have to do nothing. If the frontend started successfully, another command window should open automatically. 
 
-![Figure. 4](images/Start1_4.PNG)
+![Figure. 4](images/Start1_4.png)
 
 
 Step 5: Open [http://localhost:100/](http://localhost:100/) in your browser
 
 You should see the following: 
 
-![Figure. 5](images/Start1_5.PNG)
+![Figure. 5](images/Start1_5.png)
 
