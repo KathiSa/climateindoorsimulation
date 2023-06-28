@@ -121,14 +121,14 @@ Step 4: Backend and frontend start automatically
 
 In this step you have to do nothing. If the frontend started successfully, another command window should open automatically. 
 
-![Figg. 5](images/ProgramStartAll5.PNG)
+![Figg. 5](images/ProgramStartAllSpider.PNG)
 
 
 Step 5: Open [http://localhost:100/](http://localhost:100/) in your browser
 
 You should see the following: 
 
-![Figg. 6](images/ProgramStartAllSpider.PNG)
+![Figg. 6](images/ProgramStartAll6.PNG)
 
 ## Start frontend, backend and spider seperately (with pictures) 
 
