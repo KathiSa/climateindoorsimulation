@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: EnergyPlus Room Simulator
 nav_order: 1
 description: "Get to know the tool EnergyPlus Room Simulator."
 permalink: /
