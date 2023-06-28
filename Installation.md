@@ -58,7 +58,7 @@ By setting the IP address to 0.0.0.0, the web server runs on all available netwo
 
 The configuration of the most important software parameters for the backend can be done in the config.ini, which is located in the folder "indoor-climate-simulation/backend". The following parameters can be set:
 
-| Parameter | Beschreibung | Bereich |
+| Parameter | Description | Section |
 |----------|----------|----------|
 |epluspath|Pfad zur EnergyPlus Installation auf der lokalen Maschine. Dieser Pfad muss hier angegeben werden. Beispiel: C:/EnergyPlusV22-2-0| EnergyPlus
 |iddpath|Pfad zur .idd Datei von EnergyPlus. Dieser Pfad muss angegeben werden, um Simulationen starten zu können. Der Pfad muss hierbei in den Ordner der EnergyPlus Installation führen. Idd-Files, welche in anderen Verzeichnissen liegen, werden zu Fehlermeldungen führen. Beispiel: C:/EnergyPlusV22-2-0/Energy+.idd|EnergyPlus|
@@ -73,7 +73,7 @@ The configuration of the most important software parameters for the backend can 
 The configuration of the parameters for the frontend will be made in the frontend_config.ini. This file is located in the folder "indoor-climate-simulation/frontend".
 
 
-|Parameter|Beschreibung|Bereich|
+|Parameter|Description|Section|
 |-|-|-|
 |ip|The IP address where the frontend can be reached. |frontend|
 |port|The port where the frontend can be reached. |frontend|
