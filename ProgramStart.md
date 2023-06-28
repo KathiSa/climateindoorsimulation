@@ -280,34 +280,34 @@ Note: You can find a step by step guide including pictures below.
 
 Step 1: Open a new command window.
 
-![Figg. 1](images/ProgramStartAll1.PNG)
+![Figure. 1](images/Start1_1.PNG)
 
 Step 2: Navigate to the project folder.
 
 (Note: File path in the picture will differ and is only for visualisation purposes.)
 
-![Figg. 2](images/ProgramStartAll2.PNG)
+![Figure. 2](images/Start1_2.PNG)
 
 Step 3: Run script install.py 
 
 Execute the following: 
 
 ```
- python install.py
+ python3 install.py
 ```
 
-![Figg. 4](images/ProgramStartAll4.PNG)
+![Figure. 3](images/Start1_3.PNG)
 
 Step 4: Backend and frontend start automatically
 
 In this step you have to do nothing. If the frontend started successfully, another command window should open automatically. 
 
-![Figg. 5](images/ProgramStartAllSpider.PNG)
+![Figure. 4](images/Start1_4.PNG)
 
 
 Step 5: Open [http://localhost:100/](http://localhost:100/) in your browser
 
 You should see the following: 
 
-![Figg. 6](images/ProgramStartAll6.PNG)
+![Figure. 5](images/Start1_5.PNG)
 
