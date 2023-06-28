@@ -19,41 +19,7 @@ The script performs either a complete installation or just a start of the resour
 
 ## Instructions
 
-Um die Software erstmalig zu installieren, muss das Skript „install.py“ im Ordner 
-raumklimadaten-simulation-a1 mit dem Befehl „python install.py“ aufgerufen werden. 
-Dabei muss sich der Anwender im Projektordner befinden und dieses Skript nicht von 
-über/untergeordneten Ordnern aufrufen. Das Skript erstellt mithilfe von .bat Dateien und 
-unter Nutzung der Windows Befehlsaufforderung anschließend ein VENV mit dem Namen 
-„raumklimadaten-a1“ und aktiviert dieses. Anschließend werden alle benötigten Packages 
-mit pip in das virtuelle Environment installiert. Sind diese Schritte abgeschlossen, wird das 
-Docker-Image „mongo“ in der Version 6.0.2 von Docker-Hub heruntergeladen. Nach 
-Abschluss des Downloads wird ein Docker-Container mit diesem Image mit dem Namen 
-„raumklima_db“ erstellt. Sind diese Schritte abgeschlossen, wird das Frontend und Backend 
-gestartet. Am Ende der kompletten Installation sollten zwei cmd-Shells geöffnet sein, in welchen die beiden Programmteile ablaufen. Unter dem Port localhost:100 sollte die 
-Benutzeroberfläche erreichbar und nutzbar sein. 
-Um die Software nach erfolgter Installation lediglich zu starten, muss ebenfalls in den 
-Projektordner gewechselt werden. Anschließend muss sichergestellt werden, dass das VENV 
-„raumklimadaten-simulation-a1“ aktiviert ist, bevor erneut das Skript „install.py“ 
-aufgerufen wird. Das Skript wird dann lediglich den erstellten Container „raumklima_db“ 
-und sowohl Frontend als auch Backend starten. Das Programm sollte anschließend ohne 
-eine komplette Neuinstallation verwendbar sein. 
-Nach der Installation oder des erneuten Starts des Programms sollten zwei Python 
-Applikationen und ein MongoDB Docker Container auf der Maschine laufen. Port 100 und 
-5000 sollten von der Software selbst blockiert sein. Auf Port 100 läuft das auf dem 
-Framework Flask basierende Frontend, während auf Port 5000 die ebenfalls auf Flask 
-basierende REST API auf Anfragen wartet. Der MongoDB Container blockiert ebenfalls einen 
-Port, welcher jedoch nicht fest von den Programmierern vorgegeben ist.
-
-## Error Management
-
-Das Programm ist in der Lage sein, alle erwarteten und gängigen Fehler ordentlich zu 
-bearbeiten. Sollten im Frontend Fehlerzustände auftreten, so wird der Nutzer über eine 
-Meldung auf der GUI informiert. Sollte es im Backend zu Fehlern kommen, so wird eine 
-Fehlermeldung in der Konsole ausgegeben, in welcher das Backend läuft. Fehler, welche mit 
-einer konkreten und leicht verständlichen Fehlermeldung in der Konsole ausgegeben 
-werden, führen nicht zum Absturz des Backends. Tritt allerdings ein unerwarteter Fehler 
-auf, so würde dies zum kompletten Absturz des Backends führen. In diesem Fall müsste das 
-Programm neu gestartet werden. 
+To install the software for the first time, the "install.py" script in the indoor-climate-simultion folder must be called with the "python install.py" command. To do this, the user must be in the project folder and not call this script from parent/subordinate folders. The script then creates a VENV named "indoor-climate-simultion" using .bat files and the Windows command prompt and activates it. After that, all required packages will be installed into the virtual environment using pip. Once these steps are completed, the Docker image "mongo" is downloaded in the current version of Docker Hub. After the download is complete, a Docker container is created with this image named "simulation_db". If these steps are done, the frontend and backend will be started. At the end of the complete installation, two cmd shells should be open in which the two program parts run. Under the port localhost:100 the GUI should be accessible and usable.  To start the software after the installation has been completed, it is also necessary to change to the project folder. Afterwards it must be ensured that the VENV "indoor-climate-simulation" is activated before the script "install.py" is called again. The script will then only start the created container "simulation_db" and both frontend and backend. The program should then be usable without a complete reinstallation. After installing or restarting the program, two Python applications and a MongoDB Docker container should be running on the machine. Port 100 and 5000 should be blocked by the software itself. Port 100 runs the frontend based on the Flask framework, while port 5000 is where the REST API, also based on Flask, waits for requests. The MongoDB container also blocks a port, but this port is not fixed by the programmers.
 
 ## Memory
 
